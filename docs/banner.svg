@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="240" viewBox="0 0 960 240" role="img" aria-labelledby="title description">
+  <title id="title">Alarmo Card Minimal</title>
+  <desc id="description">A simpler Alarmo interface for Home Assistant. A fork of nielsfaber/alarmo-card.</desc>
+  <rect width="960" height="240" rx="24" fill="#111827" />
+  <rect x="48" y="64" width="112" height="112" rx="28" fill="#1f2937" />
+  <path d="M104 85 133 97v22c0 19-14 31-29 38-15-7-29-19-29-38V97Z" fill="none" stroke="#60a5fa" stroke-width="5" stroke-linejoin="round" />
+  <path d="m91 119 9 9 18-20" fill="none" stroke="#60a5fa" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <g font-family="system-ui, sans-serif">
+    <text x="192" y="104" fill="#f9fafb" font-size="40" font-weight="700">Alarmo Card Minimal</text>
+    <text x="192" y="144" fill="#d1d5db" font-size="22">A simpler Alarmo interface for Home Assistant</text>
+    <text x="192" y="180" fill="#9ca3af" font-size="18">A fork of nielsfaber/alarmo-card</text>
+  </g>
+</svg>

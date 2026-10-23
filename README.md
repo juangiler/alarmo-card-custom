@@ -1,5 +1,7 @@
 # Alarmo Card Minimal
 
+![Alarmo Card Minimal — a simpler Alarmo interface for Home Assistant](docs/banner.svg)
+
 A fork of [nielsfaber/alarmo-card](https://github.com/nielsfaber/alarmo-card) with a simpler appearance and an updated code-entry popup for Home Assistant.
 
 The original card and its functionality were created by [Niels Faber](https://github.com/nielsfaber). See the [upstream README](https://github.com/nielsfaber/alarmo-card#readme) for general features and configuration options. This README focuses on the changes in this fork.
@@ -13,6 +15,10 @@ The original card and its functionality were created by [Niels Faber](https://gi
 - **Active-mode handling:** selecting the mode that is already active does not open another code prompt or send a redundant command.
 
 The inline keypad remains available when popup code entry is disabled. Alarm delays still work; this fork removes their countdown visualization.
+
+## Screenshot
+
+![Alarmo card state and configuration example](screenshots/state-config-example.png)
 
 ## Requirements
 
