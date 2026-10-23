@@ -26,6 +26,7 @@ export class AlarmoCountdown extends LitElement {
   }
 
   protected updated(changed: PropertyValues) {
+    this.toggleAttribute('active', this._remaining > 0);
     const previousHass = changed.get('hass') as HomeAssistant | undefined;
     const previous = previousHass?.states[this.entity];
     const current = this.hass?.states[this.entity];
@@ -99,12 +100,14 @@ export class AlarmoCountdown extends LitElement {
 
   static styles = css`
     :host {
+      display: none;
+    }
+    :host([active]) {
       display: block;
+      flex: 0 1 80px;
+      min-width: 40px;
     }
     .countdown {
-      width: 80px;
-      padding-top: 12px;
-      margin-left: 16px;
       color: var(--alarm-state-color, var(--primary-color));
     }
     .seconds {

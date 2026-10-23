@@ -433,7 +433,7 @@ const ce=e=>(t,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(e,t)}
           opacity: 1;
         }
       }
-    `}}t([ue()],Ht.prototype,"hass",void 0),t([ue()],Ht.prototype,"entity",void 0),t([_e()],Ht.prototype,"_hover",void 0),customElements.define("alarmo-state-badge",Ht);let Ut=class extends le{constructor(){super(...arguments),this._remaining=0,this._duration=0,this._deadline=0,this._request=0}connectedCallback(){super.connectedCallback(),this.hasUpdated&&this._syncCountdown()}disconnectedCallback(){super.disconnectedCallback(),this._stopCountdown()}updated(e){var t;const i=e.get("hass"),a=null==i?void 0:i.states[this.entity],s=null===(t=this.hass)||void 0===t?void 0:t.states[this.entity];(e.has("entity")||e.has("hass")&&(!a||a.state!==(null==s?void 0:s.state)||a.last_changed!==(null==s?void 0:s.last_changed)||a.attributes.delay!==(null==s?void 0:s.attributes.delay)||a.attributes.expiration!==(null==s?void 0:s.attributes.expiration)))&&this._syncCountdown()}_stopCountdown(){this._request++,window.clearInterval(this._interval),this._interval=void 0,this._remaining=0}async _syncCountdown(){var e;this._stopCountdown();const t=null===(e=this.hass)||void 0===e?void 0:e.states[this.entity];if(!this.isConnected||!t||!ke.includes(t.state))return;const i=this._request,a=performance.now();try{const e=await(s=this.hass,o=this.entity,s.callWS({type:"alarmo/countdown",entity_id:o}));if(i!==this._request||!this.isConnected)return;if(!Number.isFinite(e.delay)||!Number.isFinite(e.remaining)||e.delay<=0)return;this._duration=e.delay,this._deadline=a+1e3*Math.min(e.delay,Math.max(0,e.remaining)),this._tick(),this._remaining>0&&(this._interval=window.setInterval(()=>this._tick(),100))}catch(e){}var s,o}_tick(){this._remaining=Math.max(0,(this._deadline-performance.now())/1e3),this._remaining||(window.clearInterval(this._interval),this._interval=void 0)}render(){if(this._remaining<=0)return B``;const e=Math.ceil(this._remaining);return B`
+    `}}t([ue()],Ht.prototype,"hass",void 0),t([ue()],Ht.prototype,"entity",void 0),t([_e()],Ht.prototype,"_hover",void 0),customElements.define("alarmo-state-badge",Ht);let Ut=class extends le{constructor(){super(...arguments),this._remaining=0,this._duration=0,this._deadline=0,this._request=0}connectedCallback(){super.connectedCallback(),this.hasUpdated&&this._syncCountdown()}disconnectedCallback(){super.disconnectedCallback(),this._stopCountdown()}updated(e){var t;this.toggleAttribute("active",this._remaining>0);const i=e.get("hass"),a=null==i?void 0:i.states[this.entity],s=null===(t=this.hass)||void 0===t?void 0:t.states[this.entity];(e.has("entity")||e.has("hass")&&(!a||a.state!==(null==s?void 0:s.state)||a.last_changed!==(null==s?void 0:s.last_changed)||a.attributes.delay!==(null==s?void 0:s.attributes.delay)||a.attributes.expiration!==(null==s?void 0:s.attributes.expiration)))&&this._syncCountdown()}_stopCountdown(){this._request++,window.clearInterval(this._interval),this._interval=void 0,this._remaining=0}async _syncCountdown(){var e;this._stopCountdown();const t=null===(e=this.hass)||void 0===e?void 0:e.states[this.entity];if(!this.isConnected||!t||!ke.includes(t.state))return;const i=this._request,a=performance.now();try{const e=await(s=this.hass,o=this.entity,s.callWS({type:"alarmo/countdown",entity_id:o}));if(i!==this._request||!this.isConnected)return;if(!Number.isFinite(e.delay)||!Number.isFinite(e.remaining)||e.delay<=0)return;this._duration=e.delay,this._deadline=a+1e3*Math.min(e.delay,Math.max(0,e.remaining)),this._tick(),this._remaining>0&&(this._interval=window.setInterval(()=>this._tick(),100))}catch(e){}var s,o}_tick(){this._remaining=Math.max(0,(this._deadline-performance.now())/1e3),this._remaining||(window.clearInterval(this._interval),this._interval=void 0)}render(){if(this._remaining<=0)return B``;const e=Math.ceil(this._remaining);return B`
       <div class="countdown">
         <div class="seconds">${e}<span>s</span></div>
         <div
@@ -450,12 +450,14 @@ const ce=e=>(t,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(e,t)}
       </div>
     `}};var Lt,qt;Ut.styles=n`
     :host {
+      display: none;
+    }
+    :host([active]) {
       display: block;
+      flex: 0 1 80px;
+      min-width: 40px;
     }
     .countdown {
-      width: 80px;
-      padding-top: 12px;
-      margin-left: 16px;
       color: var(--alarm-state-color, var(--primary-color));
     }
     .seconds {
@@ -927,13 +929,12 @@ const ce=e=>(t,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(e,t)}
                 </ha-dropdown>
               `:""}
 
-        <alarmo-countdown
-          .hass=${this.hass}
-          .entity=${this._config.entity}
-          style="--alarm-state-color: ${jt(i,this._config)}"
-        ></alarmo-countdown>
-
         <div class="header">
+          <alarmo-countdown
+            .hass=${this.hass}
+            .entity=${this._config.entity}
+            style="--alarm-state-color: ${jt(i,this._config)}"
+          ></alarmo-countdown>
           <div class="icon">
             <alarmo-state-badge
               .hass=${this.hass}
@@ -1076,10 +1077,17 @@ const ce=e=>(t,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(e,t)}
       }
       .header .icon {
         display: flex;
+        flex-shrink: 0;
+      }
+      .header:has(alarmo-countdown[active]) {
+        margin: 0px 16px;
+        gap: 12px;
       }
       .header .summary {
         display: flex;
         flex-direction: column;
+        min-width: 0;
+        overflow-wrap: anywhere;
       }
       .header .name {
         font-size: calc(var(--alarmo-card-font-size, 16px) * 1.25);

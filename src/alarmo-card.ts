@@ -278,13 +278,12 @@ export class AlarmoCard extends SubscribeMixin(LitElement) {
             : ''
         }
 
-        <alarmo-countdown
-          .hass=${this.hass}
-          .entity=${this._config.entity}
-          style="--alarm-state-color: ${computeStateColor(stateObj, this._config)}"
-        ></alarmo-countdown>
-
         <div class="header">
+          <alarmo-countdown
+            .hass=${this.hass}
+            .entity=${this._config.entity}
+            style="--alarm-state-color: ${computeStateColor(stateObj, this._config)}"
+          ></alarmo-countdown>
           <div class="icon">
             <alarmo-state-badge
               .hass=${this.hass}
@@ -621,10 +620,17 @@ export class AlarmoCard extends SubscribeMixin(LitElement) {
       }
       .header .icon {
         display: flex;
+        flex-shrink: 0;
+      }
+      .header:has(alarmo-countdown[active]) {
+        margin: 0px 16px;
+        gap: 12px;
       }
       .header .summary {
         display: flex;
         flex-direction: column;
+        min-width: 0;
+        overflow-wrap: anywhere;
       }
       .header .name {
         font-size: calc(var(--alarmo-card-font-size, 16px) * 1.25);
