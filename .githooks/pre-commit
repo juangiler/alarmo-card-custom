@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(git rev-parse --show-toplevel)"
+
+failed=0
+for check in lint typecheck format:check; do
+  if ! npm run "$check"; then
+    failed=1
+  fi
+done
+
+if (( failed )); then
+  echo 'Commit blocked: fix the code quality errors above and try again.' >&2
+  exit 1
+fi
