@@ -1,7 +1,7 @@
 {
-  "name": "alarmo_card",
+  "name": "alarmo-card-custom",
   "version": "1.6.9",
-  "description": "Alarmo card",
+  "description": "Alarmo Card Custom for Home Assistant",
   "main": "dist/alarmo-card.js",
   "type": "module",
   "scripts": {
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nielsfaber/alarmo.git"
+    "url": "git+https://github.com/juangiler/alarmo-card-custom.git"
   },
   "author": "nielsfaber",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nielsfaber/alarmo/issues"
+    "url": "https://github.com/juangiler/alarmo-card-custom/issues"
   },
-  "homepage": "https://github.com/nielsfaber/alarmo#readme",
+  "homepage": "https://github.com/juangiler/alarmo-card-custom#readme",
   "dependencies": {
     "@babel/core": "^7.25.2",
     "@babel/plugin-proposal-decorators": "^7.24.7",

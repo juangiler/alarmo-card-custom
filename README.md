@@ -1,6 +1,6 @@
-# Alarmo Card Minimal
+# Alarmo Card Custom
 
-![Alarmo Card Minimal — a simpler Alarmo interface for Home Assistant](docs/banner.svg)
+![Alarmo Card Custom — a simpler Alarmo interface for Home Assistant](docs/banner.svg)
 
 A fork of [nielsfaber/alarmo-card](https://github.com/nielsfaber/alarmo-card) with a simpler appearance and an updated code-entry popup for Home Assistant.
 
@@ -8,13 +8,13 @@ The original card and its functionality were created by [Niels Faber](https://gi
 
 ## Changes in this fork
 
-- **Simpler status badge:** removes the circular countdown ring and remaining-seconds display. The alarm icon still reflects the current state and pulses during entry and exit delays. Clicking it during a delay still skips the delay.
+- **Compact countdown:** shows the remaining seconds above a small horizontal bar with rounded ends at the top left of the card during entry and exit delays. The bar shrinks as time runs out and disappears when the delay ends. The alarm icon still reflects the current state and pulses during delays. Clicking it during a delay still skips the delay.
 - **Updated code popup:** uses Home Assistant’s dialog and password input components, with rounded corners and a centered layout. Numeric codes use an input that requests the device’s numeric keyboard instead of an on-screen keypad inside the popup.
 - **Blurred popup background:** applies a subtle 4px blur behind both numeric and text code dialogs while keeping the popup clear.
 - **Font and icon sizing:** adds `font_size` and `icon_size` settings, available in YAML and the visual editor.
 - **Active-mode handling:** selecting the mode that is already active does not open another code prompt or send a redundant command.
 
-The inline keypad remains available when popup code entry is disabled. Alarm delays still work; this fork removes their countdown visualization.
+The inline keypad remains available when popup code entry is disabled. The horizontal countdown bar replaces the original circular countdown ring.
 
 ## Screenshot
 
@@ -30,7 +30,7 @@ The inline keypad remains available when popup code entry is disabled. Alarm del
 
 Use the JavaScript bundle from **this fork**. The upstream download does not include these changes.
 
-1. Download [dist/alarmo-card.js](https://github.com/juangiler/alarmo-card-minimal/blob/main/dist/alarmo-card.js) using GitHub’s **Download raw file** button.
+1. Download [dist/alarmo-card.js](https://github.com/juangiler/alarmo-card-custom/blob/main/dist/alarmo-card.js) using GitHub’s **Download raw file** button.
 2. Copy it to `<Home Assistant config>/www/alarmo-card/alarmo-card.js`, creating the folders if needed.
 3. Add the following dashboard resource as a JavaScript module:
 

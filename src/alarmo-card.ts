@@ -17,6 +17,7 @@ import { CardConfig, AlarmoEvent, AlarmoEntity, AlarmoConfig } from './types';
 
 import './alarmo-card-editor';
 import './components/alarmo-state-badge';
+import './components/alarmo-countdown';
 import './components/alarmo-sensor-badge';
 import './components/alarmo-button';
 import './components/alarmo-code-dialog';
@@ -276,6 +277,12 @@ export class AlarmoCard extends SubscribeMixin(LitElement) {
               `
             : ''
         }
+
+        <alarmo-countdown
+          .hass=${this.hass}
+          .entity=${this._config.entity}
+          style="--alarm-state-color: ${computeStateColor(stateObj, this._config)}"
+        ></alarmo-countdown>
 
         <div class="header">
           <div class="icon">
@@ -803,13 +810,13 @@ export class AlarmoCard extends SubscribeMixin(LitElement) {
 (window as any).customCards = (window as any).customCards || [];
 (window as any).customCards.push({
   type: 'alarmo-card',
-  name: 'Alarmo Card',
+  name: 'Alarmo Card Custom',
   description: 'Card for operating Alarmo through Lovelace.',
   preview: true,
 });
 
 console.info(
-  `%c  ALARMO-CARD  \n%c  Version: ${CARD_VERSION.padEnd(7, ' ')}`,
+  `%c  ALARMO CARD CUSTOM  \n%c  Version: ${CARD_VERSION.padEnd(7, ' ')}`,
   'color: orange; font-weight: bold; background: black',
   'color: white; font-weight: bold; background: dimgray'
 );
