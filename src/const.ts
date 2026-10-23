@@ -34,7 +34,7 @@ export enum ArmActions {
   ArmNight = 'arm_night',
   ArmVacation = 'arm_vacation',
   ArmCustomBypass = 'arm_custom_bypass',
-  Disarm = 'disarm'
+  Disarm = 'disarm',
 }
 
 export const ActionToIcon = {
@@ -44,7 +44,7 @@ export const ActionToIcon = {
   [ArmActions.ArmVacation]: 'mdi:airplane',
   [ArmActions.ArmCustomBypass]: 'mdi:shield',
   [ArmActions.Disarm]: 'mdi:shield-off',
-}
+};
 
 export const ActionToState = {
   [ArmActions.ArmAway]: AlarmStates.ArmedAway,
@@ -78,16 +78,22 @@ export const defaultCardConfig: CardConfig = {
   keep_keypad_visible: false,
   button_scale_actions: 1,
   button_scale_keypad: 1,
+  font_size: 16,
+  icon_size: 24,
   states: {},
   show_messages: true,
   show_ready_indicator: true,
   show_bypassed_sensors: true,
   use_code_dialog: false,
-  hide_keypad: false
+  hide_keypad: false,
 };
 
 export const minButtonScale = 1;
 export const maxButtonScale = 2.5;
+export const minFontSize = 12;
+export const maxFontSize = 24;
+export const minIconSize = 16;
+export const maxIconSize = 40;
 
 export const defaultArmOptions = {
   skip_delay: false,

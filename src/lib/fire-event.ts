@@ -1,7 +1,7 @@
-
 declare global {
-  // tslint:disable-next-line
-  interface HASSDomEvents { }
+  // Consumers can extend this event map with their custom events.
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  interface HASSDomEvents {}
 }
 
 export type ValidHassDomEvent = keyof HASSDomEvents;
@@ -13,7 +13,7 @@ export interface HASSDomEvent<T> extends Event {
 export const fireEvent = (
   node: HTMLElement | Window,
   type: string,
-  detail?: Object,
+  detail?: object,
   options?: {
     bubbles?: boolean;
     cancelable?: boolean;
@@ -21,12 +21,11 @@ export const fireEvent = (
   }
 ) => {
   options = options || {};
-  // @ts-ignore
   detail = detail === null || detail === undefined ? {} : detail;
   const event = new Event(type, {
     bubbles: options.bubbles === undefined ? true : options.bubbles,
     cancelable: Boolean(options.cancelable),
-    composed: options.composed === undefined ? true : options.composed
+    composed: options.composed === undefined ? true : options.composed,
   });
   (event as any).detail = detail;
   node.dispatchEvent(event);

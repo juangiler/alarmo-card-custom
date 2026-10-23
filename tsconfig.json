@@ -1,14 +1,12 @@
 {
   "compilerOptions": {
     "target": "es2017",
+    "rootDir": "./src",
     "module": "esnext",
     "moduleResolution": "node",
-    "lib": [
-      "es2017",
-      "dom",
-      "dom.iterable"
-    ],
-    "noEmit": true,
+    "ignoreDeprecations": "6.0",
+    "lib": ["es2017", "dom", "dom.iterable"],
+    "noEmit": false,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,

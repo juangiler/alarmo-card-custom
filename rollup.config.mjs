@@ -1,5 +1,5 @@
 import nodeResolve from '@rollup/plugin-node-resolve';
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
 import babel from '@rollup/plugin-babel';
 import json from '@rollup/plugin-json';
 import terser from '@rollup/plugin-terser';
@@ -10,9 +10,10 @@ const plugins = [
   json(),
   babel({
     babelHelpers: 'bundled',
+    exclude: 'node_modules/**',
     presets: ['@babel/preset-env'],
   }),
-  terser()
+  terser(),
 ];
 
 export default [
@@ -22,9 +23,9 @@ export default [
       dir: 'dist',
       format: 'iife',
       sourcemap: false,
-      name: 'AlarmoCard'
+      name: 'AlarmoCard',
     },
     plugins: [...plugins],
-    context: 'window'
+    context: 'window',
   },
 ];

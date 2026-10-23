@@ -8,6 +8,8 @@
     "keep_keypad_visible": "Keep the keypad always visible, also when no code input is required.",
     "button_scale_actions": "Scaling factor to apply for resizing the action buttons.",
     "button_scale_keypad": "Scaling factor to apply for resizing the keypad buttons.",
+    "font_size": "Card font size (px).",
+    "icon_size": "Card icon size (px).",
     "show_messages": "Display diagnostic messages when alarm is triggered or cannot be armed.",
     "show_ready_indicator": "Show ready/not ready indicator on arm mode buttons.",
     "show_bypassed_sensors": "Show warning message when alarm is armed with bypassed sensors.",

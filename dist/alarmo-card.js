@@ -1,37 +1,46 @@
-var AlarmoCard=function(e){"use strict";function t(e,t,i,a){var o,n=arguments.length,s=n<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(e,t,i,a);else for(var r=e.length-1;r>=0;r--)(o=e[r])&&(s=(n<3?o(s):n>3?o(t,i,s):o(t,i))||s);return n>3&&s&&Object.defineProperty(t,i,s),s}function i(e,t){(null==t||t>e.length)&&(t=e.length);for(var i=0,a=Array(t);i<t;i++)a[i]=e[i];return a}function a(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function o(e,t,i,a,o,n,s){try{var r=e[n](s),l=r.value}catch(e){return void i(e)}r.done?t(l):Promise.resolve(l).then(a,o)}function n(e,t,i){return t=u(t),function(e,t){if(t&&("object"==typeof t||"function"==typeof t))return t;if(void 0!==t)throw new TypeError("Derived constructors may only return object or undefined");return a(e)}(e,_()?Reflect.construct(t,i||[],u(e).constructor):t.apply(e,i))}function s(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function r(e,t){for(var i=0;i<t.length;i++){var a=t[i];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(e,$(a.key),a)}}function l(e,t,i){return t&&r(e.prototype,t),i&&r(e,i),Object.defineProperty(e,"prototype",{writable:!1}),e}function d(e,t){var i="undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(!i){if(Array.isArray(e)||(i=A(e))||t){i&&(e=i);var a=0,o=function(){};return{s:o,n:function(){return a>=e.length?{done:!0}:{done:!1,value:e[a++]}},e:function(e){throw e},f:o}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var n,s=!0,r=!1;return{s:function(){i=i.call(e)},n:function(){var e=i.next();return s=e.done,e},e:function(e){r=!0,n=e},f:function(){try{s||null==i.return||i.return()}finally{if(r)throw n}}}}function c(e,t,i){return(t=$(t))in e?Object.defineProperty(e,t,{value:i,enumerable:!0,configurable:!0,writable:!0}):e[t]=i,e}function h(){return h="undefined"!=typeof Reflect&&Reflect.get?Reflect.get.bind():function(e,t,i){var a=function(e,t){for(;!{}.hasOwnProperty.call(e,t)&&null!==(e=u(e)););return e}(e,t);if(a){var o=Object.getOwnPropertyDescriptor(a,t);return o.get?o.get.call(arguments.length<3?e:i):o.value}},h.apply(null,arguments)}function u(e){return u=Object.setPrototypeOf?Object.getPrototypeOf.bind():function(e){return e.__proto__||Object.getPrototypeOf(e)},u(e)}function p(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),Object.defineProperty(e,"prototype",{writable:!1}),t&&b(e,t)}function _(){try{var e=!Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],function(){}))}catch(e){}return(_=function(){return!!e})()}function g(e,t){var i=Object.keys(e);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(e);t&&(a=a.filter(function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable})),i.push.apply(i,a)}return i}function m(e){for(var t=1;t<arguments.length;t++){var i=null!=arguments[t]?arguments[t]:{};t%2?g(Object(i),!0).forEach(function(t){c(e,t,i[t])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(i)):g(Object(i)).forEach(function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(i,t))})}return e}function v(){
-/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */
-var e,t,i="function"==typeof Symbol?Symbol:{},a=i.iterator||"@@iterator",o=i.toStringTag||"@@toStringTag";function n(i,a,o,n){var l=a&&a.prototype instanceof r?a:r,d=Object.create(l.prototype);return f(d,"_invoke",function(i,a,o){var n,r,l,d=0,c=o||[],h=!1,u={p:0,n:0,v:e,a:p,f:p.bind(e,4),d:function(t,i){return n=t,r=0,l=e,u.n=i,s}};function p(i,a){for(r=i,l=a,t=0;!h&&d&&!o&&t<c.length;t++){var o,n=c[t],p=u.p,_=n[2];i>3?(o=_===a)&&(l=n[(r=n[4])?5:(r=3,3)],n[4]=n[5]=e):n[0]<=p&&((o=i<2&&p<n[1])?(r=0,u.v=a,u.n=n[1]):p<_&&(o=i<3||n[0]>a||a>_)&&(n[4]=i,n[5]=a,u.n=_,r=0))}if(o||i>1)return s;throw h=!0,a}return function(o,c,_){if(d>1)throw TypeError("Generator is already running");for(h&&1===c&&p(c,_),r=c,l=_;(t=r<2?e:l)||!h;){n||(r?r<3?(r>1&&(u.n=-1),p(r,l)):u.n=l:u.v=l);try{if(d=2,n){if(r||(o="next"),t=n[o]){if(!(t=t.call(n,l)))throw TypeError("iterator result is not an object");if(!t.done)return t;l=t.value,r<2&&(r=0)}else 1===r&&(t=n.return)&&t.call(n),r<2&&(l=TypeError("The iterator does not provide a '"+o+"' method"),r=1);n=e}else if((t=(h=u.n<0)?l:i.call(a,u))!==s)break}catch(t){n=e,r=1,l=t}finally{d=1}}return{value:t,done:h}}}(i,o,n),!0),d}var s={};function r(){}function l(){}function d(){}t=Object.getPrototypeOf;var c=[][a]?t(t([][a]())):(f(t={},a,function(){return this}),t),h=d.prototype=r.prototype=Object.create(c);function u(e){return Object.setPrototypeOf?Object.setPrototypeOf(e,d):(e.__proto__=d,f(e,o,"GeneratorFunction")),e.prototype=Object.create(h),e}return l.prototype=d,f(h,"constructor",d),f(d,"constructor",l),l.displayName="GeneratorFunction",f(d,o,"GeneratorFunction"),f(h),f(h,o,"Generator"),f(h,a,function(){return this}),f(h,"toString",function(){return"[object Generator]"}),(v=function(){return{w:n,m:u}})()}function f(e,t,i,a){var o=Object.defineProperty;try{o({},"",{})}catch(e){o=0}f=function(e,t,i,a){function n(t,i){f(e,t,function(e){return this._invoke(t,i,e)})}t?o?o(e,t,{value:i,enumerable:!a,configurable:!a,writable:!a}):e[t]=i:(n("next",0),n("throw",1),n("return",2))},f(e,t,i,a)}function b(e,t){return b=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(e,t){return e.__proto__=t,e},b(e,t)}function y(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var i=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null!=i){var a,o,n,s,r=[],l=!0,d=!1;try{if(n=(i=i.call(e)).next,0===t);else for(;!(l=(a=n.call(i)).done)&&(r.push(a.value),r.length!==t);l=!0);}catch(e){d=!0,o=e}finally{try{if(!l&&null!=i.return&&(s=i.return(),Object(s)!==s))return}finally{if(d)throw o}}return r}}(e,t)||A(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function k(e,t,i,a){var o=h(u(e.prototype),t,i);return 2&a&&"function"==typeof o?function(e){return o.apply(i,e)}:o}function w(e){return function(e){if(Array.isArray(e))return i(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||A(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function $(e){var t=function(e,t){if("object"!=typeof e||!e)return e;var i=e[Symbol.toPrimitive];if(void 0!==i){var a=i.call(e,t);if("object"!=typeof a)return a;throw new TypeError("@@toPrimitive must return a primitive value.")}return String(e)}(e,"string");return"symbol"==typeof t?t:t+""}function x(e){return x="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},x(e)}function A(e,t){if(e){if("string"==typeof e)return i(e,t);var a={}.toString.call(e).slice(8,-1);return"Object"===a&&e.constructor&&(a=e.constructor.name),"Map"===a||"Set"===a?Array.from(e):"Arguments"===a||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(a)?i(e,t):void 0}}function C(e){var t="function"==typeof Map?new Map:void 0;return C=function(e){if(null===e||!function(e){try{return-1!==Function.toString.call(e).indexOf("[native code]")}catch(t){return"function"==typeof e}}(e))return e;if("function"!=typeof e)throw new TypeError("Super expression must either be null or a function");if(void 0!==t){if(t.has(e))return t.get(e);t.set(e,i)}function i(){return function(e,t,i){if(_())return Reflect.construct.apply(null,arguments);var a=[null];a.push.apply(a,t);var o=new(e.bind.apply(e,a));return i&&b(o,i.prototype),o}(e,arguments,u(this).constructor)}return i.prototype=Object.create(e.prototype,{constructor:{value:i,enumerable:!1,writable:!0,configurable:!0}}),b(i,e)},C(e)
+var AlarmoCard=function(e){"use strict";function t(e,t,i,s){var a,o=arguments.length,r=o<3?t:null===s?s=Object.getOwnPropertyDescriptor(t,i):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(e,t,i,s);else for(var n=e.length-1;n>=0;n--)(a=e[n])&&(r=(o<3?a(r):o>3?a(t,i,r):a(t,i))||r);return o>3&&r&&Object.defineProperty(t,i,r),r}"function"==typeof SuppressedError&&SuppressedError;
 /**
      * @license
      * Copyright 2019 Google LLC
      * SPDX-License-Identifier: BSD-3-Clause
-     */}"function"==typeof SuppressedError&&SuppressedError;var O,S,z,j=globalThis,E=j.ShadowRoot&&(void 0===j.ShadyCSS||j.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,P=Symbol(),T=new WeakMap,M=function(){return l(function e(t,i,a){if(s(this,e),this._$cssResult$=!0,a!==P)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t,this.t=i},[{key:"styleSheet",get:function(){var e=this.o,t=this.t;if(E&&void 0===e){var i=void 0!==t&&1===t.length;i&&(e=T.get(t)),void 0===e&&((this.o=e=new CSSStyleSheet).replaceSync(this.cssText),i&&T.set(t,e))}return e}},{key:"toString",value:function(){return this.cssText}}])}(),L=function(e){for(var t=arguments.length,i=new Array(t>1?t-1:0),a=1;a<t;a++)i[a-1]=arguments[a];var o=1===e.length?e[0]:i.reduce(function(t,i,a){return t+function(e){if(!0===e._$cssResult$)return e.cssText;if("number"==typeof e)return e;throw Error("Value passed to 'css' function must be a 'css' function result: "+e+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")}(i)+e[a+1]},e[0]);return new M(o,e,P)},D=E?function(e){return e}:function(e){return e instanceof CSSStyleSheet?function(e){var t,i="",a=d(e.cssRules);try{for(a.s();!(t=a.n()).done;){i+=t.value.cssText}}catch(e){a.e(e)}finally{a.f()}return function(e){return new M("string"==typeof e?e:e+"",void 0,P)}(i)}(e):e},N=Object.is,H=Object.defineProperty,R=Object.getOwnPropertyDescriptor,U=Object.getOwnPropertyNames,I=Object.getOwnPropertySymbols,B=Object.getPrototypeOf,q=globalThis,V=q.trustedTypes,F=V?V.emptyScript:"",Z=q.reactiveElementPolyfillSupport,W=function(e,t){return e},G={toAttribute:function(e,t){switch(t){case Boolean:e=e?F:null;break;case Object:case Array:e=null==e?e:JSON.stringify(e)}return e},fromAttribute:function(e,t){var i=e;switch(t){case Boolean:i=null!==e;break;case Number:i=null===e?null:Number(e);break;case Object:case Array:try{i=JSON.parse(e)}catch(e){i=null}}return i}},K=function(e,t){return!N(e,t)},J={attribute:!0,type:String,converter:G,reflect:!1,useDefault:!1,hasChanged:K};null!==(O=Symbol.metadata)&&void 0!==O||(Symbol.metadata=Symbol("metadata")),null!==(S=q.litPropertyMetadata)&&void 0!==S||(q.litPropertyMetadata=new WeakMap);var Y,Q=function(e){function t(){var e;return s(this,t),(e=n(this,t))._$Ep=void 0,e.isUpdatePending=!1,e.hasUpdated=!1,e._$Em=null,e._$Ev(),e}return p(t,e),l(t,[{key:"_$Ev",value:function(){var e,t=this;this._$ES=new Promise(function(e){return t.enableUpdating=e}),this._$AL=new Map,this._$E_(),this.requestUpdate(),null===(e=this.constructor.l)||void 0===e||e.forEach(function(e){return e(t)})}},{key:"addController",value:function(e){var t,i;(null!==(t=this._$EO)&&void 0!==t?t:this._$EO=new Set).add(e),void 0!==this.renderRoot&&this.isConnected&&(null===(i=e.hostConnected)||void 0===i||i.call(e))}},{key:"removeController",value:function(e){var t;null===(t=this._$EO)||void 0===t||t.delete(e)}},{key:"_$E_",value:function(){var e,t=new Map,i=d(this.constructor.elementProperties.keys());try{for(i.s();!(e=i.n()).done;){var a=e.value;this.hasOwnProperty(a)&&(t.set(a,this[a]),delete this[a])}}catch(e){i.e(e)}finally{i.f()}t.size>0&&(this._$Ep=t)}},{key:"createRenderRoot",value:function(){var e,t=null!==(e=this.shadowRoot)&&void 0!==e?e:this.attachShadow(this.constructor.shadowRootOptions);return function(e,t){if(E)e.adoptedStyleSheets=t.map(function(e){return e instanceof CSSStyleSheet?e:e.styleSheet});else{var i,a=d(t);try{for(a.s();!(i=a.n()).done;){var o=i.value,n=document.createElement("style"),s=j.litNonce;void 0!==s&&n.setAttribute("nonce",s),n.textContent=o.cssText,e.appendChild(n)}}catch(e){a.e(e)}finally{a.f()}}}(t,this.constructor.elementStyles),t}},{key:"connectedCallback",value:function(){var e,t;null!==(e=this.renderRoot)&&void 0!==e||(this.renderRoot=this.createRenderRoot()),this.enableUpdating(!0),null===(t=this._$EO)||void 0===t||t.forEach(function(e){var t;return null===(t=e.hostConnected)||void 0===t?void 0:t.call(e)})}},{key:"enableUpdating",value:function(e){}},{key:"disconnectedCallback",value:function(){var e;null===(e=this._$EO)||void 0===e||e.forEach(function(e){var t;return null===(t=e.hostDisconnected)||void 0===t?void 0:t.call(e)})}},{key:"attributeChangedCallback",value:function(e,t,i){this._$AK(e,i)}},{key:"_$ET",value:function(e,t){var i=this.constructor.elementProperties.get(e),a=this.constructor._$Eu(e,i);if(void 0!==a&&!0===i.reflect){var o,n=(void 0!==(null===(o=i.converter)||void 0===o?void 0:o.toAttribute)?i.converter:G).toAttribute(t,i.type);this._$Em=e,null==n?this.removeAttribute(a):this.setAttribute(a,n),this._$Em=null}}},{key:"_$AK",value:function(e,t){var i=this.constructor,a=i._$Eh.get(e);if(void 0!==a&&this._$Em!==a){var o,n,s,r=i.getPropertyOptions(a),l="function"==typeof r.converter?{fromAttribute:r.converter}:void 0!==(null===(o=r.converter)||void 0===o?void 0:o.fromAttribute)?r.converter:G;this._$Em=a;var d=l.fromAttribute(t,r.type);this[a]=null!==(n=null!=d?d:null===(s=this._$Ej)||void 0===s?void 0:s.get(a))&&void 0!==n?n:d,this._$Em=null}}},{key:"requestUpdate",value:function(e,t,i){if(void 0!==e){var a,o,n=this.constructor,s=this[e];if(null!=i||(i=n.getPropertyOptions(e)),!((null!==(a=i.hasChanged)&&void 0!==a?a:K)(s,t)||i.useDefault&&i.reflect&&s===(null===(o=this._$Ej)||void 0===o?void 0:o.get(e))&&!this.hasAttribute(n._$Eu(e,i))))return;this.C(e,t,i)}!1===this.isUpdatePending&&(this._$ES=this._$EP())}},{key:"C",value:function(e,t,i,a){var o,n,s,r=i.useDefault,l=i.reflect,d=i.wrapped;r&&!(null!==(o=this._$Ej)&&void 0!==o?o:this._$Ej=new Map).has(e)&&(this._$Ej.set(e,null!==(n=null!=a?a:t)&&void 0!==n?n:this[e]),!0!==d||void 0!==a)||(this._$AL.has(e)||(this.hasUpdated||r||(t=void 0),this._$AL.set(e,t)),!0===l&&this._$Em!==e&&(null!==(s=this._$Eq)&&void 0!==s?s:this._$Eq=new Set).add(e))}},{key:"_$EP",value:(i=function(e){return function(){var t=this,i=arguments;return new Promise(function(a,n){var s=e.apply(t,i);function r(e){o(s,a,n,r,l,"next",e)}function l(e){o(s,a,n,r,l,"throw",e)}r(void 0)})}}(v().m(function e(){var t,i;return v().w(function(e){for(;;)switch(e.p=e.n){case 0:return this.isUpdatePending=!0,e.p=1,e.n=2,this._$ES;case 2:e.n=4;break;case 3:e.p=3,i=e.v,Promise.reject(i);case 4:if(null==(t=this.scheduleUpdate())){e.n=5;break}return e.n=5,t;case 5:return e.a(2,!this.isUpdatePending)}},e,this,[[1,3]])})),function(){return i.apply(this,arguments)})},{key:"scheduleUpdate",value:function(){return this.performUpdate()}},{key:"performUpdate",value:function(){if(this.isUpdatePending){if(!this.hasUpdated){var e;if(null!==(e=this.renderRoot)&&void 0!==e||(this.renderRoot=this.createRenderRoot()),this._$Ep){var t,i=d(this._$Ep);try{for(i.s();!(t=i.n()).done;){var a=y(t.value,2),o=a[0],n=a[1];this[o]=n}}catch(e){i.e(e)}finally{i.f()}this._$Ep=void 0}var s=this.constructor.elementProperties;if(s.size>0){var r,l=d(s);try{for(l.s();!(r=l.n()).done;){var c=y(r.value,2),h=c[0],u=c[1],p=u.wrapped,_=this[h];!0!==p||this._$AL.has(h)||void 0===_||this.C(h,void 0,u,_)}}catch(e){l.e(e)}finally{l.f()}}}var g=!1,m=this._$AL;try{var v;(g=this.shouldUpdate(m))?(this.willUpdate(m),null!==(v=this._$EO)&&void 0!==v&&v.forEach(function(e){var t;return null===(t=e.hostUpdate)||void 0===t?void 0:t.call(e)}),this.update(m)):this._$EM()}catch(m){throw g=!1,this._$EM(),m}g&&this._$AE(m)}}},{key:"willUpdate",value:function(e){}},{key:"_$AE",value:function(e){var t;null!==(t=this._$EO)&&void 0!==t&&t.forEach(function(e){var t;return null===(t=e.hostUpdated)||void 0===t?void 0:t.call(e)}),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(e)),this.updated(e)}},{key:"_$EM",value:function(){this._$AL=new Map,this.isUpdatePending=!1}},{key:"updateComplete",get:function(){return this.getUpdateComplete()}},{key:"getUpdateComplete",value:function(){return this._$ES}},{key:"shouldUpdate",value:function(e){return!0}},{key:"update",value:function(e){var t=this;this._$Eq&&(this._$Eq=this._$Eq.forEach(function(e){return t._$ET(e,t[e])})),this._$EM()}},{key:"updated",value:function(e){}},{key:"firstUpdated",value:function(e){}}],[{key:"addInitializer",value:function(e){var t;this._$Ei(),(null!==(t=this.l)&&void 0!==t?t:this.l=[]).push(e)}},{key:"observedAttributes",get:function(){return this.finalize(),this._$Eh&&w(this._$Eh.keys())}},{key:"createProperty",value:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:J;if(t.state&&(t.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(e)&&((t=Object.create(t)).wrapped=!0),this.elementProperties.set(e,t),!t.noAccessor){var i=Symbol(),a=this.getPropertyDescriptor(e,i,t);void 0!==a&&H(this.prototype,e,a)}}},{key:"getPropertyDescriptor",value:function(e,t,i){var a,o=null!==(a=R(this.prototype,e))&&void 0!==a?a:{get:function(){return this[t]},set:function(e){this[t]=e}},n=o.get,s=o.set;return{get:n,set:function(t){var a=null==n?void 0:n.call(this);null!=s&&s.call(this,t),this.requestUpdate(e,a,i)},configurable:!0,enumerable:!0}}},{key:"getPropertyOptions",value:function(e){var t;return null!==(t=this.elementProperties.get(e))&&void 0!==t?t:J}},{key:"_$Ei",value:function(){if(!this.hasOwnProperty(W("elementProperties"))){var e=B(this);e.finalize(),void 0!==e.l&&(this.l=w(e.l)),this.elementProperties=new Map(e.elementProperties)}}},{key:"finalize",value:function(){if(!this.hasOwnProperty(W("finalized"))){if(this.finalized=!0,this._$Ei(),this.hasOwnProperty(W("properties"))){var e,t=this.properties,i=d([].concat(w(U(t)),w(I(t))));try{for(i.s();!(e=i.n()).done;){var a=e.value;this.createProperty(a,t[a])}}catch(e){i.e(e)}finally{i.f()}}var o=this[Symbol.metadata];if(null!==o){var n=litPropertyMetadata.get(o);if(void 0!==n){var s,r=d(n);try{for(r.s();!(s=r.n()).done;){var l=y(s.value,2),c=l[0],h=l[1];this.elementProperties.set(c,h)}}catch(e){r.e(e)}finally{r.f()}}}this._$Eh=new Map;var u,p=d(this.elementProperties);try{for(p.s();!(u=p.n()).done;){var _=y(u.value,2),g=_[0],m=_[1],v=this._$Eu(g,m);void 0!==v&&this._$Eh.set(v,g)}}catch(e){p.e(e)}finally{p.f()}this.elementStyles=this.finalizeStyles(this.styles)}}},{key:"finalizeStyles",value:function(e){var t=[];if(Array.isArray(e)){var i,a=d(new Set(e.flat(1/0).reverse()));try{for(a.s();!(i=a.n()).done;){var o=i.value;t.unshift(D(o))}}catch(e){a.e(e)}finally{a.f()}}else void 0!==e&&t.push(D(e));return t}},{key:"_$Eu",value:function(e,t){var i=t.attribute;return!1===i?void 0:"string"==typeof i?i:"string"==typeof e?e.toLowerCase():void 0}}]);var i}(C(HTMLElement));Q.elementStyles=[],Q.shadowRootOptions={mode:"open"},Q[W("elementProperties")]=new Map,Q[W("finalized")]=new Map,null!=Z&&Z({ReactiveElement:Q}),(null!==(z=q.reactiveElementVersions)&&void 0!==z?z:q.reactiveElementVersions=[]).push("2.1.1");
+     */
+const i=globalThis,s=i.ShadowRoot&&(void 0===i.ShadyCSS||i.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,a=Symbol(),o=new WeakMap;let r=class{constructor(e,t,i){if(this._$cssResult$=!0,i!==a)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=e,this.t=t}get styleSheet(){let e=this.o;const t=this.t;if(s&&void 0===e){const i=void 0!==t&&1===t.length;i&&(e=o.get(t)),void 0===e&&((this.o=e=new CSSStyleSheet).replaceSync(this.cssText),i&&o.set(t,e))}return e}toString(){return this.cssText}};const n=(e,...t)=>{const i=1===e.length?e[0]:t.reduce((t,i,s)=>t+(e=>{if(!0===e._$cssResult$)return e.cssText;if("number"==typeof e)return e;throw Error("Value passed to 'css' function must be a 'css' function result: "+e+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(i)+e[s+1],e[0]);return new r(i,e,a)},l=s?e=>e:e=>e instanceof CSSStyleSheet?(e=>{let t="";for(const i of e.cssRules)t+=i.cssText;return(e=>new r("string"==typeof e?e:e+"",void 0,a))(t)})(e):e,{is:d,defineProperty:c,getOwnPropertyDescriptor:h,getOwnPropertyNames:p,getOwnPropertySymbols:u,getPrototypeOf:_}=Object,g=globalThis,m=g.trustedTypes,b=m?m.emptyScript:"",v=g.reactiveElementPolyfillSupport,f=(e,t)=>e,y={toAttribute(e,t){switch(t){case Boolean:e=e?b:null;break;case Object:case Array:e=null==e?e:JSON.stringify(e)}return e},fromAttribute(e,t){let i=e;switch(t){case Boolean:i=null!==e;break;case Number:i=null===e?null:Number(e);break;case Object:case Array:try{i=JSON.parse(e)}catch(e){i=null}}return i}},$=(e,t)=>!d(e,t),w={attribute:!0,type:String,converter:y,reflect:!1,useDefault:!1,hasChanged:$};
+/**
+     * @license
+     * Copyright 2017 Google LLC
+     * SPDX-License-Identifier: BSD-3-Clause
+     */Symbol.metadata??=Symbol("metadata"),g.litPropertyMetadata??=new WeakMap;let k=class extends HTMLElement{static addInitializer(e){this._$Ei(),(this.l??=[]).push(e)}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(e,t=w){if(t.state&&(t.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(e)&&((t=Object.create(t)).wrapped=!0),this.elementProperties.set(e,t),!t.noAccessor){const i=Symbol(),s=this.getPropertyDescriptor(e,i,t);void 0!==s&&c(this.prototype,e,s)}}static getPropertyDescriptor(e,t,i){const{get:s,set:a}=h(this.prototype,e)??{get(){return this[t]},set(e){this[t]=e}};return{get:s,set(t){const o=s?.call(this);a?.call(this,t),this.requestUpdate(e,o,i)},configurable:!0,enumerable:!0}}static getPropertyOptions(e){return this.elementProperties.get(e)??w}static _$Ei(){if(this.hasOwnProperty(f("elementProperties")))return;const e=_(this);e.finalize(),void 0!==e.l&&(this.l=[...e.l]),this.elementProperties=new Map(e.elementProperties)}static finalize(){if(this.hasOwnProperty(f("finalized")))return;if(this.finalized=!0,this._$Ei(),this.hasOwnProperty(f("properties"))){const e=this.properties,t=[...p(e),...u(e)];for(const i of t)this.createProperty(i,e[i])}const e=this[Symbol.metadata];if(null!==e){const t=litPropertyMetadata.get(e);if(void 0!==t)for(const[e,i]of t)this.elementProperties.set(e,i)}this._$Eh=new Map;for(const[e,t]of this.elementProperties){const i=this._$Eu(e,t);void 0!==i&&this._$Eh.set(i,e)}this.elementStyles=this.finalizeStyles(this.styles)}static finalizeStyles(e){const t=[];if(Array.isArray(e)){const i=new Set(e.flat(1/0).reverse());for(const e of i)t.unshift(l(e))}else void 0!==e&&t.push(l(e));return t}static _$Eu(e,t){const i=t.attribute;return!1===i?void 0:"string"==typeof i?i:"string"==typeof e?e.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Em=null,this._$Ev()}_$Ev(){this._$ES=new Promise(e=>this.enableUpdating=e),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(e=>e(this))}addController(e){(this._$EO??=new Set).add(e),void 0!==this.renderRoot&&this.isConnected&&e.hostConnected?.()}removeController(e){this._$EO?.delete(e)}_$E_(){const e=new Map,t=this.constructor.elementProperties;for(const i of t.keys())this.hasOwnProperty(i)&&(e.set(i,this[i]),delete this[i]);e.size>0&&(this._$Ep=e)}createRenderRoot(){const e=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return((e,t)=>{if(s)e.adoptedStyleSheets=t.map(e=>e instanceof CSSStyleSheet?e:e.styleSheet);else for(const s of t){const t=document.createElement("style"),a=i.litNonce;void 0!==a&&t.setAttribute("nonce",a),t.textContent=s.cssText,e.appendChild(t)}})(e,this.constructor.elementStyles),e}connectedCallback(){this.renderRoot??=this.createRenderRoot(),this.enableUpdating(!0),this._$EO?.forEach(e=>e.hostConnected?.())}enableUpdating(e){}disconnectedCallback(){this._$EO?.forEach(e=>e.hostDisconnected?.())}attributeChangedCallback(e,t,i){this._$AK(e,i)}_$ET(e,t){const i=this.constructor.elementProperties.get(e),s=this.constructor._$Eu(e,i);if(void 0!==s&&!0===i.reflect){const a=(void 0!==i.converter?.toAttribute?i.converter:y).toAttribute(t,i.type);this._$Em=e,null==a?this.removeAttribute(s):this.setAttribute(s,a),this._$Em=null}}_$AK(e,t){const i=this.constructor,s=i._$Eh.get(e);if(void 0!==s&&this._$Em!==s){const e=i.getPropertyOptions(s),a="function"==typeof e.converter?{fromAttribute:e.converter}:void 0!==e.converter?.fromAttribute?e.converter:y;this._$Em=s;const o=a.fromAttribute(t,e.type);this[s]=o??this._$Ej?.get(s)??o,this._$Em=null}}requestUpdate(e,t,i,s=!1,a){if(void 0!==e){const o=this.constructor;if(!1===s&&(a=this[e]),i??=o.getPropertyOptions(e),!((i.hasChanged??$)(a,t)||i.useDefault&&i.reflect&&a===this._$Ej?.get(e)&&!this.hasAttribute(o._$Eu(e,i))))return;this.C(e,t,i)}!1===this.isUpdatePending&&(this._$ES=this._$EP())}C(e,t,{useDefault:i,reflect:s,wrapped:a},o){i&&!(this._$Ej??=new Map).has(e)&&(this._$Ej.set(e,o??t??this[e]),!0!==a||void 0!==o)||(this._$AL.has(e)||(this.hasUpdated||i||(t=void 0),this._$AL.set(e,t)),!0===s&&this._$Em!==e&&(this._$Eq??=new Set).add(e))}async _$EP(){this.isUpdatePending=!0;try{await this._$ES}catch(e){Promise.reject(e)}const e=this.scheduleUpdate();return null!=e&&await e,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??=this.createRenderRoot(),this._$Ep){for(const[e,t]of this._$Ep)this[e]=t;this._$Ep=void 0}const e=this.constructor.elementProperties;if(e.size>0)for(const[t,i]of e){const{wrapped:e}=i,s=this[t];!0!==e||this._$AL.has(t)||void 0===s||this.C(t,void 0,i,s)}}let e=!1;const t=this._$AL;try{e=this.shouldUpdate(t),e?(this.willUpdate(t),this._$EO?.forEach(e=>e.hostUpdate?.()),this.update(t)):this._$EM()}catch(t){throw e=!1,this._$EM(),t}e&&this._$AE(t)}willUpdate(e){}_$AE(e){this._$EO?.forEach(e=>e.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(e)),this.updated(e)}_$EM(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(e){return!0}update(e){this._$Eq&&=this._$Eq.forEach(e=>this._$ET(e,this[e])),this._$EM()}updated(e){}firstUpdated(e){}};k.elementStyles=[],k.shadowRootOptions={mode:"open"},k[f("elementProperties")]=new Map,k[f("finalized")]=new Map,v?.({ReactiveElement:k}),(g.reactiveElementVersions??=[]).push("2.1.2");
 /**
      * @license
      * Copyright 2017 Google LLC
      * SPDX-License-Identifier: BSD-3-Clause
      */
-var X=globalThis,ee=X.trustedTypes,te=ee?ee.createPolicy("lit-html",{createHTML:function(e){return e}}):void 0,ie="$lit$",ae="lit$".concat(Math.random().toFixed(9).slice(2),"$"),oe="?"+ae,ne="<".concat(oe,">"),se=document,re=function(){return se.createComment("")},le=function(e){return null===e||"object"!=x(e)&&"function"!=typeof e},de=Array.isArray,ce="[ \t\n\f\r]",he=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,ue=/-->/g,pe=/>/g,_e=RegExp(">|".concat(ce,"(?:([^\\s\"'>=/]+)(").concat(ce,"*=").concat(ce,"*(?:[^ \t\n\f\r\"'`<>=]|(\"|')|))|$)"),"g"),ge=/'/g,me=/"/g,ve=/^(?:script|style|textarea|title)$/i,fe=function(e){return function(t){for(var i=arguments.length,a=new Array(i>1?i-1:0),o=1;o<i;o++)a[o-1]=arguments[o];return{_$litType$:e,strings:t,values:a}}}(1),be=Symbol.for("lit-noChange"),ye=Symbol.for("lit-nothing"),ke=new WeakMap,we=se.createTreeWalker(se,129);function $e(e,t){if(!de(e)||!e.hasOwnProperty("raw"))throw Error("invalid template strings array");return void 0!==te?te.createHTML(t):t}var xe=function(e,t){for(var i,a=e.length-1,o=[],n=2===t?"<svg>":3===t?"<math>":"",s=he,r=0;r<a;r++){for(var l=e[r],d=void 0,c=void 0,h=-1,u=0;u<l.length&&(s.lastIndex=u,null!==(c=s.exec(l)));)u=s.lastIndex,s===he?"!--"===c[1]?s=ue:void 0!==c[1]?s=pe:void 0!==c[2]?(ve.test(c[2])&&(i=RegExp("</"+c[2],"g")),s=_e):void 0!==c[3]&&(s=_e):s===_e?">"===c[0]?(s=null!=i?i:he,h=-1):void 0===c[1]?h=-2:(h=s.lastIndex-c[2].length,d=c[1],s=void 0===c[3]?_e:'"'===c[3]?me:ge):s===me||s===ge?s=_e:s===ue||s===pe?s=he:(s=_e,i=void 0);var p=s===_e&&e[r+1].startsWith("/>")?" ":"";n+=s===he?l+ne:h>=0?(o.push(d),l.slice(0,h)+ie+l.slice(h)+ae+p):l+ae+(-2===h?r:p)}return[$e(e,n+(e[a]||"<?>")+(2===t?"</svg>":3===t?"</math>":"")),o]},Ae=function(){return l(function e(t,i){var a,o=t.strings,n=t._$litType$;s(this,e),this.parts=[];var r=0,l=0,c=o.length-1,h=this.parts,u=y(xe(o,n),2),p=u[0],_=u[1];if(this.el=e.createElement(p,i),we.currentNode=this.el.content,2===n||3===n){var g=this.el.content.firstChild;g.replaceWith.apply(g,w(g.childNodes))}for(;null!==(a=we.nextNode())&&h.length<c;){if(1===a.nodeType){if(a.hasAttributes()){var m,v=d(a.getAttributeNames());try{for(v.s();!(m=v.n()).done;){var f=m.value;if(f.endsWith(ie)){var b=_[l++],k=a.getAttribute(f).split(ae),$=/([.?@])?(.*)/.exec(b);h.push({type:1,index:r,name:$[2],strings:k,ctor:"."===$[1]?je:"?"===$[1]?Ee:"@"===$[1]?Pe:ze}),a.removeAttribute(f)}else f.startsWith(ae)&&(h.push({type:6,index:r}),a.removeAttribute(f))}}catch(e){v.e(e)}finally{v.f()}}if(ve.test(a.tagName)){var x=a.textContent.split(ae),A=x.length-1;if(A>0){a.textContent=ee?ee.emptyScript:"";for(var C=0;C<A;C++)a.append(x[C],re()),we.nextNode(),h.push({type:2,index:++r});a.append(x[A],re())}}}else if(8===a.nodeType)if(a.data===oe)h.push({type:2,index:r});else for(var O=-1;-1!==(O=a.data.indexOf(ae,O+1));)h.push({type:7,index:r}),O+=ae.length-1;r++}},null,[{key:"createElement",value:function(e,t){var i=se.createElement("template");return i.innerHTML=e,i}}])}();function Ce(e,t){var i,a,o,n,s,r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:e,l=arguments.length>3?arguments[3]:void 0;if(t===be)return t;var d=void 0!==l?null===(i=r._$Co)||void 0===i?void 0:i[l]:r._$Cl,c=le(t)?void 0:t._$litDirective$;return(null===(a=d)||void 0===a?void 0:a.constructor)!==c&&(null!==(o=d)&&void 0!==o&&null!==(n=o._$AO)&&void 0!==n&&n.call(o,!1),void 0===c?d=void 0:(d=new c(e))._$AT(e,r,l),void 0!==l?(null!==(s=r._$Co)&&void 0!==s?s:r._$Co=[])[l]=d:r._$Cl=d),void 0!==d&&(t=Ce(e,d._$AS(e,t.values),d,l)),t}var Oe=function(){return l(function e(t,i){s(this,e),this._$AV=[],this._$AN=void 0,this._$AD=t,this._$AM=i},[{key:"parentNode",get:function(){return this._$AM.parentNode}},{key:"_$AU",get:function(){return this._$AM._$AU}},{key:"u",value:function(e){var t,i=this._$AD,a=i.el.content,o=i.parts,n=(null!==(t=null==e?void 0:e.creationScope)&&void 0!==t?t:se).importNode(a,!0);we.currentNode=n;for(var s=we.nextNode(),r=0,l=0,d=o[0];void 0!==d;){var c;if(r===d.index){var h=void 0;2===d.type?h=new Se(s,s.nextSibling,this,e):1===d.type?h=new d.ctor(s,d.name,d.strings,this,e):6===d.type&&(h=new Te(s,this,e)),this._$AV.push(h),d=o[++l]}r!==(null===(c=d)||void 0===c?void 0:c.index)&&(s=we.nextNode(),r++)}return we.currentNode=se,n}},{key:"p",value:function(e){var t,i=0,a=d(this._$AV);try{for(a.s();!(t=a.n()).done;){var o=t.value;void 0!==o&&(void 0!==o.strings?(o._$AI(e,o,i),i+=o.strings.length-2):o._$AI(e[i])),i++}}catch(e){a.e(e)}finally{a.f()}}}])}(),Se=function(){function e(t,i,a,o){var n;s(this,e),this.type=2,this._$AH=ye,this._$AN=void 0,this._$AA=t,this._$AB=i,this._$AM=a,this.options=o,this._$Cv=null===(n=null==o?void 0:o.isConnected)||void 0===n||n}return l(e,[{key:"_$AU",get:function(){var e,t;return null!==(e=null===(t=this._$AM)||void 0===t?void 0:t._$AU)&&void 0!==e?e:this._$Cv}},{key:"parentNode",get:function(){var e,t=this._$AA.parentNode,i=this._$AM;return void 0!==i&&11===(null===(e=t)||void 0===e?void 0:e.nodeType)&&(t=i.parentNode),t}},{key:"startNode",get:function(){return this._$AA}},{key:"endNode",get:function(){return this._$AB}},{key:"_$AI",value:function(e){e=Ce(this,e,arguments.length>1&&void 0!==arguments[1]?arguments[1]:this),le(e)?e===ye||null==e||""===e?(this._$AH!==ye&&this._$AR(),this._$AH=ye):e!==this._$AH&&e!==be&&this._(e):void 0!==e._$litType$?this.$(e):void 0!==e.nodeType?this.T(e):function(e){return de(e)||"function"==typeof(null==e?void 0:e[Symbol.iterator])}(e)?this.k(e):this._(e)}},{key:"O",value:function(e){return this._$AA.parentNode.insertBefore(e,this._$AB)}},{key:"T",value:function(e){this._$AH!==e&&(this._$AR(),this._$AH=this.O(e))}},{key:"_",value:function(e){this._$AH!==ye&&le(this._$AH)?this._$AA.nextSibling.data=e:this.T(se.createTextNode(e)),this._$AH=e}},{key:"$",value:function(e){var t,i=e.values,a=e._$litType$,o="number"==typeof a?this._$AC(e):(void 0===a.el&&(a.el=Ae.createElement($e(a.h,a.h[0]),this.options)),a);if((null===(t=this._$AH)||void 0===t?void 0:t._$AD)===o)this._$AH.p(i);else{var n=new Oe(o,this),s=n.u(this.options);n.p(i),this.T(s),this._$AH=n}}},{key:"_$AC",value:function(e){var t=ke.get(e.strings);return void 0===t&&ke.set(e.strings,t=new Ae(e)),t}},{key:"k",value:function(t){de(this._$AH)||(this._$AH=[],this._$AR());var i,a,o=this._$AH,n=0,s=d(t);try{for(s.s();!(a=s.n()).done;){var r=a.value;n===o.length?o.push(i=new e(this.O(re()),this.O(re()),this,this.options)):i=o[n],i._$AI(r),n++}}catch(e){s.e(e)}finally{s.f()}n<o.length&&(this._$AR(i&&i._$AB.nextSibling,n),o.length=n)}},{key:"_$AR",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:this._$AA.nextSibling,t=arguments.length>1?arguments[1]:void 0;for(null===(i=this._$AP)||void 0===i||i.call(this,!1,!0,t);e!==this._$AB;){var i,a=e.nextSibling;e.remove(),e=a}}},{key:"setConnected",value:function(e){var t;void 0===this._$AM&&(this._$Cv=e,null===(t=this._$AP)||void 0===t||t.call(this,e))}}])}(),ze=function(){return l(function e(t,i,a,o,n){s(this,e),this.type=1,this._$AH=ye,this._$AN=void 0,this.element=t,this.name=i,this._$AM=o,this.options=n,a.length>2||""!==a[0]||""!==a[1]?(this._$AH=Array(a.length-1).fill(new String),this.strings=a):this._$AH=ye},[{key:"tagName",get:function(){return this.element.tagName}},{key:"_$AU",get:function(){return this._$AM._$AU}},{key:"_$AI",value:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:this,i=arguments.length>2?arguments[2]:void 0,a=arguments.length>3?arguments[3]:void 0,o=this.strings,n=!1;if(void 0===o)e=Ce(this,e,t,0),(n=!le(e)||e!==this._$AH&&e!==be)&&(this._$AH=e);else{var s,r,l=e;for(e=o[0],s=0;s<o.length-1;s++)(r=Ce(this,l[i+s],t,s))===be&&(r=this._$AH[s]),n||(n=!le(r)||r!==this._$AH[s]),r===ye?e=ye:e!==ye&&(e+=(null!=r?r:"")+o[s+1]),this._$AH[s]=r}n&&!a&&this.j(e)}},{key:"j",value:function(e){e===ye?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,null!=e?e:"")}}])}(),je=function(e){function t(){var e;return s(this,t),(e=n(this,t,arguments)).type=3,e}return p(t,e),l(t,[{key:"j",value:function(e){this.element[this.name]=e===ye?void 0:e}}])}(ze),Ee=function(e){function t(){var e;return s(this,t),(e=n(this,t,arguments)).type=4,e}return p(t,e),l(t,[{key:"j",value:function(e){this.element.toggleAttribute(this.name,!!e&&e!==ye)}}])}(ze),Pe=function(e){function t(e,i,a,o,r){var l;return s(this,t),(l=n(this,t,[e,i,a,o,r])).type=5,l}return p(t,e),l(t,[{key:"_$AI",value:function(e){var t;if((e=null!==(t=Ce(this,e,arguments.length>1&&void 0!==arguments[1]?arguments[1]:this,0))&&void 0!==t?t:ye)!==be){var i=this._$AH,a=e===ye&&i!==ye||e.capture!==i.capture||e.once!==i.once||e.passive!==i.passive,o=e!==ye&&(i===ye||a);a&&this.element.removeEventListener(this.name,this,i),o&&this.element.addEventListener(this.name,this,e),this._$AH=e}}},{key:"handleEvent",value:function(e){var t,i;"function"==typeof this._$AH?this._$AH.call(null!==(t=null===(i=this.options)||void 0===i?void 0:i.host)&&void 0!==t?t:this.element,e):this._$AH.handleEvent(e)}}])}(ze),Te=function(){return l(function e(t,i,a){s(this,e),this.element=t,this.type=6,this._$AN=void 0,this._$AM=i,this.options=a},[{key:"_$AU",get:function(){return this._$AM._$AU}},{key:"_$AI",value:function(e){Ce(this,e)}}])}(),Me=X.litHtmlPolyfillSupport;null!=Me&&Me(Ae,Se),(null!==(Y=X.litHtmlVersions)&&void 0!==Y?Y:X.litHtmlVersions=[]).push("3.3.1");var Le,De,Ne=globalThis,He=function(e){function t(){var e;return s(this,t),(e=n(this,t,arguments)).renderOptions={host:a(e)},e._$Do=void 0,e}return p(t,e),l(t,[{key:"createRenderRoot",value:function(){var e,i,a=k(t,"createRenderRoot",this,3)([]);return null!==(i=(e=this.renderOptions).renderBefore)&&void 0!==i||(e.renderBefore=a.firstChild),a}},{key:"update",value:function(e){var i=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),k(t,"update",this,3)([e]),this._$Do=function(e,t,i){var a,o=null!==(a=null==i?void 0:i.renderBefore)&&void 0!==a?a:t,n=o._$litPart$;if(void 0===n){var s,r=null!==(s=null==i?void 0:i.renderBefore)&&void 0!==s?s:null;o._$litPart$=n=new Se(t.insertBefore(re(),r),r,void 0,null!=i?i:{})}return n._$AI(e),n}(i,this.renderRoot,this.renderOptions)}},{key:"connectedCallback",value:function(){var e;k(t,"connectedCallback",this,3)([]),null===(e=this._$Do)||void 0===e||e.setConnected(!0)}},{key:"disconnectedCallback",value:function(){var e;k(t,"disconnectedCallback",this,3)([]),null===(e=this._$Do)||void 0===e||e.setConnected(!1)}},{key:"render",value:function(){return be}}])}(Q);He._$litElement$=!0,He.finalized=!0,null===(Le=Ne.litElementHydrateSupport)||void 0===Le||Le.call(Ne,{LitElement:He});var Re=Ne.litElementPolyfillSupport;null==Re||Re({LitElement:He}),(null!==(De=Ne.litElementVersions)&&void 0!==De?De:Ne.litElementVersions=[]).push("4.2.1");
+const x=globalThis,A=e=>e,C=x.trustedTypes,z=C?C.createPolicy("lit-html",{createHTML:e=>e}):void 0,O="$lit$",S=`lit$${Math.random().toFixed(9).slice(2)}$`,E="?"+S,j=`<${E}>`,T=document,M=()=>T.createComment(""),P=e=>null===e||"object"!=typeof e&&"function"!=typeof e,N=Array.isArray,D="[ \t\n\f\r]",H=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,U=/-->/g,L=/>/g,R=RegExp(`>|${D}(?:([^\\s"'>=/]+)(${D}*=${D}*(?:[^ \t\n\f\r"'\`<>=]|("|')|))|$)`,"g"),q=/'/g,I=/"/g,V=/^(?:script|style|textarea|title)$/i,B=(e=>(t,...i)=>({_$litType$:e,strings:t,values:i}))(1),F=Symbol.for("lit-noChange"),W=Symbol.for("lit-nothing"),Z=new WeakMap,G=T.createTreeWalker(T,129);function K(e,t){if(!N(e)||!e.hasOwnProperty("raw"))throw Error("invalid template strings array");return void 0!==z?z.createHTML(t):t}const J=(e,t)=>{const i=e.length-1,s=[];let a,o=2===t?"<svg>":3===t?"<math>":"",r=H;for(let t=0;t<i;t++){const i=e[t];let n,l,d=-1,c=0;for(;c<i.length&&(r.lastIndex=c,l=r.exec(i),null!==l);)c=r.lastIndex,r===H?"!--"===l[1]?r=U:void 0!==l[1]?r=L:void 0!==l[2]?(V.test(l[2])&&(a=RegExp("</"+l[2],"g")),r=R):void 0!==l[3]&&(r=R):r===R?">"===l[0]?(r=a??H,d=-1):void 0===l[1]?d=-2:(d=r.lastIndex-l[2].length,n=l[1],r=void 0===l[3]?R:'"'===l[3]?I:q):r===I||r===q?r=R:r===U||r===L?r=H:(r=R,a=void 0);const h=r===R&&e[t+1].startsWith("/>")?" ":"";o+=r===H?i+j:d>=0?(s.push(n),i.slice(0,d)+O+i.slice(d)+S+h):i+S+(-2===d?t:h)}return[K(e,o+(e[i]||"<?>")+(2===t?"</svg>":3===t?"</math>":"")),s]};class X{constructor({strings:e,_$litType$:t},i){let s;this.parts=[];let a=0,o=0;const r=e.length-1,n=this.parts,[l,d]=J(e,t);if(this.el=X.createElement(l,i),G.currentNode=this.el.content,2===t||3===t){const e=this.el.content.firstChild;e.replaceWith(...e.childNodes)}for(;null!==(s=G.nextNode())&&n.length<r;){if(1===s.nodeType){if(s.hasAttributes())for(const e of s.getAttributeNames())if(e.endsWith(O)){const t=d[o++],i=s.getAttribute(e).split(S),r=/([.?@])?(.*)/.exec(t);n.push({type:1,index:a,name:r[2],strings:i,ctor:"."===r[1]?ie:"?"===r[1]?se:"@"===r[1]?ae:te}),s.removeAttribute(e)}else e.startsWith(S)&&(n.push({type:6,index:a}),s.removeAttribute(e));if(V.test(s.tagName)){const e=s.textContent.split(S),t=e.length-1;if(t>0){s.textContent=C?C.emptyScript:"";for(let i=0;i<t;i++)s.append(e[i],M()),G.nextNode(),n.push({type:2,index:++a});s.append(e[t],M())}}}else if(8===s.nodeType)if(s.data===E)n.push({type:2,index:a});else{let e=-1;for(;-1!==(e=s.data.indexOf(S,e+1));)n.push({type:7,index:a}),e+=S.length-1}a++}}static createElement(e,t){const i=T.createElement("template");return i.innerHTML=e,i}}function Y(e,t,i=e,s){if(t===F)return t;let a=void 0!==s?i._$Co?.[s]:i._$Cl;const o=P(t)?void 0:t._$litDirective$;return a?.constructor!==o&&(a?._$AO?.(!1),void 0===o?a=void 0:(a=new o(e),a._$AT(e,i,s)),void 0!==s?(i._$Co??=[])[s]=a:i._$Cl=a),void 0!==a&&(t=Y(e,a._$AS(e,t.values),a,s)),t}class Q{constructor(e,t){this._$AV=[],this._$AN=void 0,this._$AD=e,this._$AM=t}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(e){const{el:{content:t},parts:i}=this._$AD,s=(e?.creationScope??T).importNode(t,!0);G.currentNode=s;let a=G.nextNode(),o=0,r=0,n=i[0];for(;void 0!==n;){if(o===n.index){let t;2===n.type?t=new ee(a,a.nextSibling,this,e):1===n.type?t=new n.ctor(a,n.name,n.strings,this,e):6===n.type&&(t=new oe(a,this,e)),this._$AV.push(t),n=i[++r]}o!==n?.index&&(a=G.nextNode(),o++)}return G.currentNode=T,s}p(e){let t=0;for(const i of this._$AV)void 0!==i&&(void 0!==i.strings?(i._$AI(e,i,t),t+=i.strings.length-2):i._$AI(e[t])),t++}}class ee{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(e,t,i,s){this.type=2,this._$AH=W,this._$AN=void 0,this._$AA=e,this._$AB=t,this._$AM=i,this.options=s,this._$Cv=s?.isConnected??!0}get parentNode(){let e=this._$AA.parentNode;const t=this._$AM;return void 0!==t&&11===e?.nodeType&&(e=t.parentNode),e}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(e,t=this){e=Y(this,e,t),P(e)?e===W||null==e||""===e?(this._$AH!==W&&this._$AR(),this._$AH=W):e!==this._$AH&&e!==F&&this._(e):void 0!==e._$litType$?this.$(e):void 0!==e.nodeType?this.T(e):(e=>N(e)||"function"==typeof e?.[Symbol.iterator])(e)?this.k(e):this._(e)}O(e){return this._$AA.parentNode.insertBefore(e,this._$AB)}T(e){this._$AH!==e&&(this._$AR(),this._$AH=this.O(e))}_(e){this._$AH!==W&&P(this._$AH)?this._$AA.nextSibling.data=e:this.T(T.createTextNode(e)),this._$AH=e}$(e){const{values:t,_$litType$:i}=e,s="number"==typeof i?this._$AC(e):(void 0===i.el&&(i.el=X.createElement(K(i.h,i.h[0]),this.options)),i);if(this._$AH?._$AD===s)this._$AH.p(t);else{const e=new Q(s,this),i=e.u(this.options);e.p(t),this.T(i),this._$AH=e}}_$AC(e){let t=Z.get(e.strings);return void 0===t&&Z.set(e.strings,t=new X(e)),t}k(e){N(this._$AH)||(this._$AH=[],this._$AR());const t=this._$AH;let i,s=0;for(const a of e)s===t.length?t.push(i=new ee(this.O(M()),this.O(M()),this,this.options)):i=t[s],i._$AI(a),s++;s<t.length&&(this._$AR(i&&i._$AB.nextSibling,s),t.length=s)}_$AR(e=this._$AA.nextSibling,t){for(this._$AP?.(!1,!0,t);e!==this._$AB;){const t=A(e).nextSibling;A(e).remove(),e=t}}setConnected(e){void 0===this._$AM&&(this._$Cv=e,this._$AP?.(e))}}class te{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(e,t,i,s,a){this.type=1,this._$AH=W,this._$AN=void 0,this.element=e,this.name=t,this._$AM=s,this.options=a,i.length>2||""!==i[0]||""!==i[1]?(this._$AH=Array(i.length-1).fill(new String),this.strings=i):this._$AH=W}_$AI(e,t=this,i,s){const a=this.strings;let o=!1;if(void 0===a)e=Y(this,e,t,0),o=!P(e)||e!==this._$AH&&e!==F,o&&(this._$AH=e);else{const s=e;let r,n;for(e=a[0],r=0;r<a.length-1;r++)n=Y(this,s[i+r],t,r),n===F&&(n=this._$AH[r]),o||=!P(n)||n!==this._$AH[r],n===W?e=W:e!==W&&(e+=(n??"")+a[r+1]),this._$AH[r]=n}o&&!s&&this.j(e)}j(e){e===W?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,e??"")}}class ie extends te{constructor(){super(...arguments),this.type=3}j(e){this.element[this.name]=e===W?void 0:e}}class se extends te{constructor(){super(...arguments),this.type=4}j(e){this.element.toggleAttribute(this.name,!!e&&e!==W)}}class ae extends te{constructor(e,t,i,s,a){super(e,t,i,s,a),this.type=5}_$AI(e,t=this){if((e=Y(this,e,t,0)??W)===F)return;const i=this._$AH,s=e===W&&i!==W||e.capture!==i.capture||e.once!==i.once||e.passive!==i.passive,a=e!==W&&(i===W||s);s&&this.element.removeEventListener(this.name,this,i),a&&this.element.addEventListener(this.name,this,e),this._$AH=e}handleEvent(e){"function"==typeof this._$AH?this._$AH.call(this.options?.host??this.element,e):this._$AH.handleEvent(e)}}class oe{constructor(e,t,i){this.element=e,this.type=6,this._$AN=void 0,this._$AM=t,this.options=i}get _$AU(){return this._$AM._$AU}_$AI(e){Y(this,e)}}const re=x.litHtmlPolyfillSupport;re?.(X,ee),(x.litHtmlVersions??=[]).push("3.3.3");const ne=globalThis;
+/**
+     * @license
+     * Copyright 2017 Google LLC
+     * SPDX-License-Identifier: BSD-3-Clause
+     */class le extends k{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){const e=super.createRenderRoot();return this.renderOptions.renderBefore??=e.firstChild,e}update(e){const t=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(e),this._$Do=((e,t,i)=>{const s=i?.renderBefore??t;let a=s._$litPart$;if(void 0===a){const e=i?.renderBefore??null;s._$litPart$=a=new ee(t.insertBefore(M(),e),e,void 0,i??{})}return a._$AI(e),a})(t,this.renderRoot,this.renderOptions)}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(!0)}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(!1)}render(){return F}}le._$litElement$=!0,le.finalized=!0,ne.litElementHydrateSupport?.({LitElement:le});const de=ne.litElementPolyfillSupport;de?.({LitElement:le}),(ne.litElementVersions??=[]).push("4.2.2");
 /**
      * @license
      * Copyright 2017 Google LLC
      * SPDX-License-Identifier: BSD-3-Clause
      */
-var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){customElements.define(e,t)}):customElements.define(e,t)}},Ie={attribute:!0,type:String,converter:G,reflect:!1,hasChanged:K},Be=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:Ie,t=arguments.length>1?arguments[1]:void 0,i=arguments.length>2?arguments[2]:void 0,a=i.kind,o=i.metadata,n=globalThis.litPropertyMetadata.get(o);if(void 0===n&&globalThis.litPropertyMetadata.set(o,n=new Map),"setter"===a&&((e=Object.create(e)).wrapped=!0),n.set(i.name,e),"accessor"===a){var s=i.name;return{set:function(i){var a=t.get.call(this);t.set.call(this,i),this.requestUpdate(s,a,e)},init:function(t){return void 0!==t&&this.C(s,void 0,e,t),t}}}if("setter"===a){var r=i.name;return function(i){var a=this[r];t.call(this,i),this.requestUpdate(r,a,e)}}throw Error("Unsupported decorator location: "+a)};
+const ce=e=>(t,i)=>{void 0!==i?i.addInitializer(()=>{customElements.define(e,t)}):customElements.define(e,t)},he={attribute:!0,type:String,converter:y,reflect:!1,hasChanged:$},pe=(e=he,t,i)=>{const{kind:s,metadata:a}=i;let o=globalThis.litPropertyMetadata.get(a);if(void 0===o&&globalThis.litPropertyMetadata.set(a,o=new Map),"setter"===s&&((e=Object.create(e)).wrapped=!0),o.set(i.name,e),"accessor"===s){const{name:s}=i;return{set(i){const a=t.get.call(this);t.set.call(this,i),this.requestUpdate(s,a,e,!0,i)},init(t){return void 0!==t&&this.C(s,void 0,e,t),t}}}if("setter"===s){const{name:s}=i;return function(i){const a=this[s];t.call(this,i),this.requestUpdate(s,a,e,!0,i)}}throw Error("Unsupported decorator location: "+s)};
 /**
      * @license
      * Copyright 2017 Google LLC
      * SPDX-License-Identifier: BSD-3-Clause
-     */function qe(e){return function(t,i){return"object"==x(i)?Be(e,t,i):function(e,t,i){var a=t.hasOwnProperty(i);return t.constructor.createProperty(i,e),a?Object.getOwnPropertyDescriptor(t,i):void 0}(e,t,i)}}
+     */function ue(e){return(t,i)=>"object"==typeof i?pe(e,t,i):((e,t,i)=>{const s=t.hasOwnProperty(i);return t.constructor.createProperty(i,e),s?Object.getOwnPropertyDescriptor(t,i):void 0})(e,t,i)}
 /**
      * @license
      * Copyright 2017 Google LLC
      * SPDX-License-Identifier: BSD-3-Clause
-     */function Ve(e){return qe(m(m({},e),{},{state:!0,attribute:!1}))}const Fe="number";var Ze;!function(e){e.Disarmed="disarmed",e.Arming="arming",e.Pending="pending",e.Triggered="triggered",e.ArmedAway="armed_away",e.ArmedHome="armed_home",e.ArmedNight="armed_night",e.ArmedVacation="armed_vacation",e.ArmedCustomBypass="armed_custom_bypass"}(Ze||(Ze={}));const We={[Ze.ArmedAway]:"hass:shield-lock",[Ze.ArmedHome]:"hass:shield-home",[Ze.ArmedNight]:"hass:shield-moon",[Ze.ArmedVacation]:"hass:shield-airplane",[Ze.ArmedCustomBypass]:"hass:security",[Ze.Disarmed]:"hass:shield-off",[Ze.Arming]:"hass:shield-outline",[Ze.Pending]:"hass:shield-outline",[Ze.Triggered]:"hass:bell-ring"};var Ge;!function(e){e.ArmAway="arm_away",e.ArmHome="arm_home",e.ArmNight="arm_night",e.ArmVacation="arm_vacation",e.ArmCustomBypass="arm_custom_bypass",e.Disarm="disarm"}(Ge||(Ge={}));const Ke={[Ge.ArmAway]:"mdi:lock",[Ge.ArmHome]:"mdi:home",[Ge.ArmNight]:"mdi:moon-waning-crescent",[Ge.ArmVacation]:"mdi:airplane",[Ge.ArmCustomBypass]:"mdi:shield",[Ge.Disarm]:"mdi:shield-off"},Je={[Ge.ArmAway]:Ze.ArmedAway,[Ge.ArmHome]:Ze.ArmedHome,[Ge.ArmNight]:Ze.ArmedNight,[Ge.ArmVacation]:Ze.ArmedVacation,[Ge.ArmCustomBypass]:Ze.ArmedCustomBypass,[Ge.Disarm]:Ze.Disarmed};var Ye;!function(e){e.Disarm="disarm",e.Arm="arm",e.Trigger="trigger",e.FailedToArm="failed_to_arm",e.CommandNotAllowed="command_not_allowed",e.NoCodeProvided="no_code_provided",e.InvalidCodeProvided="invalid_code_provided",e.TriggerTimeExpired="trigger_time_expired",e.ReadyToArmModesChanged="ready_to_arm_modes_changed"}(Ye||(Ye={}));const Qe="alarmo_updated",Xe=["arming","pending"],et={type:"",entity:"",name:"",keep_keypad_visible:!1,button_scale_actions:1,button_scale_keypad:1,states:{},show_messages:!0,show_ready_indicator:!0,show_bypassed_sensors:!0,use_code_dialog:!1,hide_keypad:!1},tt=2.5,it={skip_delay:!1,force:!1};var at;!function(e){e.Red="red",e.Pink="pink",e.Purple="purple",e.DeepPurple="deep-purple",e.Indigo="indigo",e.Blue="blue",e.LightBlue="light-blue",e.Cyan="cyan",e.Teal="teal",e.Green="green",e.LightGreen="light-green",e.Lime="lime",e.Yellow="yellow",e.Amber="amber",e.Orange="orange",e.DeepOrange="deep-orange",e.Brown="brown",e.LightGrey="light-grey",e.Grey="grey",e.DarkGrey="dark-grey",e.BlueGrey="blue-grey",e.Black="black",e.White="white"}(at||(at={}));var ot={heading:"Možnosti aktivace",skip_delay:"Přeskočit čas pro vystup",force:"Bypass otevřených senzorů"},nt={keep_keypad_visible:"Zachovat klávesnici vždy viditelnou, i když není vyžadován žádný kód.",button_scale_actions:"Měřítko použité pro změnu velikosti tlačítek akcí.",button_scale_keypad:"Měřítko použité pro změnu velikosti tlačítek klávesnice.",show_messages:"Zobrazit diagnostické zprávy při spuštění alarmu nebo nemožnosti aktivace.",show_ready_indicator:"Zobrazit indikátor připraveno/nepřipraveno na tlačítkách režimu aktivace.",show_bypassed_sensors:"Zobrazit varování při aktivaci alarmu s přemostěnými senzory.",use_code_dialog:"Zobrazte klávesnici pro zadání kódu jako vyskakovací dialog.",hide_keypad:"Skrýt tlačítka klávesnice pro zadávání kódu.",available_actions:"Dostupné akce:",action_dialog:{title:"Upravit zobrazení akce '{action}'",show_button:{title:"Viditelnost akčního tlačítka",options:{always:"Vždy zobrazeno",never:"Nikdy zobrazeno",disarmed:"Zobrazit pouze při odzbrojení",armed:"Zobrazit pouze při zapnutí"}},button_label:"Přepsat popisek tlačítka",button_icon:"Ikona zobrazeného tlačítka",state_label:"Přepsat popisek stavu",color:"Přepsat barvu použitou pro akci"}},st={invalid_pin:"Neplatný",blocking_sensors:"Nelze aktivovat kvůli následujícím senzorům",triggered_sensors:"Alarm byl spuštěn následujícími senzory",bypassed_sensors:"Jsou tam přemostěné senzory"},rt={arm_options:ot,editor:nt,errors:st},lt={heading:"Scharfschaltungsoptionen",skip_delay:"Ausgangsverzögerung überspringen",force:"Offene Sensoren ignorieren"},dt={keep_keypad_visible:"Zeige das Pin-Eingabefeld immer an, auch wenn kein Code erfordert ist.",button_scale_actions:"Skalierungsfaktor für Buttongröße der Aktionen.",button_scale_keypad:"Skalierungsfaktor für Buttongröße der Pin-Eingabefeld.",show_messages:"Anzeige von Diagnosemeldungen, wenn der Alarm ausgelöst wird oder nicht scharf geschaltet werden kann.",show_ready_indicator:"Zeigt die Bereitschafts-/Nicht-Bereitschaftsanzeige auf den Scharfschaltmodus-Tasten an.",show_bypassed_sensors:"Warnung anzeigen, wenn der Alarm mit umgangenen Sensoren aktiviert wird.",use_code_dialog:"Zeigen Sie die Tastatur zur Codeeingabe als Popup-Dialog an.",hide_keypad:"Blenden Sie die Tasten der Tastatur zur Codeeingabe aus.",available_actions:"Verfügbare Aktionen:",action_dialog:{title:"Anzeige der Aktion '{action}' anpassen",show_button:{title:"Sichtbarkeit der Aktionsschaltfläche",options:{always:"Immer angezeigt",never:"Nie angezeigt",disarmed:"Nur im deaktivierten Zustand anzeigen",armed:"Nur im aktivierten Zustand anzeigen"}},button_label:"Überschreibung der Tastenbeschriftung",button_icon:"Angezeigtes Schaltflächensymbol",state_label:"Überschreibung der Statusbezeichnung",color:"Die für die Aktion verwendete Farbe überschreiben"}},ct={invalid_pin:"Ungültig",blocking_sensors:"Konnte nicht scharf geschaltet werden, da folgende Sensoren geöffnet sind",triggered_sensors:"Alarm wurde durch folgende Sensoren ausgelöst",bypassed_sensors:"Es gibt umgangene Sensoren"},ht={arm_options:lt,editor:dt,errors:ct},ut={heading:"Επιλογές για όπλισμα",skip_delay:"Παράλειψη καθυστέρησης εξόδου",force:"Παράκαμψη ανοιχτών αισθητήρων"},pt={keep_keypad_visible:"Κράτησε το πληκτρολόγιο πάντα ορατό, ακόμη και όταν δεν απαιτείται εισαγωγή κωδικού.",button_scale_actions:"Συντελεστής κλίμακας για αλλαγή μεγέθους των κουμπιών ενεργειών.",button_scale_keypad:"Συντελεστής κλίμακας για αλλαγή μεγέθους των κουμπιών του πληκτρολογίου.",show_messages:"Εμφάνιση διαγνωστικών μηνυμάτων όταν ενεργοποιείται ο συναγερμός ή δεν μπορεί να οπλιστεί.",show_ready_indicator:"Εμφάνιση ένδειξης έτοιμο/μη έτοιμο στα κουμπιά λειτουργίας όπλισης.",show_bypassed_sensors:"Εμφάνιση προειδοποιητικού μηνύματος όταν ο συναγερμός οπλίζεται με παρακαμφθέντες αισθητήρες.",use_code_dialog:"Εμφανίστε το πληκτρολόγιο για την εισαγωγή του κωδικού ως αναδυόμενο παράθυρο διαλόγου.",hide_keypad:"Απόκρυψη των κουμπιών του πληκτρολογίου για την εισαγωγή του κωδικού.",available_actions:"Διαθέσιμες ενέργειες:",action_dialog:{title:"Προσαρμογή εμφάνισης της ενέργειας '{action}'",show_button:{title:"Ορατότητα κουμπιού ενέργειας",options:{always:"Εμφανίζεται πάντα",never:"Ποτέ δεν εμφανίζεται",disarmed:"Εμφάνιση μόνο όταν είναι αφοπλισμένο",armed:"Εμφάνιση μόνο όταν είναι οπλισμένο"}},button_icon:"Εμφανιζόμενο εικονίδιο κουμπιού",state_label:"Αντικατάσταση ετικέτας κατάστασης",color:"Παράκαμψη χρώματος που χρησιμοποιείται για την ενέργεια"}},_t={invalid_pin:"Ακυρος",blocking_sensors:"Δεν ήταν δυνατή η όπλιση λόγω των ακόλουθων αισθητήρων",triggered_sensors:"Ο συναγερμός ενεργοποιήθηκε από τους ακόλουθους αισθητήρες",bypassed_sensors:"Υπάρχουν παρακαμφθέντες αισθητήρες"},gt={arm_options:ut,editor:pt,errors:_t},mt={heading:"Options for arming",skip_delay:"Skip exit delay",force:"Bypass open sensors"},vt={keep_keypad_visible:"Keep the keypad always visible, also when no code input is required.",button_scale_actions:"Scaling factor to apply for resizing the action buttons.",button_scale_keypad:"Scaling factor to apply for resizing the keypad buttons.",show_messages:"Display diagnostic messages when alarm is triggered or cannot be armed.",show_ready_indicator:"Show ready/not ready indicator on arm mode buttons.",show_bypassed_sensors:"Show warning message when alarm is armed with bypassed sensors.",use_code_dialog:"Display the keypad for entering the code as a popup dialog.",hide_keypad:"Hide the keypad buttons for entering the code.",available_actions:"Available actions:",action_dialog:{title:"Customize display of action '{action}'",show_button:{title:"Button visibility",options:{always:"Always shown",never:"Never shown",disarmed:"Show only when disarmed",armed:"Hide only when disarmed"}},button_label:"Override displayed action label",button_icon:"Override displayed icon",state_label:"Override displayed state label",color:"Override color used for the action"}},ft={invalid_pin:"Invalid",blocking_sensors:"Could not arm due to the following sensors",triggered_sensors:"Alarm was triggered by the following sensors",bypassed_sensors:"There are bypassed sensors"},bt={arm_options:mt,editor:vt,errors:ft},yt={heading:"Opciones de armado",skip_delay:"Omitir el retardo de salida",force:"Pasar por alto los sensores abiertos"},kt={keep_keypad_visible:"Mantener el teclado siempre visible, también cuando no se requiere ninguna entrada de código.",button_scale_actions:"Factor de escalado para cambiar el tamaño de los botones de acción.",button_scale_keypad:"Factor de escalado para cambiar el tamaño de los botones del teclado.",show_messages:"Mostrar mensajes de diagnóstico cuando se activa la alarma o no se puede activar.",show_ready_indicator:"Mostrar indicador listo/no listo en los botones de modo armado.",show_bypassed_sensors:"Mostrar advertencia cuando la alarma está activada con sensores omitidos.",use_code_dialog:"Muestra el teclado para ingresar el código como un cuadro de diálogo emergente.",hide_keypad:"Ocultar los botones del teclado para ingresar el código.",available_actions:"Acciones disponibles:",action_dialog:{title:"Personalizar la visualización de la acción '{action}'",show_button:{title:"Visibilidad del botón de acción",options:{always:"Mostrar siempre",never:"Ocultar siempre",disarmed:"Mostrar solo si desarmada",armed:"Ocultar solo si desarmada"}},button_label:"Sobrescribir el texto del botón",button_icon:"Icono de botón mostrado",state_label:"Sobrescribir el texto de estado",color:"Anular el color utilizado para la acción"}},wt={invalid_pin:"Inválido",blocking_sensors:"No se pudo armar debido a los siguientes sensores",triggered_sensors:"La alarma fue disparada por los siguientes sensores",bypassed_sensors:"Hay sensores omitidos"},$t={arm_options:yt,editor:kt,errors:wt},xt={heading:"Options pour l'armement",skip_delay:"Ignorer le délai de sortie",force:"Bypasser les capteurs ouverts"},At={keep_keypad_visible:"Gardez le clavier toujours visible, même lorsqu'aucune saisie de code n'est requise.",button_scale_actions:"Facteur d'échelle à appliquer pour le redimensionnement des boutons des actions.",button_scale_keypad:"Facteur d'échelle à appliquer pour le redimensionnement des boutons du clavier.",show_messages:"Afficher les messages de diagnostic lorsque l'alarme est déclenchée ou ne peut pas être armée.",show_ready_indicator:"Afficher l'indicateur prêt/pas prêt sur les boutons de mode d'armement.",show_bypassed_sensors:"Afficher un avertissement lorsque l'alarme est armée avec des capteurs ignorés.",use_code_dialog:"Affichez le clavier pour saisir le code sous forme de boîte de dialogue contextuelle.",hide_keypad:"Masquer les boutons du clavier pour saisir le code.",available_actions:"Actions disponibles:",action_dialog:{title:"Personnaliser l'affichage de l'action '{action}'",show_button:{title:"Visibilité du bouton d'action",options:{always:"Toujours affiché",never:"Jamais affiché",disarmed:"Afficher uniquement si désarmé",armed:"Afficher uniquement si armé"}},button_label:"Remplacer le libellé du bouton",button_icon:"Icône de bouton affichée",state_label:"Remplacer l'étiquette d'état",color:"Remplacer la couleur utilisée pour l'action"}},Ct={invalid_pin:"Invalide",blocking_sensors:"Impossible d'armer en raison du(es) capteur(s) suivant(s)",triggered_sensors:"L'alarme a été déclenchée par le(s) capteur(s) suivant(s)",bypassed_sensors:"Il y a des capteurs ignorés"},Ot={arm_options:xt,editor:At,errors:Ct},St={heading:"Opzioni di inserimento",skip_delay:"Ignorare il ritardo di uscita",force:"Ignorare i sensori aperti"},zt={keep_keypad_visible:"Mantenere la tastiera sempre visibile, anche quando nessun codice è richiesto.",button_scale_actions:"Fattore di scala da applicare per ridimensionare i pulsanti di azione.",button_scale_keypad:"Fattore di scala da applicare per ridimensionare i pulsanti della tastiera.",show_messages:"Mostrare messaggi diagnostici quando l'allarme viene attivato o non può essere inserito.",show_ready_indicator:"Mostra l'indicatore pronto/non pronto sui pulsanti della modalità di inserimento.",show_bypassed_sensors:"Mostra avviso quando l'allarme è armato con sensori esclusi.",use_code_dialog:"Visualizza la tastiera per l'immissione del codice come finestra di dialogo popup.",hide_keypad:"Nascondi i pulsanti della tastiera per l'inserimento del codice.",available_actions:"Azioni disponibili:",action_dialog:{title:"Personalizzare la visualizzazione dell'azione '{action}'",show_button:{title:"Visibilità del pulsante di azione",options:{always:"Sempre visualizzato",never:"Mai visualizzato",disarmed:"Mostra solo quando disarmato",armed:"Mostra solo quando disarmato"}},button_label:"Sovrascrivere l'etichetta del pulsante",button_icon:"Icona del pulsante visualizzato",state_label:"Sovrascrivere l'etichetta di stato",color:"Sostituisci il colore utilizzato per l'azione"}},jt={invalid_pin:"Non valido",blocking_sensors:"Impossibile inserire l'allarme a causa dei seguenti sensori",triggered_sensors:"L'allarme è stato attivato dai seguenti sensori",bypassed_sensors:"Sono presenti sensori esclusi"},Et={arm_options:St,editor:zt,errors:jt},Pt={heading:"Opties voor inschakelen",skip_delay:"Sla vertraging over",force:"Negeer open sensoren"},Tt={keep_keypad_visible:"Houd het keypad altijd zichtbaar, ook wanneer er geen code vereist is.",button_scale_actions:"Schaalfactor actieknoppen",button_scale_keypad:"Schaalfactor keypadknoppen",show_messages:"Toon diagnostische berichten wanneer het alarm wordt geactiveerd of niet kan worden ingeschakeld.",show_ready_indicator:"Toon gereed/niet gereed-indicator op inschakelmodusknoppen.",show_bypassed_sensors:"Toon melding wanneer het alarm is ingeschakeld met omzeilde sensoren.",use_code_dialog:"Geef het toetsenbord voor het invoeren van de code weer als een pop-upvenster.",hide_keypad:"Verberg het toetsenbord voor het invoeren van de code.",available_actions:"Beschikbare acties:",action_dialog:{title:"Weergave van actie '{action}' aanpassen",show_button:{title:"Actieknop weergave",options:{always:"Altijd zichtbaar",never:"Nooit zichtbaar",disarmed:"Toon alleen bij uitgeschakeld",armed:"Zichtbaar tenzij uitgeschakeld"}},button_label:"Weergegeven naam voor actie",button_icon:"Weergegeven icoon voor actie",state_label:"Weergegeven status",color:"Weergegeven kleur voor action"}},Mt={invalid_pin:"Ongeldig",blocking_sensors:"Kon niet inschakelen vanwege de volgende sensoren",triggered_sensors:"Alarm werd geactiveerd door de volgende sensoren",bypassed_sensors:"Er zijn omzeilde sensoren"},Lt={arm_options:Pt,editor:Tt,errors:Mt},Dt={heading:"Opções para armar",skip_delay:"Omitir tempo para sair",force:"Ignorar os sensores abertos"},Nt={keep_keypad_visible:"Mantenha o teclado sempre visível, mesmo quando não for necessária nenhuma entrada de código.",button_scale_actions:"Fator de escala para redimensionar botões de ação.",button_scale_keypad:"Fator de escala para redimensionar os botões do teclado.",show_messages:"Mostrar mensagens de diagnóstico quando o alarme estiver disparado ou não puder ser armado.",show_ready_indicator:"Mostrar indicador de disponível/não disponível nos botões do modo de armar.",show_bypassed_sensors:"Mostrar aviso quando o alarme for ativado com sensores ignorados.",use_code_dialog:"Exiba o teclado para inserir o código como uma caixa de diálogo pop-up.",hide_keypad:"Oculte os botões do teclado para inserir o código.",available_actions:"Ações disponíveis:",action_dialog:{title:"Personalize a exibição da ação '{action}'",show_button:{title:"Visibilidade do botão de ação",options:{always:"Sempre visível",never:"Sempre visível",disarmed:"Mostrar somente quando desarmado",armed:"Mostrar somente quando armado"}},button_label:"Substituir texto do botão",button_icon:"Ícone de botão exibido",state_label:"Substituir texto de status",color:"Substituir a cor usada para a ação"}},Ht={invalid_pin:"Inválido",blocking_sensors:"Não foi possível armar devido aos seguintes sensores",triggered_sensors:"O alarme foi disparado pelos seguintes sensores",bypassed_sensors:"Existem sensores ignorados"},Rt={arm_options:Dt,editor:Nt,errors:Ht},Ut={heading:"Варианты постановки на охрану",skip_delay:"Задержка перед выходом",force:"Обход датчиков открытия"},It={keep_keypad_visible:"Клавиатура всегда видима, даже если ввод кода не требуется.",button_scale_actions:"Коэффициент масштабирования для изменения размера кнопок действий.",button_scale_keypad:"Коэффициент масштабирования для изменения размера кнопок клавиатуры.",show_messages:"Вывод диагностических сообщений, когда срабатывает сигнализация или ее невозможно включить.",show_ready_indicator:"Отображать индикатор готовности/неготовности на кнопках режима охраны.",show_bypassed_sensors:"Вывод предупреждающего сообщения, когда сигнализация включена с помощью обходных датчиков.",use_code_dialog:"Отобразить клавиатуру для ввода кода в виде всплывающего диалогового окна.",hide_keypad:"Скрыть кнопки клавиатуры для ввода кода.",available_actions:"Доступные действия:",action_dialog:{title:"Настройка отображения действия '{action}'",show_button:{title:"Видимость кнопки действия",options:{always:"Показывать всегда",never:"Показывать никогда",disarmed:"Показывать только при снятии с охраны",armed:"Показывать только при поддержании под охраной"}},button_label:"Измененение названия кнопки",button_icon:"Отображаемый значок кнопки",state_label:"Изменение названия состояния",color:"Переопределить цвет, используемый для действия"}},Bt={invalid_pin:"Неверный",blocking_sensors:"Не удалось включить охрану из-за следующих датчиков",triggered_sensors:"Сигнал тревоги был вызван следующими датчиками",bypassed_sensors:"Есть обходные датчики"},qt={arm_options:Ut,editor:It,errors:Bt},Vt={heading:"Alternativ vid aktivering",skip_delay:"Hoppa över lämna fördröjning",force:"Förbikoppla öppna sensorer"},Ft={keep_keypad_visible:"Håll knappsatsen alltid synlig, även när ingen kodinmatning krävs.",button_scale_actions:"Ändra storlek på åtgärdsknapparna.",button_scale_keypad:"Ändra storlek på knapparna på knappsatsen.",show_messages:"Visa diagnostiska meddelanden när larmet utlöses eller inte kan aktiveras.",show_ready_indicator:"Visa redo/ej redo-indikator på lägesknapparna.",show_bypassed_sensors:"Visa varningsmeddelande när larmet är aktiverat med förbikopplade sensorer.",use_code_dialog:"Visa knappsatsen för att ange koden som en popup-dialogruta.",hide_keypad:"Dölj knapparna på tangentbordet för att ange koden.",available_actions:"Tillgängliga åtgärder:",action_dialog:{title:"Anpassa visningen av åtgärden '{action}'",show_button:{title:"Synlighet för åtgärdsknapp",options:{always:"Visas alltid",never:"Visas aldrig",disarmed:"Visa endast vid avaktivering",armed:"Visa endast vid aktivering"}},button_label:"Anpassad knappetikett",button_icon:"Visad knappikon",state_label:"Anpassad tillståndsetikett",color:"Åsidosättningsfärg som används för åtgärden"}},Zt={invalid_pin:"Ogiltig",blocking_sensors:"Kunde inte aktivera på grund av följande sensorer",triggered_sensors:"Larmet utlöstes av följande sensorer",bypassed_sensors:"Det finns förbikopplade sensorer"},Wt={arm_options:Vt,editor:Ft,errors:Zt},Gt={heading:"警戒选项",skip_delay:"跳过离开延迟",force:"绕过开放的传感器"},Kt={keep_keypad_visible:"保持小键盘总是可见，即使不需要输入密码",button_scale_actions:"调整动作按键大小的缩放系数",button_scale_keypad:"调整小键盘按键大小的缩放系数",show_messages:"当警报被触发或无法警戒时，显示诊断信息。",show_ready_indicator:"在手臂模式按钮上显示就绪/未就绪指示器。",show_bypassed_sensors:"当警报配备旁路传感器时显示警告消息。",use_code_dialog:"以弹出对话框的形式显示用于输入代码的键盘。",hide_keypad:"隐藏用于输入代码的键盘按钮。",available_actions:"可用动作：",action_dialog:{title:"自定义动作'{action}'的显示",show_button:{title:"操作按钮可见性",options:{always:"始终显示",never:"从不显示",disarmed:"仅在解除武装时显示",armed:"仅在武装时显示"}},button_label:"覆盖按钮标签",button_icon:"显示的按钮图标",state_label:"覆盖状态标签",color:"覆盖操作使用的颜色"}},Jt={invalid_pin:"无效的",blocking_sensors:"由于以下传感器而无法警戒",triggered_sensors:"警报是由以下传感器触发的",bypassed_sensors:"有绕过的传感器"},Yt={arm_options:Gt,editor:Kt,errors:Jt},Qt={cs:Object.freeze({__proto__:null,arm_options:ot,default:rt,editor:nt,errors:st}),de:Object.freeze({__proto__:null,arm_options:lt,default:ht,editor:dt,errors:ct}),el:Object.freeze({__proto__:null,arm_options:ut,default:gt,editor:pt,errors:_t}),en:Object.freeze({__proto__:null,arm_options:mt,default:bt,editor:vt,errors:ft}),es:Object.freeze({__proto__:null,arm_options:yt,default:$t,editor:kt,errors:wt}),fr:Object.freeze({__proto__:null,arm_options:xt,default:Ot,editor:At,errors:Ct}),it:Object.freeze({__proto__:null,arm_options:St,default:Et,editor:zt,errors:jt}),nl:Object.freeze({__proto__:null,arm_options:Pt,default:Lt,editor:Tt,errors:Mt}),"pt-BR":Object.freeze({__proto__:null,arm_options:Dt,default:Rt,editor:Nt,errors:Ht}),ru:Object.freeze({__proto__:null,arm_options:Ut,default:qt,editor:It,errors:Bt}),sv:Object.freeze({__proto__:null,arm_options:Vt,default:Wt,editor:Ft,errors:Zt}),"zh-Hans":Object.freeze({__proto__:null,arm_options:Gt,default:Yt,editor:Kt,errors:Jt})};function Xt(e,t,i="",a=""){const o=t.replace(/['"]+/g,"");var n;try{n=e.split(".").reduce((e,t)=>e[t],Qt[o])}catch(t){n=e.split(".").reduce((e,t)=>e[t],Qt.en)}if(void 0===n&&(n=e.split(".").reduce((e,t)=>e[t],Qt.en)),""!==i&&""!==a){Array.isArray(i)||(i=[i]),Array.isArray(a)||(a=[a]);for(let e=0;e<i.length;e++)n=n.replace(i[e],a[e])}return n}function ei(e){return null!=e}function ti(e){switch(typeof e){case"object":return 0==Object.keys(e).length;case"string":return 0==String(e).length;default:return!ei(e)}}function ii(e){return e.substring(0,e.indexOf("."))}const ai=(e,t)=>{let i={hide:!1};return(t.states||{}).hasOwnProperty(e)&&(i=Object.assign(Object.assign({},i),t.states[e])),i},oi=e=>{if(!e)return[];const t=e.attributes.supported_features||0;let i=[];return 2&t&&i.push(Ge.ArmAway),1&t&&i.push(Ge.ArmHome),4&t&&i.push(Ge.ArmNight),32&t&&i.push(Ge.ArmVacation),16&t&&i.push(Ge.ArmCustomBypass),i},ni=(e,t,i)=>{const a=ii(e.entity_id),o=e.attributes.device_class,n=e.state;if(Object.values(Ze).includes(n)&&i){const e=ai(n,i);if(!ti(e.state_label))return e.state_label}let s="";return o&&(s=t(`component.${a}.entity_component.${o}.state.${e.state}`)),s||(s=t(`component.${a}.entity_component._.state.${e.state}`)),s},si=e=>null!==e.attributes.code_format,ri=(e,t,i=!1)=>{if(!e||!e.state)return"var(--state-unavailable-color)";let a=e.state;if(i){const i=Object.values(Ge).map(e=>Je[e]);if(!i.includes(a)){const t=e.attributes.arm_mode;t&&(a=t)}const o=[Ge.Disarm,...oi(e)].filter(e=>!ai(Je[e],t).hide);1==o.length&&(a=Je[o[0]])}if(Object.keys(t.states||{}).includes(a)&&ei((t.states[a]||{}).color)){const e=t.states[a].color;return Object.values(at).includes(e)?`var(--${e}-color)`:e}return a==Ze.Disarmed?"var(--state-alarm_control_panel-disarmed-color, var(--state-alarm_control_panel-inactive-color, var(--state-inactive-color)))":Object.values(Ze).includes(a)?`var(--state-alarm_control_panel-${a}-color, var(--state-alarm_control_panel-active-color, var(--state-active-color)))`:"var(--disabled-color, var(--state-inactive-color))"},li=e=>e.callWS({type:"alarmo/entities"}),di=e=>e.callWS({type:"alarmo/config"}),ci=(e,t,i,a)=>{a=a||{},i=null==i?{}:i;const o=new Event(t,{bubbles:void 0===a.bubbles||a.bubbles,cancelable:Boolean(a.cancelable),composed:void 0===a.composed||a.composed});return o.detail=i,e.dispatchEvent(o),o};let hi=class extends He{constructor(){super(...arguments),this._entities=null,this._editAction=null}async firstUpdated(){li(this.hass).then(e=>{this._entities=e.map(e=>e.entity_id)}).catch(e=>{var t;null===(t=this.hass)||void 0===t||t.callService("system_log","write",{message:`Failed to fetch entities: ${e}`,level:"error"})}),this._alarmoConfig=await di(this.hass)}setConfig(e){!(null==e?void 0:e.button_scale_actions)&&(null==e?void 0:e.button_scale)&&(e=Object.assign(Object.assign({},e),{button_scale_actions:null==e?void 0:e.button_scale})),!(null==e?void 0:e.button_scale_keypad)&&(null==e?void 0:e.button_scale)&&(e=Object.assign(Object.assign({},e),{button_scale_keypad:null==e?void 0:e.button_scale})),this._config=Object.assign(Object.assign({},et),e)}render(){var e,t,i,a,o,n,s,r;if(!this._config||!this.hass||!this._entities)return fe``;if(!this._entities.length)return fe`
+     */function _e(e){return ue({...e,state:!0,attribute:!1})}const ge="number";var me;!function(e){e.Disarmed="disarmed",e.Arming="arming",e.Pending="pending",e.Triggered="triggered",e.ArmedAway="armed_away",e.ArmedHome="armed_home",e.ArmedNight="armed_night",e.ArmedVacation="armed_vacation",e.ArmedCustomBypass="armed_custom_bypass"}(me||(me={}));const be={[me.ArmedAway]:"hass:shield-lock",[me.ArmedHome]:"hass:shield-home",[me.ArmedNight]:"hass:shield-moon",[me.ArmedVacation]:"hass:shield-airplane",[me.ArmedCustomBypass]:"hass:security",[me.Disarmed]:"hass:shield-off",[me.Arming]:"hass:shield-outline",[me.Pending]:"hass:shield-outline",[me.Triggered]:"hass:bell-ring"};var ve;!function(e){e.ArmAway="arm_away",e.ArmHome="arm_home",e.ArmNight="arm_night",e.ArmVacation="arm_vacation",e.ArmCustomBypass="arm_custom_bypass",e.Disarm="disarm"}(ve||(ve={}));const fe={[ve.ArmAway]:"mdi:lock",[ve.ArmHome]:"mdi:home",[ve.ArmNight]:"mdi:moon-waning-crescent",[ve.ArmVacation]:"mdi:airplane",[ve.ArmCustomBypass]:"mdi:shield",[ve.Disarm]:"mdi:shield-off"},ye={[ve.ArmAway]:me.ArmedAway,[ve.ArmHome]:me.ArmedHome,[ve.ArmNight]:me.ArmedNight,[ve.ArmVacation]:me.ArmedVacation,[ve.ArmCustomBypass]:me.ArmedCustomBypass,[ve.Disarm]:me.Disarmed};var $e;!function(e){e.Disarm="disarm",e.Arm="arm",e.Trigger="trigger",e.FailedToArm="failed_to_arm",e.CommandNotAllowed="command_not_allowed",e.NoCodeProvided="no_code_provided",e.InvalidCodeProvided="invalid_code_provided",e.TriggerTimeExpired="trigger_time_expired",e.ReadyToArmModesChanged="ready_to_arm_modes_changed"}($e||($e={}));const we="alarmo_updated",ke=["arming","pending"],xe={type:"",entity:"",name:"",keep_keypad_visible:!1,button_scale_actions:1,button_scale_keypad:1,font_size:16,icon_size:24,states:{},show_messages:!0,show_ready_indicator:!0,show_bypassed_sensors:!0,use_code_dialog:!1,hide_keypad:!1},Ae=2.5,Ce={skip_delay:!1,force:!1};var ze;!function(e){e.Red="red",e.Pink="pink",e.Purple="purple",e.DeepPurple="deep-purple",e.Indigo="indigo",e.Blue="blue",e.LightBlue="light-blue",e.Cyan="cyan",e.Teal="teal",e.Green="green",e.LightGreen="light-green",e.Lime="lime",e.Yellow="yellow",e.Amber="amber",e.Orange="orange",e.DeepOrange="deep-orange",e.Brown="brown",e.LightGrey="light-grey",e.Grey="grey",e.DarkGrey="dark-grey",e.BlueGrey="blue-grey",e.Black="black",e.White="white"}(ze||(ze={}));var Oe={heading:"Možnosti aktivace",skip_delay:"Přeskočit čas pro vystup",force:"Bypass otevřených senzorů"},Se={keep_keypad_visible:"Zachovat klávesnici vždy viditelnou, i když není vyžadován žádný kód.",button_scale_actions:"Měřítko použité pro změnu velikosti tlačítek akcí.",button_scale_keypad:"Měřítko použité pro změnu velikosti tlačítek klávesnice.",show_messages:"Zobrazit diagnostické zprávy při spuštění alarmu nebo nemožnosti aktivace.",show_ready_indicator:"Zobrazit indikátor připraveno/nepřipraveno na tlačítkách režimu aktivace.",show_bypassed_sensors:"Zobrazit varování při aktivaci alarmu s přemostěnými senzory.",use_code_dialog:"Zobrazte klávesnici pro zadání kódu jako vyskakovací dialog.",hide_keypad:"Skrýt tlačítka klávesnice pro zadávání kódu.",available_actions:"Dostupné akce:",action_dialog:{title:"Upravit zobrazení akce '{action}'",show_button:{title:"Viditelnost akčního tlačítka",options:{always:"Vždy zobrazeno",never:"Nikdy zobrazeno",disarmed:"Zobrazit pouze při odzbrojení",armed:"Zobrazit pouze při zapnutí"}},button_label:"Přepsat popisek tlačítka",button_icon:"Ikona zobrazeného tlačítka",state_label:"Přepsat popisek stavu",color:"Přepsat barvu použitou pro akci"}},Ee={invalid_pin:"Neplatný",blocking_sensors:"Nelze aktivovat kvůli následujícím senzorům",triggered_sensors:"Alarm byl spuštěn následujícími senzory",bypassed_sensors:"Jsou tam přemostěné senzory"},je={arm_options:Oe,editor:Se,errors:Ee},Te={heading:"Scharfschaltungsoptionen",skip_delay:"Ausgangsverzögerung überspringen",force:"Offene Sensoren ignorieren"},Me={keep_keypad_visible:"Zeige das Pin-Eingabefeld immer an, auch wenn kein Code erfordert ist.",button_scale_actions:"Skalierungsfaktor für Buttongröße der Aktionen.",button_scale_keypad:"Skalierungsfaktor für Buttongröße der Pin-Eingabefeld.",show_messages:"Anzeige von Diagnosemeldungen, wenn der Alarm ausgelöst wird oder nicht scharf geschaltet werden kann.",show_ready_indicator:"Zeigt die Bereitschafts-/Nicht-Bereitschaftsanzeige auf den Scharfschaltmodus-Tasten an.",show_bypassed_sensors:"Warnung anzeigen, wenn der Alarm mit umgangenen Sensoren aktiviert wird.",use_code_dialog:"Zeigen Sie die Tastatur zur Codeeingabe als Popup-Dialog an.",hide_keypad:"Blenden Sie die Tasten der Tastatur zur Codeeingabe aus.",available_actions:"Verfügbare Aktionen:",action_dialog:{title:"Anzeige der Aktion '{action}' anpassen",show_button:{title:"Sichtbarkeit der Aktionsschaltfläche",options:{always:"Immer angezeigt",never:"Nie angezeigt",disarmed:"Nur im deaktivierten Zustand anzeigen",armed:"Nur im aktivierten Zustand anzeigen"}},button_label:"Überschreibung der Tastenbeschriftung",button_icon:"Angezeigtes Schaltflächensymbol",state_label:"Überschreibung der Statusbezeichnung",color:"Die für die Aktion verwendete Farbe überschreiben"}},Pe={invalid_pin:"Ungültig",blocking_sensors:"Konnte nicht scharf geschaltet werden, da folgende Sensoren geöffnet sind",triggered_sensors:"Alarm wurde durch folgende Sensoren ausgelöst",bypassed_sensors:"Es gibt umgangene Sensoren"},Ne={arm_options:Te,editor:Me,errors:Pe},De={heading:"Επιλογές για όπλισμα",skip_delay:"Παράλειψη καθυστέρησης εξόδου",force:"Παράκαμψη ανοιχτών αισθητήρων"},He={keep_keypad_visible:"Κράτησε το πληκτρολόγιο πάντα ορατό, ακόμη και όταν δεν απαιτείται εισαγωγή κωδικού.",button_scale_actions:"Συντελεστής κλίμακας για αλλαγή μεγέθους των κουμπιών ενεργειών.",button_scale_keypad:"Συντελεστής κλίμακας για αλλαγή μεγέθους των κουμπιών του πληκτρολογίου.",show_messages:"Εμφάνιση διαγνωστικών μηνυμάτων όταν ενεργοποιείται ο συναγερμός ή δεν μπορεί να οπλιστεί.",show_ready_indicator:"Εμφάνιση ένδειξης έτοιμο/μη έτοιμο στα κουμπιά λειτουργίας όπλισης.",show_bypassed_sensors:"Εμφάνιση προειδοποιητικού μηνύματος όταν ο συναγερμός οπλίζεται με παρακαμφθέντες αισθητήρες.",use_code_dialog:"Εμφανίστε το πληκτρολόγιο για την εισαγωγή του κωδικού ως αναδυόμενο παράθυρο διαλόγου.",hide_keypad:"Απόκρυψη των κουμπιών του πληκτρολογίου για την εισαγωγή του κωδικού.",available_actions:"Διαθέσιμες ενέργειες:",action_dialog:{title:"Προσαρμογή εμφάνισης της ενέργειας '{action}'",show_button:{title:"Ορατότητα κουμπιού ενέργειας",options:{always:"Εμφανίζεται πάντα",never:"Ποτέ δεν εμφανίζεται",disarmed:"Εμφάνιση μόνο όταν είναι αφοπλισμένο",armed:"Εμφάνιση μόνο όταν είναι οπλισμένο"}},button_icon:"Εμφανιζόμενο εικονίδιο κουμπιού",state_label:"Αντικατάσταση ετικέτας κατάστασης",color:"Παράκαμψη χρώματος που χρησιμοποιείται για την ενέργεια"}},Ue={invalid_pin:"Ακυρος",blocking_sensors:"Δεν ήταν δυνατή η όπλιση λόγω των ακόλουθων αισθητήρων",triggered_sensors:"Ο συναγερμός ενεργοποιήθηκε από τους ακόλουθους αισθητήρες",bypassed_sensors:"Υπάρχουν παρακαμφθέντες αισθητήρες"},Le={arm_options:De,editor:He,errors:Ue},Re={heading:"Options for arming",skip_delay:"Skip exit delay",force:"Bypass open sensors"},qe={keep_keypad_visible:"Keep the keypad always visible, also when no code input is required.",button_scale_actions:"Scaling factor to apply for resizing the action buttons.",button_scale_keypad:"Scaling factor to apply for resizing the keypad buttons.",font_size:"Card font size (px).",icon_size:"Card icon size (px).",show_messages:"Display diagnostic messages when alarm is triggered or cannot be armed.",show_ready_indicator:"Show ready/not ready indicator on arm mode buttons.",show_bypassed_sensors:"Show warning message when alarm is armed with bypassed sensors.",use_code_dialog:"Display the keypad for entering the code as a popup dialog.",hide_keypad:"Hide the keypad buttons for entering the code.",available_actions:"Available actions:",action_dialog:{title:"Customize display of action '{action}'",show_button:{title:"Button visibility",options:{always:"Always shown",never:"Never shown",disarmed:"Show only when disarmed",armed:"Hide only when disarmed"}},button_label:"Override displayed action label",button_icon:"Override displayed icon",state_label:"Override displayed state label",color:"Override color used for the action"}},Ie={invalid_pin:"Invalid",blocking_sensors:"Could not arm due to the following sensors",triggered_sensors:"Alarm was triggered by the following sensors",bypassed_sensors:"There are bypassed sensors"},Ve={arm_options:Re,editor:qe,errors:Ie},Be={heading:"Opciones de armado",skip_delay:"Omitir el retardo de salida",force:"Pasar por alto los sensores abiertos"},Fe={keep_keypad_visible:"Mantener el teclado siempre visible, también cuando no se requiere ninguna entrada de código.",button_scale_actions:"Factor de escalado para cambiar el tamaño de los botones de acción.",button_scale_keypad:"Factor de escalado para cambiar el tamaño de los botones del teclado.",show_messages:"Mostrar mensajes de diagnóstico cuando se activa la alarma o no se puede activar.",show_ready_indicator:"Mostrar indicador listo/no listo en los botones de modo armado.",show_bypassed_sensors:"Mostrar advertencia cuando la alarma está activada con sensores omitidos.",use_code_dialog:"Muestra el teclado para ingresar el código como un cuadro de diálogo emergente.",hide_keypad:"Ocultar los botones del teclado para ingresar el código.",available_actions:"Acciones disponibles:",action_dialog:{title:"Personalizar la visualización de la acción '{action}'",show_button:{title:"Visibilidad del botón de acción",options:{always:"Mostrar siempre",never:"Ocultar siempre",disarmed:"Mostrar solo si desarmada",armed:"Ocultar solo si desarmada"}},button_label:"Sobrescribir el texto del botón",button_icon:"Icono de botón mostrado",state_label:"Sobrescribir el texto de estado",color:"Anular el color utilizado para la acción"}},We={invalid_pin:"Inválido",blocking_sensors:"No se pudo armar debido a los siguientes sensores",triggered_sensors:"La alarma fue disparada por los siguientes sensores",bypassed_sensors:"Hay sensores omitidos"},Ze={arm_options:Be,editor:Fe,errors:We},Ge={heading:"Options pour l'armement",skip_delay:"Ignorer le délai de sortie",force:"Bypasser les capteurs ouverts"},Ke={keep_keypad_visible:"Gardez le clavier toujours visible, même lorsqu'aucune saisie de code n'est requise.",button_scale_actions:"Facteur d'échelle à appliquer pour le redimensionnement des boutons des actions.",button_scale_keypad:"Facteur d'échelle à appliquer pour le redimensionnement des boutons du clavier.",show_messages:"Afficher les messages de diagnostic lorsque l'alarme est déclenchée ou ne peut pas être armée.",show_ready_indicator:"Afficher l'indicateur prêt/pas prêt sur les boutons de mode d'armement.",show_bypassed_sensors:"Afficher un avertissement lorsque l'alarme est armée avec des capteurs ignorés.",use_code_dialog:"Affichez le clavier pour saisir le code sous forme de boîte de dialogue contextuelle.",hide_keypad:"Masquer les boutons du clavier pour saisir le code.",available_actions:"Actions disponibles:",action_dialog:{title:"Personnaliser l'affichage de l'action '{action}'",show_button:{title:"Visibilité du bouton d'action",options:{always:"Toujours affiché",never:"Jamais affiché",disarmed:"Afficher uniquement si désarmé",armed:"Afficher uniquement si armé"}},button_label:"Remplacer le libellé du bouton",button_icon:"Icône de bouton affichée",state_label:"Remplacer l'étiquette d'état",color:"Remplacer la couleur utilisée pour l'action"}},Je={invalid_pin:"Invalide",blocking_sensors:"Impossible d'armer en raison du(es) capteur(s) suivant(s)",triggered_sensors:"L'alarme a été déclenchée par le(s) capteur(s) suivant(s)",bypassed_sensors:"Il y a des capteurs ignorés"},Xe={arm_options:Ge,editor:Ke,errors:Je},Ye={heading:"Opzioni di inserimento",skip_delay:"Ignorare il ritardo di uscita",force:"Ignorare i sensori aperti"},Qe={keep_keypad_visible:"Mantenere la tastiera sempre visibile, anche quando nessun codice è richiesto.",button_scale_actions:"Fattore di scala da applicare per ridimensionare i pulsanti di azione.",button_scale_keypad:"Fattore di scala da applicare per ridimensionare i pulsanti della tastiera.",show_messages:"Mostrare messaggi diagnostici quando l'allarme viene attivato o non può essere inserito.",show_ready_indicator:"Mostra l'indicatore pronto/non pronto sui pulsanti della modalità di inserimento.",show_bypassed_sensors:"Mostra avviso quando l'allarme è armato con sensori esclusi.",use_code_dialog:"Visualizza la tastiera per l'immissione del codice come finestra di dialogo popup.",hide_keypad:"Nascondi i pulsanti della tastiera per l'inserimento del codice.",available_actions:"Azioni disponibili:",action_dialog:{title:"Personalizzare la visualizzazione dell'azione '{action}'",show_button:{title:"Visibilità del pulsante di azione",options:{always:"Sempre visualizzato",never:"Mai visualizzato",disarmed:"Mostra solo quando disarmato",armed:"Mostra solo quando disarmato"}},button_label:"Sovrascrivere l'etichetta del pulsante",button_icon:"Icona del pulsante visualizzato",state_label:"Sovrascrivere l'etichetta di stato",color:"Sostituisci il colore utilizzato per l'azione"}},et={invalid_pin:"Non valido",blocking_sensors:"Impossibile inserire l'allarme a causa dei seguenti sensori",triggered_sensors:"L'allarme è stato attivato dai seguenti sensori",bypassed_sensors:"Sono presenti sensori esclusi"},tt={arm_options:Ye,editor:Qe,errors:et},it={heading:"Opties voor inschakelen",skip_delay:"Sla vertraging over",force:"Negeer open sensoren"},st={keep_keypad_visible:"Houd het keypad altijd zichtbaar, ook wanneer er geen code vereist is.",button_scale_actions:"Schaalfactor actieknoppen",button_scale_keypad:"Schaalfactor keypadknoppen",show_messages:"Toon diagnostische berichten wanneer het alarm wordt geactiveerd of niet kan worden ingeschakeld.",show_ready_indicator:"Toon gereed/niet gereed-indicator op inschakelmodusknoppen.",show_bypassed_sensors:"Toon melding wanneer het alarm is ingeschakeld met omzeilde sensoren.",use_code_dialog:"Geef het toetsenbord voor het invoeren van de code weer als een pop-upvenster.",hide_keypad:"Verberg het toetsenbord voor het invoeren van de code.",available_actions:"Beschikbare acties:",action_dialog:{title:"Weergave van actie '{action}' aanpassen",show_button:{title:"Actieknop weergave",options:{always:"Altijd zichtbaar",never:"Nooit zichtbaar",disarmed:"Toon alleen bij uitgeschakeld",armed:"Zichtbaar tenzij uitgeschakeld"}},button_label:"Weergegeven naam voor actie",button_icon:"Weergegeven icoon voor actie",state_label:"Weergegeven status",color:"Weergegeven kleur voor action"}},at={invalid_pin:"Ongeldig",blocking_sensors:"Kon niet inschakelen vanwege de volgende sensoren",triggered_sensors:"Alarm werd geactiveerd door de volgende sensoren",bypassed_sensors:"Er zijn omzeilde sensoren"},ot={arm_options:it,editor:st,errors:at},rt={heading:"Opções para armar",skip_delay:"Omitir tempo para sair",force:"Ignorar os sensores abertos"},nt={keep_keypad_visible:"Mantenha o teclado sempre visível, mesmo quando não for necessária nenhuma entrada de código.",button_scale_actions:"Fator de escala para redimensionar botões de ação.",button_scale_keypad:"Fator de escala para redimensionar os botões do teclado.",show_messages:"Mostrar mensagens de diagnóstico quando o alarme estiver disparado ou não puder ser armado.",show_ready_indicator:"Mostrar indicador de disponível/não disponível nos botões do modo de armar.",show_bypassed_sensors:"Mostrar aviso quando o alarme for ativado com sensores ignorados.",use_code_dialog:"Exiba o teclado para inserir o código como uma caixa de diálogo pop-up.",hide_keypad:"Oculte os botões do teclado para inserir o código.",available_actions:"Ações disponíveis:",action_dialog:{title:"Personalize a exibição da ação '{action}'",show_button:{title:"Visibilidade do botão de ação",options:{always:"Sempre visível",never:"Sempre visível",disarmed:"Mostrar somente quando desarmado",armed:"Mostrar somente quando armado"}},button_label:"Substituir texto do botão",button_icon:"Ícone de botão exibido",state_label:"Substituir texto de status",color:"Substituir a cor usada para a ação"}},lt={invalid_pin:"Inválido",blocking_sensors:"Não foi possível armar devido aos seguintes sensores",triggered_sensors:"O alarme foi disparado pelos seguintes sensores",bypassed_sensors:"Existem sensores ignorados"},dt={arm_options:rt,editor:nt,errors:lt},ct={heading:"Варианты постановки на охрану",skip_delay:"Задержка перед выходом",force:"Обход датчиков открытия"},ht={keep_keypad_visible:"Клавиатура всегда видима, даже если ввод кода не требуется.",button_scale_actions:"Коэффициент масштабирования для изменения размера кнопок действий.",button_scale_keypad:"Коэффициент масштабирования для изменения размера кнопок клавиатуры.",show_messages:"Вывод диагностических сообщений, когда срабатывает сигнализация или ее невозможно включить.",show_ready_indicator:"Отображать индикатор готовности/неготовности на кнопках режима охраны.",show_bypassed_sensors:"Вывод предупреждающего сообщения, когда сигнализация включена с помощью обходных датчиков.",use_code_dialog:"Отобразить клавиатуру для ввода кода в виде всплывающего диалогового окна.",hide_keypad:"Скрыть кнопки клавиатуры для ввода кода.",available_actions:"Доступные действия:",action_dialog:{title:"Настройка отображения действия '{action}'",show_button:{title:"Видимость кнопки действия",options:{always:"Показывать всегда",never:"Показывать никогда",disarmed:"Показывать только при снятии с охраны",armed:"Показывать только при поддержании под охраной"}},button_label:"Измененение названия кнопки",button_icon:"Отображаемый значок кнопки",state_label:"Изменение названия состояния",color:"Переопределить цвет, используемый для действия"}},pt={invalid_pin:"Неверный",blocking_sensors:"Не удалось включить охрану из-за следующих датчиков",triggered_sensors:"Сигнал тревоги был вызван следующими датчиками",bypassed_sensors:"Есть обходные датчики"},ut={arm_options:ct,editor:ht,errors:pt},_t={heading:"Alternativ vid aktivering",skip_delay:"Hoppa över lämna fördröjning",force:"Förbikoppla öppna sensorer"},gt={keep_keypad_visible:"Håll knappsatsen alltid synlig, även när ingen kodinmatning krävs.",button_scale_actions:"Ändra storlek på åtgärdsknapparna.",button_scale_keypad:"Ändra storlek på knapparna på knappsatsen.",show_messages:"Visa diagnostiska meddelanden när larmet utlöses eller inte kan aktiveras.",show_ready_indicator:"Visa redo/ej redo-indikator på lägesknapparna.",show_bypassed_sensors:"Visa varningsmeddelande när larmet är aktiverat med förbikopplade sensorer.",use_code_dialog:"Visa knappsatsen för att ange koden som en popup-dialogruta.",hide_keypad:"Dölj knapparna på tangentbordet för att ange koden.",available_actions:"Tillgängliga åtgärder:",action_dialog:{title:"Anpassa visningen av åtgärden '{action}'",show_button:{title:"Synlighet för åtgärdsknapp",options:{always:"Visas alltid",never:"Visas aldrig",disarmed:"Visa endast vid avaktivering",armed:"Visa endast vid aktivering"}},button_label:"Anpassad knappetikett",button_icon:"Visad knappikon",state_label:"Anpassad tillståndsetikett",color:"Åsidosättningsfärg som används för åtgärden"}},mt={invalid_pin:"Ogiltig",blocking_sensors:"Kunde inte aktivera på grund av följande sensorer",triggered_sensors:"Larmet utlöstes av följande sensorer",bypassed_sensors:"Det finns förbikopplade sensorer"},bt={arm_options:_t,editor:gt,errors:mt},vt={heading:"警戒选项",skip_delay:"跳过离开延迟",force:"绕过开放的传感器"},ft={keep_keypad_visible:"保持小键盘总是可见，即使不需要输入密码",button_scale_actions:"调整动作按键大小的缩放系数",button_scale_keypad:"调整小键盘按键大小的缩放系数",show_messages:"当警报被触发或无法警戒时，显示诊断信息。",show_ready_indicator:"在手臂模式按钮上显示就绪/未就绪指示器。",show_bypassed_sensors:"当警报配备旁路传感器时显示警告消息。",use_code_dialog:"以弹出对话框的形式显示用于输入代码的键盘。",hide_keypad:"隐藏用于输入代码的键盘按钮。",available_actions:"可用动作：",action_dialog:{title:"自定义动作'{action}'的显示",show_button:{title:"操作按钮可见性",options:{always:"始终显示",never:"从不显示",disarmed:"仅在解除武装时显示",armed:"仅在武装时显示"}},button_label:"覆盖按钮标签",button_icon:"显示的按钮图标",state_label:"覆盖状态标签",color:"覆盖操作使用的颜色"}},yt={invalid_pin:"无效的",blocking_sensors:"由于以下传感器而无法警戒",triggered_sensors:"警报是由以下传感器触发的",bypassed_sensors:"有绕过的传感器"},$t={arm_options:vt,editor:ft,errors:yt},wt={cs:Object.freeze({__proto__:null,arm_options:Oe,default:je,editor:Se,errors:Ee}),de:Object.freeze({__proto__:null,arm_options:Te,default:Ne,editor:Me,errors:Pe}),el:Object.freeze({__proto__:null,arm_options:De,default:Le,editor:He,errors:Ue}),en:Object.freeze({__proto__:null,arm_options:Re,default:Ve,editor:qe,errors:Ie}),es:Object.freeze({__proto__:null,arm_options:Be,default:Ze,editor:Fe,errors:We}),fr:Object.freeze({__proto__:null,arm_options:Ge,default:Xe,editor:Ke,errors:Je}),it:Object.freeze({__proto__:null,arm_options:Ye,default:tt,editor:Qe,errors:et}),nl:Object.freeze({__proto__:null,arm_options:it,default:ot,editor:st,errors:at}),"pt-BR":Object.freeze({__proto__:null,arm_options:rt,default:dt,editor:nt,errors:lt}),ru:Object.freeze({__proto__:null,arm_options:ct,default:ut,editor:ht,errors:pt}),sv:Object.freeze({__proto__:null,arm_options:_t,default:bt,editor:gt,errors:mt}),"zh-Hans":Object.freeze({__proto__:null,arm_options:vt,default:$t,editor:ft,errors:yt})};function kt(e,t,i="",s=""){const a=t.replace(/['"]+/g,"");var o;try{o=e.split(".").reduce((e,t)=>e[t],wt[a])}catch(t){o=e.split(".").reduce((e,t)=>e[t],wt.en)}if(void 0===o&&(o=e.split(".").reduce((e,t)=>e[t],wt.en)),""!==i&&""!==s){Array.isArray(i)||(i=[i]),Array.isArray(s)||(s=[s]);for(let e=0;e<i.length;e++)o=o.replace(i[e],s[e])}return o}function xt(e){return null!=e}function At(e){switch(typeof e){case"object":return 0==Object.keys(e).length;case"string":return 0==String(e).length;default:return!xt(e)}}function Ct(e){return e.substring(0,e.indexOf("."))}const zt=(e,t)=>{let i={hide:!1};return(t.states||{}).hasOwnProperty(e)&&(i=Object.assign(Object.assign({},i),t.states[e])),i},Ot=e=>{if(!e)return[];const t=e.attributes.supported_features||0;let i=[];return 2&t&&i.push(ve.ArmAway),1&t&&i.push(ve.ArmHome),4&t&&i.push(ve.ArmNight),32&t&&i.push(ve.ArmVacation),16&t&&i.push(ve.ArmCustomBypass),i},St=(e,t,i)=>{const s=Ct(e.entity_id),a=e.attributes.device_class,o=e.state;if(Object.values(me).includes(o)&&i){const e=zt(o,i);if(!At(e.state_label))return e.state_label}let r="";return a&&(r=t(`component.${s}.entity_component.${a}.state.${e.state}`)),r||(r=t(`component.${s}.entity_component._.state.${e.state}`)),r},Et=e=>null!==e.attributes.code_format,jt=(e,t,i=!1)=>{if(!e||!e.state)return"var(--state-unavailable-color)";let s=e.state;if(i){const i=Object.values(ve).map(e=>ye[e]);if(!i.includes(s)){const t=e.attributes.arm_mode;t&&(s=t)}const a=[ve.Disarm,...Ot(e)].filter(e=>!zt(ye[e],t).hide);1==a.length&&(s=ye[a[0]])}if(Object.keys(t.states||{}).includes(s)&&xt((t.states[s]||{}).color)){const e=t.states[s].color;return Object.values(ze).includes(e)?`var(--${e}-color)`:e}return s==me.Disarmed?"var(--state-alarm_control_panel-disarmed-color, var(--state-alarm_control_panel-inactive-color, var(--state-inactive-color)))":Object.values(me).includes(s)?`var(--state-alarm_control_panel-${s}-color, var(--state-alarm_control_panel-active-color, var(--state-active-color)))`:"var(--disabled-color, var(--state-inactive-color))"},Tt=e=>e.callWS({type:"alarmo/entities"}),Mt=e=>e.callWS({type:"alarmo/config"}),Pt=(e,t,i,s)=>{s=s||{},i=null==i?{}:i;const a=new Event(t,{bubbles:void 0===s.bubbles||s.bubbles,cancelable:Boolean(s.cancelable),composed:void 0===s.composed||s.composed});return a.detail=i,e.dispatchEvent(a),a};let Nt=class extends le{constructor(){super(...arguments),this._entities=null,this._editAction=null}async firstUpdated(){Tt(this.hass).then(e=>{this._entities=e.map(e=>e.entity_id)}).catch(e=>{var t;null===(t=this.hass)||void 0===t||t.callService("system_log","write",{message:`Failed to fetch entities: ${e}`,level:"error"})}),this._alarmoConfig=await Mt(this.hass)}setConfig(e){!(null==e?void 0:e.button_scale_actions)&&(null==e?void 0:e.button_scale)&&(e=Object.assign(Object.assign({},e),{button_scale_actions:null==e?void 0:e.button_scale})),!(null==e?void 0:e.button_scale_keypad)&&(null==e?void 0:e.button_scale)&&(e=Object.assign(Object.assign({},e),{button_scale_keypad:null==e?void 0:e.button_scale})),this._config=Object.assign(Object.assign({},xe),e)}render(){var e,t,i,s,a,o,r,n;if(!this._config||!this.hass||!this._entities)return B``;if(!this._entities.length)return B`
         <hui-warning>
           Could not establish a connection with the alarmo integration. Please check if it is installed and running.
         </hui-warning>
-      `;const l=this._config.entity?this.hass.states[this._config.entity]:void 0,d=(null===(e=this._alarmoConfig)||void 0===e?void 0:e.code_format)===Fe&&(this._alarmoConfig.code_arm_required||this._alarmoConfig.code_disarm_required);if(null!==this._editAction){const e=ai(Je[this._editAction],this._config);return fe`
+      `;const l=this._config.entity?this.hass.states[this._config.entity]:void 0,d=(null===(e=this._alarmoConfig)||void 0===e?void 0:e.code_format)===ge&&(this._alarmoConfig.code_arm_required||this._alarmoConfig.code_disarm_required);if(null!==this._editAction){const e=zt(ye[this._editAction],this._config);return B`
         <div class="header">
           <div class="back-title">
             <ha-icon-button
@@ -40,119 +49,123 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
               @click=${this._goBack}
             ></ha-icon-button>
             <span slot="title"
-              >${Xt("editor.action_dialog.title",this.hass.language,"{action}",this.hass.localize(`ui.card.alarm_control_panel.${this._editAction}`))}</span
+              >${kt("editor.action_dialog.title",this.hass.language,"{action}",this.hass.localize(`ui.card.alarm_control_panel.${this._editAction}`))}</span
             >
           </div>
         </div>
 
         <div>
-          <span>${Xt("editor.action_dialog.show_button.title",this.hass.language)}</span>
+          <span>${kt("editor.action_dialog.show_button.title",this.hass.language)}</span>
           <div style="display: flex; flex-direction: row">
-            <ha-formfield label="${Xt("editor.action_dialog.show_button.options.always",this.hass.language)}">
+            <ha-formfield label="${kt("editor.action_dialog.show_button.options.always",this.hass.language)}">
               <ha-radio
                 name="show_button"
                 value="never"
-                @change=${()=>this._updateStateConfig(Je[this._editAction],{hide:void 0})}
-                ?checked=${!ei(e.hide)||[!1,"never"].includes(e.hide)}
+                @change=${()=>this._updateStateConfig(ye[this._editAction],{hide:void 0})}
+                ?checked=${!xt(e.hide)||[!1,"never"].includes(e.hide)}
               >
               </ha-radio>
             </ha-formfield>
 
-            <ha-formfield label="${Xt("editor.action_dialog.show_button.options.never",this.hass.language)}">
+            <ha-formfield label="${kt("editor.action_dialog.show_button.options.never",this.hass.language)}">
               <ha-radio
                 name="show_button"
                 value="always"
-                @change=${()=>this._updateStateConfig(Je[this._editAction],{hide:"always"})}
+                @change=${()=>this._updateStateConfig(ye[this._editAction],{hide:"always"})}
                 ?checked=${[!0,"always"].includes(e.hide||!1)}
               >
               </ha-radio>
             </ha-formfield>
 
-            ${this._editAction==Ge.Disarm?fe`
-            <ha-formfield label="${Xt("editor.action_dialog.show_button.options.armed",this.hass.language)}">
-              <ha-radio
-                name="show_button"
-                value="disarmed"
-                @change=${()=>this._updateStateConfig(Je[this._editAction],{hide:"disarmed"})}
-                ?checked=${"disarmed"==e.hide}
-              >
-              </ha-radio>
-            </ha-formfield>`:fe`
-            <ha-formfield label="${Xt("editor.action_dialog.show_button.options.disarmed",this.hass.language)}">
-              <ha-radio
-                name="show_button"
-                value="armed"
-                @change=${()=>this._updateStateConfig(Je[this._editAction],{hide:"armed"})}
-                ?checked=${"armed"==e.hide}
-              >
-              </ha-radio>
-            </ha-formfield>
-              `}
+            ${this._editAction==ve.Disarm?B` <ha-formfield
+                    label="${kt("editor.action_dialog.show_button.options.armed",this.hass.language)}"
+                  >
+                    <ha-radio
+                      name="show_button"
+                      value="disarmed"
+                      @change=${()=>this._updateStateConfig(ye[this._editAction],{hide:"disarmed"})}
+                      ?checked=${"disarmed"==e.hide}
+                    >
+                    </ha-radio>
+                  </ha-formfield>`:B`
+                    <ha-formfield
+                      label="${kt("editor.action_dialog.show_button.options.disarmed",this.hass.language)}"
+                    >
+                      <ha-radio
+                        name="show_button"
+                        value="armed"
+                        @change=${()=>this._updateStateConfig(ye[this._editAction],{hide:"armed"})}
+                        ?checked=${"armed"==e.hide}
+                      >
+                      </ha-radio>
+                    </ha-formfield>
+                  `}
           </div>
         </div>
 
         <div class="grid">
           <ha-input
-            label="${Xt("editor.action_dialog.button_label",this.hass.language)}"
+            label="${kt("editor.action_dialog.button_label",this.hass.language)}"
             .value="${e.button_label||""}"
             placeholder="${this.hass.localize(`ui.card.alarm_control_panel.${this._editAction}`)}"
             ?disabled=${e.hide}
-            @input=${e=>this._updateStateConfig(Je[this._editAction],{button_label:String(e.target.value).trim()})}
+            @input=${e=>this._updateStateConfig(ye[this._editAction],{button_label:String(e.target.value).trim()})}
           ></ha-input>
 
           <ha-icon-picker
             .hass=${this.hass}
-            label="${Xt("editor.action_dialog.button_icon",this.hass.language)}"
-            .value="${e.button_icon||Ke[this._editAction]}"
+            label="${kt("editor.action_dialog.button_icon",this.hass.language)}"
+            .value="${e.button_icon||fe[this._editAction]}"
             ?disabled=${e.hide}
-            @value-changed=${e=>this._updateStateConfig(Je[this._editAction],{button_icon:e.detail.value})}
-            >
+            @value-changed=${e=>this._updateStateConfig(ye[this._editAction],{button_icon:e.detail.value})}
+          >
           </ha-icon-picker>
 
           <ha-input
-            label="${Xt("editor.action_dialog.state_label",this.hass.language)}"
+            label="${kt("editor.action_dialog.state_label",this.hass.language)}"
             .value="${e.state_label||""}"
-            placeholder="${this.hass.localize(`component.alarm_control_panel.entity_component._.state.${Je[this._editAction]}`)}"
-            @input=${e=>this._updateStateConfig(Je[this._editAction],{state_label:String(e.target.value).trim()})}
+            placeholder="${this.hass.localize(`component.alarm_control_panel.entity_component._.state.${ye[this._editAction]}`)}"
+            @input=${e=>this._updateStateConfig(ye[this._editAction],{state_label:String(e.target.value).trim()})}
           ></ha-input>
 
           <ha-select
-            .icon=${ei(e.color)}
-            label="${Xt("editor.action_dialog.color",this.hass.language)}"
+            .icon=${xt(e.color)}
+            label="${kt("editor.action_dialog.color",this.hass.language)}"
             .value=${e.color}
             @closed=${e=>{e.stopPropagation()}}
-            @selected=${e=>{e.stopPropagation();const t=e.target.value;this._updateStateConfig(Je[this._editAction],{color:t||void 0})}}
+            @selected=${e=>{e.stopPropagation();const t=e.target.value;this._updateStateConfig(ye[this._editAction],{color:t||void 0})}}
             fixedMenuPosition
             naturalMenuWidth
             clearable
           >
-          ${e.color?fe`
-              <span slot="icon">
-                <span class="circle-color" style="--circle-color: ${Object.values(at).includes(e.color)?`var(--${e.color}-color)`:e.color}">
-                </span>
-              </span>
-            `:ye}
-            ${ei(e.color)&&e.color.length&&!Object.values(at).includes(e.color)?fe`
-                <ha-list-item .value=${e.color} graphic="icon">
-                  ${e.color}
-                  <span slot="graphic">
-                    <span class="circle-color" style="--circle-color: ${e.color}">
+            ${e.color?B`
+                    <span slot="icon">
+                      <span
+                        class="circle-color"
+                        style="--circle-color: ${Object.values(ze).includes(e.color)?`var(--${e.color}-color)`:e.color}"
+                      >
+                      </span>
                     </span>
-                  </span>
-                </ha-list-item>
-            `:ye}
-            ${Object.values(at).map(e=>fe`
+                  `:W}
+            ${xt(e.color)&&e.color.length&&!Object.values(ze).includes(e.color)?B`
+                    <ha-list-item .value=${e.color} graphic="icon">
+                      ${e.color}
+                      <span slot="graphic">
+                        <span class="circle-color" style="--circle-color: ${e.color}"> </span>
+                      </span>
+                    </ha-list-item>
+                  `:W}
+            ${Object.values(ze).map(e=>B`
                 <ha-list-item .value=${e} graphic="icon">
                   ${this.hass.localize(`ui.components.color-picker.colors.${e}`)||e}
                   <span slot="graphic">
-                    <span class="circle-color" style="--circle-color: ${`var(--${e}-color)`}">
-                    </span>
+                    <span class="circle-color" style="--circle-color: ${`var(--${e}-color)`}"> </span>
                   </span>
                 </ha-list-item>
               `)}
           </ha-select>
         </div>
-      `}return fe`
+      `}return B`
       <div class="card-config">
         <div class="grid">
           <ha-entity-picker
@@ -172,40 +185,60 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
           ></ha-input>
         </div>
 
-        ${l?fe`
-              <div class="config-item">
-                <span>${Xt("editor.available_actions",this.hass.language)}</span>
-              </div>
-              <div class="config-row">
-                ${this._renderActionOptions()}
-              </div>
-            `:""}
+        ${l?B`
+                <div class="config-item">
+                  <span>${kt("editor.available_actions",this.hass.language)}</span>
+                </div>
+                <div class="config-row">${this._renderActionOptions()}</div>
+              `:""}
 
         <div class="grid">
-          <ha-formfield .label=${Xt("editor.button_scale_actions",this.hass.language)}>
+          <ha-formfield .label=${kt("editor.button_scale_actions",this.hass.language)}>
             <ha-slider
               .value=${this._config.button_scale_actions||1}
               @change=${e=>this._updateConfig("button_scale_actions",Number(e.target.value))}
               min="${1}"
-              max="${tt}"
+              max="${Ae}"
               step="0.1"
               labeled
             ></ha-slider>
           </ha-formfield>
 
-          <ha-formfield .label=${Xt("editor.button_scale_keypad",this.hass.language)}>
+          <ha-formfield .label=${kt("editor.button_scale_keypad",this.hass.language)}>
             <ha-slider
               .value=${this._config.button_scale_keypad||1}
               @change=${e=>this._updateConfig("button_scale_keypad",Number(e.target.value))}
               min="${1}"
-              max="${tt}"
+              max="${Ae}"
               step="0.1"
               labeled
               ?disabled=${!l||!d||(null===(t=this._config)||void 0===t?void 0:t.use_code_dialog)}
             ></ha-slider>
           </ha-formfield>
 
-          <ha-formfield .label=${Xt("editor.hide_keypad",this.hass.language)}>
+          <ha-formfield .label=${kt("editor.font_size",this.hass.language)}>
+            <ha-slider
+              .value=${this._config.font_size||16}
+              @change=${e=>this._updateConfig("font_size",Number(e.target.value))}
+              min="${12}"
+              max="${24}"
+              step="1"
+              labeled
+            ></ha-slider>
+          </ha-formfield>
+
+          <ha-formfield .label=${kt("editor.icon_size",this.hass.language)}>
+            <ha-slider
+              .value=${this._config.icon_size||24}
+              @change=${e=>this._updateConfig("icon_size",Number(e.target.value))}
+              min="${16}"
+              max="${40}"
+              step="1"
+              labeled
+            ></ha-slider>
+          </ha-formfield>
+
+          <ha-formfield .label=${kt("editor.hide_keypad",this.hass.language)}>
             <ha-switch
               .checked=${this._config.hide_keypad}
               @change=${e=>this._updateConfig("hide_keypad",e.target.checked)}
@@ -213,37 +246,37 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
             ></ha-switch
           ></ha-formfield>
 
-          <ha-formfield .label=${Xt("editor.keep_keypad_visible",this.hass.language)}>
+          <ha-formfield .label=${kt("editor.keep_keypad_visible",this.hass.language)}>
             <ha-switch
               .checked=${this._config.keep_keypad_visible}
               @change=${e=>this._updateConfig("keep_keypad_visible",e.target.checked)}
-              ?disabled=${!l||!d||(null===(i=this._alarmoConfig)||void 0===i?void 0:i.code_arm_required)==(null===(a=this._alarmoConfig)||void 0===a?void 0:a.code_disarm_required)||(null===(o=this._config)||void 0===o?void 0:o.use_code_dialog)||(null===(n=this._config)||void 0===n?void 0:n.hide_keypad)}
+              ?disabled=${!l||!d||(null===(i=this._alarmoConfig)||void 0===i?void 0:i.code_arm_required)==(null===(s=this._alarmoConfig)||void 0===s?void 0:s.code_disarm_required)||(null===(a=this._config)||void 0===a?void 0:a.use_code_dialog)||(null===(o=this._config)||void 0===o?void 0:o.hide_keypad)}
             ></ha-switch
           ></ha-formfield>
 
-          <ha-formfield .label=${Xt("editor.use_code_dialog",this.hass.language)}>
+          <ha-formfield .label=${kt("editor.use_code_dialog",this.hass.language)}>
             <ha-switch
               .checked=${this._config.use_code_dialog}
               @change=${e=>this._updateConfig("use_code_dialog",e.target.checked)}
-              ?disabled=${!l||!(null===(s=this._alarmoConfig)||void 0===s?void 0:s.code_arm_required)&&!(null===(r=this._alarmoConfig)||void 0===r?void 0:r.code_disarm_required)}
+              ?disabled=${!l||!(null===(r=this._alarmoConfig)||void 0===r?void 0:r.code_arm_required)&&!(null===(n=this._alarmoConfig)||void 0===n?void 0:n.code_disarm_required)}
             ></ha-switch
           ></ha-formfield>
 
-          <ha-formfield .label=${Xt("editor.show_messages",this.hass.language)}>
+          <ha-formfield .label=${kt("editor.show_messages",this.hass.language)}>
             <ha-switch
-              .checked=${this._config.show_messages||!ei(this._config.show_messages)}
+              .checked=${this._config.show_messages||!xt(this._config.show_messages)}
               @change=${e=>this._updateConfig("show_messages",e.target.checked)}
             ></ha-switch
           ></ha-formfield>
 
-          <ha-formfield .label=${Xt("editor.show_ready_indicator",this.hass.language)}>
+          <ha-formfield .label=${kt("editor.show_ready_indicator",this.hass.language)}>
             <ha-switch
               .checked=${this._config.show_ready_indicator}
               @change=${e=>this._updateConfig("show_ready_indicator",e.target.checked)}
             ></ha-switch
           ></ha-formfield>
 
-          <ha-formfield .label=${Xt("editor.show_bypassed_sensors",this.hass.language)}>
+          <ha-formfield .label=${kt("editor.show_bypassed_sensors",this.hass.language)}>
             <ha-switch
               .checked=${this._config.show_bypassed_sensors}
               @change=${e=>this._updateConfig("show_bypassed_sensors",e.target.checked)}
@@ -253,14 +286,14 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
           <ha-formfield></ha-formfield>
         </div>
       </div>
-    `}_renderActionOptions(){if(!this._config||!this.hass||!this._config.entity)return ye;const e=this.hass.states[this._config.entity],t=oi(e);let i=[Ge.Disarm,...t].map(e=>({id:e,label:this.hass.localize(`ui.card.alarm_control_panel.${e}`),hidden:["always",!0].includes(ai(Je[e],this._config).hide||!1),order:ai(Je[e],this._config).button_order}));return i.sort((e,t)=>e.hidden&&!t.hidden?1:t.hidden&&!e.hidden?-1:ei(e.order)||ei(t.order)?ei(e.order)&&!ei(t.order)?-1:!ei(e.order)&&ei(t.order)?1:e.order-t.order:0),fe`
+    `}_renderActionOptions(){if(!this._config||!this.hass||!this._config.entity)return W;const e=this.hass.states[this._config.entity],t=Ot(e);let i=[ve.Disarm,...t].map(e=>({id:e,label:this.hass.localize(`ui.card.alarm_control_panel.${e}`),hidden:["always",!0].includes(zt(ye[e],this._config).hide||!1),order:zt(ye[e],this._config).button_order}));return i.sort((e,t)=>e.hidden&&!t.hidden?1:t.hidden&&!e.hidden?-1:xt(e.order)||xt(t.order)?xt(e.order)&&!xt(t.order)?-1:!xt(e.order)&&xt(t.order)?1:e.order-t.order:0),B`
       <ha-sortable
         handle-selector=".handle"
         draggable-selector=".draggable"
-        @item-moved=${e=>this._handleActionsMoved(e,i.map(e=>Je[e.id]))}
+        @item-moved=${e=>this._handleActionsMoved(e,i.map(e=>ye[e.id]))}
       >
         <div class="sortable-list">
-        ${i.map((e,t)=>fe`
+          ${i.map((e,t)=>B`
           <div class="sortable-item ${e.hidden?"":"draggable"}"">
             <ha-svg-icon
               class="handle"
@@ -271,8 +304,8 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
             <ha-icon-button
               .path=${e.hidden?"M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19Z":"M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"}
               style="${e.hidden?"":"color: var(--primary-color)"}"
-              ?disabled=${!e.hidden&&i.filter(e=>!e.hidden).length<=2||e.id==Ge.Disarm}
-              @click=${a=>{if(this._updateStateConfig(Je[e.id],e.hidden?{hide:void 0}:{hide:"always"}),e.hidden){let e=new CustomEvent("",{detail:{oldIdx:t,nexIdx:i.filter(e=>!e.hidden).length}});this._handleActionsMoved(e,i.map(e=>Je[e.id]))}a.target.blur()}}
+              ?disabled=${!e.hidden&&i.filter(e=>!e.hidden).length<=2||e.id==ve.Disarm}
+              @click=${s=>{if(this._updateStateConfig(ye[e.id],e.hidden?{hide:void 0}:{hide:"always"}),e.hidden){let e=new CustomEvent("",{detail:{oldIdx:t,nexIdx:i.filter(e=>!e.hidden).length}});this._handleActionsMoved(e,i.map(e=>ye[e.id]))}s.target.blur()}}
             >
             </ha-icon-button>
             <span>${e.label}</span>
@@ -287,7 +320,7 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
         `)}
         </div>
       </ha-sortable>
-    `}_handleActionsMoved(e,t){const i=e.detail.oldIndex,a=e.detail.newIndex;let o=t[i];t=t.filter((e,t)=>t!=i),t.splice(a,0,o);let n=Object.assign({},this._config.states);t.forEach((e,t)=>{n=Object.assign(Object.assign({},n),{[e]:Object.assign(Object.assign({},n[e]||{}),{button_order:t+1})})}),this._updateConfig("states",n)}_updateConfig(e,t){if(this.hass){if(this._config=Object.assign(Object.assign({},this._config),{[e]:t}),"entity"==e){const e=this._config.entity?this.hass.states[this._config.entity]:void 0;e&&e.attributes.code_arm_required!=e.attributes.code_disarm_required||(this._config=Object.assign(Object.assign({},this._config),{keep_keypad_visible:!1}))}ci(this,"config-changed",{config:this._config})}}_updateStateConfig(e,t){var i;const a=e=>function(e,t){return e?Object.entries(e).filter(([e])=>t.includes(e)).reduce((e,[t,i])=>Object.assign(e,{[t]:i}),{}):{}}(e,Object.keys(e).filter(t=>ei(e[t]||"string"==typeof e[t])));let o=(null===(i=this._config)||void 0===i?void 0:i.states)||{};const n=a(Object.assign(Object.assign({},o[e]),t));o=a(Object.assign(Object.assign({},o),{[e]:n})),this._updateConfig("states",o)}_editActionClick(e){this._editAction=e}_goBack(){this._editAction=null}static get styles(){return L`
+    `}_handleActionsMoved(e,t){const i=e.detail.oldIndex,s=e.detail.newIndex;let a=t[i];t=t.filter((e,t)=>t!=i),t.splice(s,0,a);let o=Object.assign({},this._config.states);t.forEach((e,t)=>{o=Object.assign(Object.assign({},o),{[e]:Object.assign(Object.assign({},o[e]||{}),{button_order:t+1})})}),this._updateConfig("states",o)}_updateConfig(e,t){if(this.hass){if(this._config=Object.assign(Object.assign({},this._config),{[e]:t}),"entity"==e){const e=this._config.entity?this.hass.states[this._config.entity]:void 0;e&&e.attributes.code_arm_required!=e.attributes.code_disarm_required||(this._config=Object.assign(Object.assign({},this._config),{keep_keypad_visible:!1}))}Pt(this,"config-changed",{config:this._config})}}_updateStateConfig(e,t){var i;const s=e=>function(e,t){return e?Object.entries(e).filter(([e])=>t.includes(e)).reduce((e,[t,i])=>Object.assign(e,{[t]:i}),{}):{}}(e,Object.keys(e).filter(t=>xt(e[t]||"string"==typeof e[t])));let a=(null===(i=this._config)||void 0===i?void 0:i.states)||{};const o=s(Object.assign(Object.assign({},a[e]),t));a=s(Object.assign(Object.assign({},a),{[e]:o})),this._updateConfig("states",a)}_editActionClick(e){this._editAction=e}_goBack(){this._editAction=null}static get styles(){return n`
       div.config-row {
         font-size: 16px;
         display: flex;
@@ -347,66 +380,29 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
         height: 20px;
         box-sizing: border-box;
       }
-    `}};t([qe({attribute:!1})],hi.prototype,"hass",void 0),t([Ve()],hi.prototype,"_config",void 0),t([Ve()],hi.prototype,"_alarmoConfig",void 0),t([Ve()],hi.prototype,"_entities",void 0),t([Ve()],hi.prototype,"_editAction",void 0),hi=t([Ue("alarmo-card-editor")],hi);var ui,pi,_i=Object.freeze({__proto__:null,get AlarmoCardEditor(){return hi}});class gi extends He{constructor(){super(...arguments),this.duration=0,this.datetime=null,this.timer=0,this._touchStarted=!1,this._hover=!1}shouldUpdate(e){if(!e.size)return!0;const t=e.get("hass");if(!t||t.themes!==this.hass.themes||t.language!==this.hass.language)return!0;if(t.states[this.entity].state!==this.hass.states[this.entity].state||t.states[this.entity].attributes.delay!==this.hass.states[this.entity].attributes.delay){const e=t.states[this.entity].state,i=this.hass.states[this.entity].state;return Xe.includes(i)?this.startTimer():Xe.includes(e)&&this.stopTimer(),!0}return!1}firstUpdated(){const e=this.hass.states[this.entity].state;Xe.includes(e)&&this.startTimer(),this.addEventListener("click",this.handleClick),this.addEventListener("touchstart",()=>{this._touchStarted=!0}),this.addEventListener("touchend",()=>{setTimeout(()=>{this._touchStarted=!1},10)}),this.addEventListener("mouseenter",()=>{this._touchStarted||(this._hover=!0)}),this.addEventListener("mouseleave",()=>{this._hover=!1})}async startTimer(){var e,t;clearInterval(this.timer),(e=this.hass,t=this.entity,e.callWS({type:"alarmo/countdown",entity_id:t})).then(e=>{this.duration=e.delay,this.datetime=new Date((new Date).getTime()+1e3*e.remaining)}).catch(e=>{}),this.timer=window.setInterval(()=>{this.requestUpdate()},1e3)}stopTimer(){clearInterval(this.timer),this.datetime=null,this.duration=0}getRemaining(){if(!this.datetime)return 0;const e=(this.datetime.getTime()-(new Date).getTime())/1e3;return e<0?(clearInterval(this.timer),0):e}getFraction(){return this.duration?(Math.round(this.getRemaining())-1)/this.duration:1}_stateValue(e){return this._hover&&Xe.includes(e)&&this.timer?fe` <ha-icon icon="mdi:skip-forward"></ha-icon> `:this.datetime&&this.duration?fe` ${Math.max(Math.round(this.getRemaining()),0)} `:fe` <ha-icon .icon=${We[e]}></ha-icon> `}handleClick(){const e=this.hass.states[this.entity].state;Xe.includes(e)&&this.timer?this.hass.callService("alarmo","skip_delay",{entity_id:this.entity}):ci(this,"hass-more-info",{entityId:this.entity})}render(){let e=45,t=2*Math.PI*e;const i=this.hass.states[this.entity],a=this.datetime&&this.duration;return fe`
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <g class="track ${i.state.split("_").shift()} ${a?"timer":""}">
-          <circle cx="${50}" cy="${50}" r="${e}"></circle>
-          <path
-            stroke-dasharray="${(this.getFraction()*t).toFixed(2)} ${t.toFixed(2)}"
-            class="remaining"
-            d="
-              M ${50}, ${50}
-              m -${e}, 0
-              a ${e},${e} 0 1,0 90,0
-              a ${e},${e} 0 1,0 -90,0
-            "
-          ></path>
-        </g>
-      </svg>
-      <div class="overlay ${i.state.split("_").shift()} ${a?"timer":""}">
-        <div class="value">${this._stateValue(i.state)}</div>
+    `}};t([ue({attribute:!1})],Nt.prototype,"hass",void 0),t([_e()],Nt.prototype,"_config",void 0),t([_e()],Nt.prototype,"_alarmoConfig",void 0),t([_e()],Nt.prototype,"_entities",void 0),t([_e()],Nt.prototype,"_editAction",void 0),Nt=t([ce("alarmo-card-editor")],Nt);var Dt,Ht,Ut=Object.freeze({__proto__:null,get AlarmoCardEditor(){return Nt}});class Lt extends le{constructor(){super(...arguments),this._delayActive=!1,this._touchStarted=!1,this._hover=!1}shouldUpdate(e){if(!e.size)return!0;const t=e.get("hass");if(!t||t.themes!==this.hass.themes||t.language!==this.hass.language)return!0;if(t.states[this.entity].state!==this.hass.states[this.entity].state||t.states[this.entity].attributes.delay!==this.hass.states[this.entity].attributes.delay){const e=t.states[this.entity].state,i=this.hass.states[this.entity].state;return ke.includes(i)?this.startTimer():ke.includes(e)&&this.stopTimer(),!0}return!1}firstUpdated(){const e=this.hass.states[this.entity].state;ke.includes(e)&&this.startTimer(),this.addEventListener("click",this.handleClick),this.addEventListener("touchstart",()=>{this._touchStarted=!0}),this.addEventListener("touchend",()=>{setTimeout(()=>{this._touchStarted=!1},10)}),this.addEventListener("mouseenter",()=>{this._touchStarted||(this._hover=!0)}),this.addEventListener("mouseleave",()=>{this._hover=!1})}startTimer(){this._delayActive=!0}stopTimer(){this._delayActive=!1}_stateValue(e){return this._hover&&ke.includes(e)&&this._delayActive?B` <ha-icon icon="mdi:skip-forward"></ha-icon> `:B` <ha-icon .icon=${be[e]}></ha-icon> `}handleClick(){const e=this.hass.states[this.entity].state;ke.includes(e)&&this._delayActive?this.hass.callService("alarmo","skip_delay",{entity_id:this.entity}):Pt(this,"hass-more-info",{entityId:this.entity})}render(){const e=this.hass.states[this.entity];return B`
+      <div class="overlay ${e.state.split("_").shift()}">
+        <div class="value">${this._stateValue(e.state)}</div>
       </div>
-    `}static get styles(){return L`
+    `}static get styles(){return n`
       :host {
-        width: 60px;
-        height: 60px;
+        width: calc(var(--alarmo-card-icon-size, 24px) * 2.5);
+        height: calc(var(--alarmo-card-icon-size, 24px) * 2.5);
         cursor: pointer;
-      }
-      svg {
-        width: 100%;
-        height: 100%;
-        display: block;
-        transform: rotateZ(90deg) scale(1, -1);
-      }
-      .track {
-        stroke-width: 4px;
-        stroke-linecap: round;
-        stroke: var(--disabled-text-color);
-        fill: none;
-      }
-      .track .remaining {
-        transition: 0.3s linear stroke;
-        stroke: var(--alarm-state-color);
-      }
-      .track.arming .remaining,
-      .track.pending .remaining {
-        transition: 1s linear stroke-dasharray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .overlay {
-        position: absolute;
-        margin-top: -60px;
-        margin-left: 0;
-        width: 60px;
-        height: 60px;
-        font-size: 1.5em;
-        white-space: nowrap;
+        width: 100%;
+        height: 100%;
+        display: flex;
       }
       .value {
         overflow: hidden;
         text-overflow: ellipsis;
         text-align: center;
         color: var(--alarm-state-color);
-        transition: 0.3s linear color;
         display: flex;
         flex: 1;
         height: 100%;
@@ -415,7 +411,7 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
         font-weight: 500;
       }
       .value ha-icon {
-        --mdc-icon-size: 1.2em;
+        --mdc-icon-size: calc(var(--alarmo-card-icon-size, 24px) * 1.25);
       }
       .disarmed,
       .armed {
@@ -425,10 +421,6 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
       .arming,
       .pending {
         animation: pulse 1s infinite;
-      }
-      .arming.timer,
-      .pending.timer {
-        animation: none;
       }
       @keyframes pulse {
         0% {
@@ -441,22 +433,19 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
           opacity: 1;
         }
       }
-    `}}t([qe()],gi.prototype,"hass",void 0),t([qe()],gi.prototype,"entity",void 0),t([Ve()],gi.prototype,"_hover",void 0),customElements.define("alarmo-state-badge",gi),function(e){e.language="language",e.system="system",e.comma_decimal="comma_decimal",e.decimal_comma="decimal_comma",e.space_comma="space_comma",e.none="none"}(ui||(ui={})),function(e){e.language="language",e.system="system",e.am_pm="12",e.twenty_four="24"}(pi||(pi={}));class mi extends He{shouldUpdate(e){const t=e.get("hass");return!t||!(!this.entity||t.states[this.entity]===this.hass.states[this.entity])}render(){if(!this.hass||!this.entity)return fe``;const e=this.entity in this.hass.states;let t=Object.assign({},this.hass.states[this.entity]);void 0!==this.state&&(t=Object.assign(Object.assign({},t),{state:this.state}));const i=e?ni(t,this.hass.localize):this.hass.localize("state.default.unavailable",this.hass.locale||{language:this.hass.language,number_format:ui.language}),a=e?t.attributes.friendly_name||(o=t.entity_id).substring(o.indexOf(".")+1):this.entity;var o;let n=!!this.state||"on"==t.state;return fe`
-      <div class="badge-container" @click=${()=>ci(this,"hass-more-info",{entityId:this.entity})}>
-        <div class="label-badge ${n?"active":""}" id="badge">
+    `}}t([ue()],Lt.prototype,"hass",void 0),t([ue()],Lt.prototype,"entity",void 0),t([_e()],Lt.prototype,"_hover",void 0),customElements.define("alarmo-state-badge",Lt),function(e){e.language="language",e.system="system",e.comma_decimal="comma_decimal",e.decimal_comma="decimal_comma",e.space_comma="space_comma",e.none="none"}(Dt||(Dt={})),function(e){e.language="language",e.system="system",e.am_pm="12",e.twenty_four="24"}(Ht||(Ht={}));class Rt extends le{shouldUpdate(e){const t=e.get("hass");return!t||!(!this.entity||t.states[this.entity]===this.hass.states[this.entity])}render(){if(!this.hass||!this.entity)return B``;const e=this.entity in this.hass.states;let t=Object.assign({},this.hass.states[this.entity]);void 0!==this.state&&(t=Object.assign(Object.assign({},t),{state:this.state}));const i=e?St(t,this.hass.localize):this.hass.localize("state.default.unavailable",this.hass.locale||{language:this.hass.language,number_format:Dt.language}),s=e?t.attributes.friendly_name||(a=t.entity_id).substring(a.indexOf(".")+1):this.entity;var a;let o=!!this.state||"on"==t.state;return B`
+      <div class="badge-container" @click=${()=>Pt(this,"hass-more-info",{entityId:this.entity})}>
+        <div class="label-badge ${o?"active":""}" id="badge">
           <div class="value">
-            <ha-state-icon
-              .hass=${this.hass}
-              .stateObj=${t}
-            ></ha-state-icon>
+            <ha-state-icon .hass=${this.hass} .stateObj=${t}></ha-state-icon>
             <div class="label">
               <span>${i}</span>
             </div>
           </div>
         </div>
-        <div class="title">${a}</div>
+        <div class="title">${s}</div>
       </div>
-    `}static get styles(){return L`
+    `}static get styles(){return n`
       .badge-container {
         display: inline-block;
         text-align: center;
@@ -524,11 +513,11 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
         text-overflow: ellipsis;
         line-height: normal;
       }
-    `}}t([qe()],mi.prototype,"hass",void 0),t([qe()],mi.prototype,"entity",void 0),t([qe()],mi.prototype,"state",void 0),customElements.define("alarmo-sensor-badge",mi);class vi extends He{constructor(){super(...arguments),this.disabled=!1,this.scaled=!1}render(){return fe`
+    `}}t([ue()],Rt.prototype,"hass",void 0),t([ue()],Rt.prototype,"entity",void 0),t([ue()],Rt.prototype,"state",void 0),customElements.define("alarmo-sensor-badge",Rt);class qt extends le{constructor(){super(...arguments),this.disabled=!1,this.scaled=!1}render(){return B`
       <button ?disabled=${this.disabled}>
         <slot></slot>
       </button>
-    `}handleFocus(e){e.target.blur()}static get styles(){return L`
+    `}handleFocus(e){e.target.blur()}static get styles(){return n`
       button {
         position: relative;
         width: 100%;
@@ -595,21 +584,24 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
       ::slotted span {
         display: flex;
       }
-    `}}t([qe({type:Boolean})],vi.prototype,"disabled",void 0),t([qe({type:Boolean})],vi.prototype,"scaled",void 0),customElements.define("alarmo-button",vi);const fi=e=>{class i extends e{connectedCallback(){super.connectedCallback(),this.__checkSubscribed()}disconnectedCallback(){if(super.disconnectedCallback(),this.__unsubs){for(;this.__unsubs.length;){const e=this.__unsubs.pop();e instanceof Promise?e.then(e=>e()):e()}this.__unsubs=void 0}}updated(e){super.updated(e),e.has("hass")&&this.__checkSubscribed()}hassSubscribe(){return[]}__checkSubscribed(){void 0===this.__unsubs&&this.isConnected&&void 0!==this.hass&&(this.__unsubs=this.hassSubscribe())}}return t([qe({attribute:!1})],i.prototype,"hass",void 0),i},bi=["1","2","3","4","5","6","7","8","9","0","clear","submit"];let yi=class extends(fi(He)){constructor(){super(...arguments),this._input="",this._showClearButton=!1,this._narrow=!1,this._codeClearTimer=0}hassSubscribe(){return[this.hass.connection.subscribeMessage(e=>this._fetchData(e),{type:Qe})]}async _fetchData(e){var t;if(e.data.area_id===(null===(t=this._params)||void 0===t?void 0:t.area_id))switch(e.data.event){case Ye.Disarm:case Ye.Arm:case Ye.Trigger:this._confirm(e.data.event);break;case Ye.InvalidCodeProvided:case Ye.NoCodeProvided:this._showCodeError();break;case Ye.FailedToArm:case Ye.CommandNotAllowed:this._confirm(e.data.event);case Ye.TriggerTimeExpired:case Ye.ReadyToArmModesChanged:}}shouldUpdate(e){const t=e.get("hass");return!(!e.has("_params")&&this._params)||(!!e.has("_input")||(!t||t.states[this._params.entity_id]!==this.hass.states[this._params.entity_id]&&(t.states[this._params.entity_id],this.hass.states[this._params.entity_id],!0)))}firstUpdated(e){super.firstUpdated(e),this.addEventListener("keypress",e=>{"Enter"===e.key&&this._input.length&&this._submit()})}async showDialog(e){this._params=e,this._input="",this._narrow=matchMedia("all and (max-width: 450px), all and (max-height: 500px)").matches,await this.updateComplete}closeDialog(){return this._params=void 0,this._showClearButton=!1,!0}_showCodeError(){var e;const t=null===(e=this.shadowRoot)||void 0===e?void 0:e.querySelector("#code");t&&(t.classList.remove("error"),t.classList.add("error"),t.hint=Xt("errors.invalid_pin",this.hass.language))}_clearCodeError(){var e;const t=null===(e=this.shadowRoot)||void 0===e?void 0:e.querySelector("#code");t&&t.classList.contains("error")&&(t.classList.remove("error"),t.hint="",this._input="",this._cancelCodeClearTimer())}_clearCode(){this._input="",this._clearCodeError(),this._cancelCodeClearTimer()}_setCodeClearTimer(){this._cancelCodeClearTimer(),this._input.length&&(this._codeClearTimer=window.setTimeout(()=>{this._clearCode()},12e4))}_cancelCodeClearTimer(){this._codeClearTimer&&clearTimeout(this._codeClearTimer)}_submit(){var e;const t=null!==(e=this._input)&&void 0!==e?e:"";this._clearCodeError(),this._params.action==Ge.Disarm?this.hass.callService("alarmo","disarm",{entity_id:this._params.entity_id,code:t}):this.hass.callService("alarmo","arm",Object.assign(Object.assign({},this._params.armOptions),{entity_id:this._params.entity_id,mode:Je[this._params.action],code:t}))}_confirm(e){var t,i;null===(i=null===(t=this._params)||void 0===t?void 0:t.confirm)||void 0===i||i.call(t,e),this.closeDialog()}_cancel(){var e,t;null===(t=null===(e=this._params)||void 0===e?void 0:e.cancel)||void 0===t||t.call(e),this.closeDialog()}_numberClick(e){const t=e.currentTarget.value;this._clearCodeError(),this._setCodeClearTimer(),this._input=this._input+t,this._showClearButton=!0}_clear(){this._input="",this._showClearButton=!1}render(){if(!this._params||!this.hass)return ye;return"text"===this._params.code_format?fe`
+    `}}t([ue({type:Boolean})],qt.prototype,"disabled",void 0),t([ue({type:Boolean})],qt.prototype,"scaled",void 0),customElements.define("alarmo-button",qt);const It=e=>{class i extends e{connectedCallback(){super.connectedCallback(),this.__checkSubscribed()}disconnectedCallback(){if(super.disconnectedCallback(),this.__unsubs){for(;this.__unsubs.length;){const e=this.__unsubs.pop();e instanceof Promise?e.then(e=>e()):e()}this.__unsubs=void 0}}updated(e){super.updated(e),e.has("hass")&&this.__checkSubscribed()}hassSubscribe(){return[]}__checkSubscribed(){void 0===this.__unsubs&&this.isConnected&&void 0!==this.hass&&(this.__unsubs=this.hassSubscribe())}}return t([ue({attribute:!1})],i.prototype,"hass",void 0),i};let Vt=class extends(It(le)){constructor(){super(...arguments),this._input="",this._codeClearTimer=0}hassSubscribe(){return[this.hass.connection.subscribeMessage(e=>this._fetchData(e),{type:we})]}async _fetchData(e){var t;if(e.data.area_id===(null===(t=this._params)||void 0===t?void 0:t.area_id))switch(e.data.event){case $e.Disarm:case $e.Arm:case $e.Trigger:this._confirm(e.data.event);break;case $e.InvalidCodeProvided:case $e.NoCodeProvided:this._showCodeError();break;case $e.FailedToArm:case $e.CommandNotAllowed:this._confirm(e.data.event);case $e.TriggerTimeExpired:case $e.ReadyToArmModesChanged:}}shouldUpdate(e){const t=e.get("hass");return!(!e.has("_params")&&this._params)||(!!e.has("_input")||(!t||t.states[this._params.entity_id]!==this.hass.states[this._params.entity_id]&&(t.states[this._params.entity_id],this.hass.states[this._params.entity_id],!0)))}firstUpdated(e){super.firstUpdated(e),this.addEventListener("keydown",e=>{"Enter"===e.key&&this._input.length&&(e.preventDefault(),this._submit())})}async showDialog(e){this._params=e,this._input="",await this.updateComplete}closeDialog(){return this._params=void 0,!0}_showCodeError(){var e;const t=null===(e=this.shadowRoot)||void 0===e?void 0:e.querySelector("#code");t&&(t.classList.remove("error"),t.classList.add("error"),t.hint=kt("errors.invalid_pin",this.hass.language))}_clearCodeError(){var e;const t=null===(e=this.shadowRoot)||void 0===e?void 0:e.querySelector("#code");t&&t.classList.contains("error")&&(t.classList.remove("error"),t.hint="",this._input="",this._cancelCodeClearTimer())}_clearCode(){this._input="",this._clearCodeError(),this._cancelCodeClearTimer()}_setCodeClearTimer(){this._cancelCodeClearTimer(),this._input.length&&(this._codeClearTimer=window.setTimeout(()=>{this._clearCode()},12e4))}_cancelCodeClearTimer(){this._codeClearTimer&&clearTimeout(this._codeClearTimer)}_submit(){var e;const t=null!==(e=this._input)&&void 0!==e?e:"";this._clearCodeError(),this._params.action==ve.Disarm?this.hass.callService("alarmo","disarm",{entity_id:this._params.entity_id,code:t}):this.hass.callService("alarmo","arm",Object.assign(Object.assign({},this._params.armOptions),{entity_id:this._params.entity_id,mode:ye[this._params.action],code:t}))}_confirm(e){var t,i;null===(i=null===(t=this._params)||void 0===t?void 0:t.confirm)||void 0===i||i.call(t,e),this.closeDialog()}_cancel(){var e,t;null===(t=null===(e=this._params)||void 0===e?void 0:e.cancel)||void 0===t||t.call(e),this.closeDialog()}render(){if(!this._params||!this.hass)return W;return"text"===this._params.code_format?B`
         <ha-dialog
           open
+          type="alert"
           @closed=${this._cancel}
           header-title="${this.hass.localize("ui.dialogs.enter_code.title")}"
           width="small"
+          class="code-dialog"
         >
           <ha-input
             class="input"
-            ?dialogInitialFocus=${!this._narrow}
+            autofocus
             .value=${this._input}
             id="code"
             .label=${this.hass.localize("ui.dialogs.enter_code.input_label")}
             type="password"
             inputmode="text"
+            enterkeyhint="done"
             @input=${e=>{this._clearCodeError(),this._input=e.target.value,this._setCodeClearTimer()}}
             @focus=${this._clearCodeError}
           ></ha-input>
@@ -622,67 +614,57 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
             </ha-button>
           </ha-dialog-footer>
         </ha-dialog>
-      `:fe`
+      `:B`
       <ha-dialog
         open
+        type="alert"
         header-title="${this.hass.localize("ui.dialogs.enter_code.title")}"
         @closed=${this._cancel}
         width="small"
+        class="code-dialog"
       >
         <div class="container">
           <ha-input
             class="input"
-            ?dialogInitialFocus=${!this._narrow}
+            autofocus
             .value=${this._input}
             id="code"
             .label=${this.hass.localize("ui.dialogs.enter_code.input_label")}
             type="password"
             inputmode="numeric"
+            enterkeyhint="done"
             @input=${e=>{this._clearCodeError(),this._input=e.target.value,this._setCodeClearTimer()}}
             @focus=${this._clearCodeError}
           ></ha-input>
-          <div class="keypad">
-            ${bi.map(e=>""===e?fe`<span></span>`:"clear"===e?fe`
-                      <ha-control-button
-                        @click=${this._clear}
-                        class="clear"
-                        .disabled=${!this._showClearButton}
-                        .label=${this.hass.localize("ui.common.clear")}
-                      >
-                        <ha-svg-icon path=${"M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"}></ha-svg-icon>
-                      </ha-control-button>
-                    `:"submit"===e?fe`
-                        <ha-control-button
-                          @click=${this._submit}
-                          class="submit"
-                          .label=${this.hass.localize("ui.common.submit")}
-                        >
-                          <ha-svg-icon path=${"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"}></ha-svg-icon>
-                        </ha-control-button>
-                      `:fe`
-                        <ha-control-button
-                          .value=${e}
-                          @click=${this._numberClick}
-                          .label=${e}
-                        >
-                          ${e}
-                        </ha-control-button>
-                      `)}
-          </div>
         </div>
+        <ha-dialog-footer>
+          <ha-button slot="secondaryAction" data-dialog="close" appearance="plain">
+            ${this.hass.localize("ui.common.cancel")}
+          </ha-button>
+          <ha-button @click=${this._submit} slot="primaryAction"> ${this.hass.localize("ui.common.submit")} </ha-button>
+        </ha-dialog-footer>
       </ha-dialog>
-    `}};yi.styles=L`
+    `}};Vt.styles=n`
     ha-dialog {
       /* Place above other dialogs */
       --dialog-z-index: 104;
     }
+    ha-dialog.code-dialog {
+      --ha-dialog-border-radius: 24px;
+      --ha-dialog-scrim-backdrop-filter: blur(4px);
+      --dialog-backdrop-filter: blur(4px);
+      --vertical-align-dialog: center;
+      --dialog-container-padding: 16px;
+      --ha-dialog-max-height: calc(100svh - 32px);
+    }
     ha-input {
       width: 100%;
-      max-width: 240px;
-      margin: 0px auto;
+      max-width: 320px;
+      margin: 16px auto;
       text-align: center;
-      margin-left: calc(50% - 240px / 2);
-      margin-bottom: 18.5px;
+      --ha-input-border-radius: 16px;
+      --mdc-shape-small: 16px;
+      --mdc-text-field-outlined-border-radius: 16px;
     }
     ha-input.error {
       animation: shake 0.2s ease-in-out 0s 2;
@@ -697,16 +679,16 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
     }
     @keyframes shake {
       0% {
-        margin-left: calc(50% - 240px / 2);
+        transform: translateX(0);
       }
       25% {
-        margin-left: calc(50% - 240px / 2 + 10px);
+        transform: translateX(10px);
       }
       75% {
-        margin-left: calc(50% - 240px / 2 - 10px);
+        transform: translateX(-10px);
       }
       100% {
-        margin-left: calc(50% - 240px / 2);
+        transform: translateX(0);
       }
     }
     .container {
@@ -714,72 +696,31 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
       align-items: center;
       flex-direction: column;
     }
-    .keypad {
-      --keypad-columns: 3;
-      margin-top: 12px;
-      padding: 12px;
-      display: grid;
-      grid-template-columns: repeat(var(--keypad-columns), auto);
-      grid-auto-rows: auto;
-      grid-gap: 24px;
-      justify-items: center;
-      align-items: center;
-    }
-    .clear {
-      grid-row-start: 4;
-      grid-column-start: 0;
-    }
-    @media all and (max-height: 450px) {
-      .keypad {
-        --keypad-columns: 6;
-      }
-      .clear {
-        grid-row-start: 1;
-        grid-column-start: 6;
-      }
-    }
-
-    ha-control-button {
-      width: 56px;
-      height: 56px;
-      --control-button-border-radius: 28px;
-      --mdc-icon-size: 24px;
-      font-size: 24px;
-    }
-    .submit {
-      --control-button-background-color: var(--green-color);
-      --control-button-icon-color: var(--green-color);
-    }
-    .clear {
-      --control-button-background-color: var(--red-color);
-      --control-button-icon-color: var(--red-color);
-    }
     .hidden {
       display: none;
     }
     .buttons {
       margin-top: 12px;
     }
-  `,t([qe({attribute:!1})],yi.prototype,"hass",void 0),t([Ve()],yi.prototype,"_params",void 0),t([Ve()],yi.prototype,"_input",void 0),t([Ve()],yi.prototype,"_showClearButton",void 0),t([Ve()],yi.prototype,"_narrow",void 0),yi=t([Ue("alarmo-code-dialog")],yi);var ki=Object.freeze({__proto__:null,get AlarmoCodeDialog(){return yi}});let wi=class extends He{render(){if(!this.hass||!this.config)return ye;const e=this.hass.states[this.config.entity];let t=e.state;const i=Object.values(Ge).map(e=>Je[e]);if(!i.includes(t)){const i=e.attributes.arm_mode;i&&(t=i)}return fe`
-      <div class="container">
-        ${this._renderOptions(t)}
-      </div>
-    `}_renderOptions(e){const t=this.hass.states[this.config.entity],i=[Ge.Disarm,...oi(t)].filter(e=>{const i=ai(Je[e],this.config).hide;if("boolean"==typeof i||!ei(i))return!i;switch(i){case"always":return!1;case"never":return!0;case"armed":return"disarmed"==t.state;case"disarmed":return"disarmed"!==t.state}}),a=i.map(e=>ai(Je[e],this.config)).some(e=>!ei(e.button_label)||e.button_label.length);return i.sort((e,t)=>{const i=ai(Je[e],this.config).button_order,a=ai(Je[t],this.config).button_order;return ei(i)||ei(a)?ei(i)&&!ei(a)?-1:!ei(i)&&ei(a)?1:i-a:0}),i.map(i=>{const o=ei(this.readyForArmModes)&&!this.readyForArmModes.includes(Je[i])&&i!=Ge.Disarm,n=ai(Je[i],this.config);return fe`
-        <div class="button ${Je[i]==e?"selected":""}" @click=${e=>this._handleClick(e,i)}>
-          <div class="content ${a?"has-text":""}">
-            <ha-icon icon="${ti(n.button_icon)?Ke[i]:n.button_icon}"></ha-icon>
-            ${Je[i]!=e&&ei(this.readyForArmModes)?fe`
-              <ha-icon
-                icon="${"mdi:circle-medium"}"
-                class="badge ${o?"error":"success"}"
-              ></ha-icon>
-            `:ye}
+  `,t([ue({attribute:!1})],Vt.prototype,"hass",void 0),t([_e()],Vt.prototype,"_params",void 0),t([_e()],Vt.prototype,"_input",void 0),Vt=t([ce("alarmo-code-dialog")],Vt);var Bt=Object.freeze({__proto__:null,get AlarmoCodeDialog(){return Vt}});let Ft=class extends le{render(){if(!this.hass||!this.config)return W;const e=this.hass.states[this.config.entity];let t=e.state;const i=Object.values(ve).map(e=>ye[e]);if(!i.includes(t)){const i=e.attributes.arm_mode;i&&(t=i)}return B` <div class="container">${this._renderOptions(t)}</div> `}_renderOptions(e){const t=this.hass.states[this.config.entity],i=[ve.Disarm,...Ot(t)].filter(e=>{const i=zt(ye[e],this.config).hide;if("boolean"==typeof i||!xt(i))return!i;switch(i){case"always":return!1;case"never":return!0;case"armed":return"disarmed"==t.state;case"disarmed":return"disarmed"!==t.state}}),s=i.map(e=>zt(ye[e],this.config)).some(e=>!xt(e.button_label)||e.button_label.length);return i.sort((e,t)=>{const i=zt(ye[e],this.config).button_order,s=zt(ye[t],this.config).button_order;return xt(i)||xt(s)?xt(i)&&!xt(s)?-1:!xt(i)&&xt(s)?1:i-s:0}),i.map(i=>{const a=xt(this.readyForArmModes)&&!this.readyForArmModes.includes(ye[i])&&i!=ve.Disarm,o=zt(ye[i],this.config);return B`
+        <div
+          class="button ${ye[i]==e?"selected":""}"
+          @click=${e=>this._handleClick(e,i)}
+        >
+          <div class="content ${s?"has-text":""}">
+            <ha-icon icon="${At(o.button_icon)?fe[i]:o.button_icon}"></ha-icon>
+            ${ye[i]!=e&&xt(this.readyForArmModes)?B`
+                    <ha-icon
+                      icon="${"mdi:circle-medium"}"
+                      class="badge ${a?"error":"success"}"
+                    ></ha-icon>
+                  `:W}
             <span>
-              ${ei(n.button_label)?n.button_label:i==Ge.Disarm&&t.state!==Ze.Disarmed?this.hass.localize(`ui.card.alarm_control_panel.${i}`):this.hass.localize(`ui.card.alarm_control_panel.modes.${Je[i]}`)}
+              ${xt(o.button_label)?o.button_label:i==ve.Disarm&&t.state!==me.Disarmed?this.hass.localize(`ui.card.alarm_control_panel.${i}`):this.hass.localize(`ui.card.alarm_control_panel.modes.${ye[i]}`)}
             </span>
           </div>
         </div>
-      `})}_handleClick(e,t){ci(this,"button-clicked",{ev:e,action:t})}static get styles(){return L`
+      `})}_handleClick(e,t){Pt(this,"button-clicked",{ev:e,action:t})}static get styles(){return n`
       :host {
         width: 100%;
         display: inline-block;
@@ -797,7 +738,7 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
         --selected-color: var(--alarm-state-color);
       }
       div.container::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -827,7 +768,7 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
         border-radius: calc(var(--content-scale, 1) * 6px);
         height: calc(var(--content-scale, 1) * 26px);
         color: var(--primary-text-color);
-        --mdc-icon-size: calc(var(--content-scale, 1) * 22px);
+        --mdc-icon-size: calc(var(--content-scale, 1) * var(--alarmo-card-icon-size, 22px));
         align-items: center;
         justify-content: center;
         cursor: pointer;
@@ -836,14 +777,13 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
         overvlow: hidden;
         flex: 1;
         gap: 4px;
-        transition:
-          color ease-in-out 180ms;
+        transition: color ease-in-out 180ms;
       }
       div.content.has-text {
         height: calc(var(--content-scale, 1) * 40px);
       }
       div.content::before {
-        content: "";
+        content: '';
         position: absolute;
         z-index: -1;
         top: 0;
@@ -880,9 +820,10 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
         hyphens: auto;
         word-break: break-word;
         font-weight: 400;
-        font-size: calc(var(--content-scale, 1) * 1rem);
+        font-size: calc(var(--content-scale, 1) * var(--alarmo-card-font-size, 1rem));
       }
-      div.button.selected div.content ha-icon, div.button.selected div.content {
+      div.button.selected div.content ha-icon,
+      div.button.selected div.content {
         color: white;
       }
       @media (max-width: 280px) {
@@ -901,114 +842,109 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
       div.content ha-icon.error {
         color: var(--red-color);
       }
-    `}};t([qe({attribute:!1})],wi.prototype,"hass",void 0),t([qe({attribute:!1})],wi.prototype,"config",void 0),t([qe({attribute:!1})],wi.prototype,"readyForArmModes",void 0),wi=t([Ue("alarmo-actions-bar")],wi);const $i=["1","2","3","4","5","6","7","8","9","","0","clear"];return e.AlarmoCard=class extends(fi(He)){constructor(){super(...arguments),this._input="",this.warning="",this.area_id=void 0,this.armOptions=Object.assign({},it),this.readyForArmModes=null,this.backendConnection=null,this.showBypassedSensors=!1,this.subscribedEntities=[],this._codeClearTimer=0}static async getConfigElement(){return await Promise.resolve().then(function(){return _i}),document.createElement("alarmo-card-editor")}static async getStubConfig(e){let t=Object.keys(e.states).find(e=>"alarm_control_panel"==ii(e));return await li(e).then(e=>{const i=e.sort((e,t)=>Number(e.area_id)-Number(t.area_id));i.length&&(t=i[0].entity_id)}),{type:"custom:alarmo-card",entity:t}}async getCardSize(){var e;if(!this._config||!this.hass)return 9;const t=this.hass.states[this._config.entity];return t&&(null===(e=this._alarmoConfig)||void 0===e?void 0:e.code_format)===Fe?!si(t)&&!this._config.keep_keypad_visible||this._config.use_code_dialog?4:9:4}setConfig(e){!(null==e?void 0:e.button_scale_actions)&&(null==e?void 0:e.button_scale)&&(e=Object.assign(Object.assign({},e),{button_scale_actions:null==e?void 0:e.button_scale})),!(null==e?void 0:e.button_scale_keypad)&&(null==e?void 0:e.button_scale)&&(e=Object.assign(Object.assign({},e),{button_scale_keypad:null==e?void 0:e.button_scale})),(e=>{if(!e||!e.entity||"alarm_control_panel"!==ii(e.entity))throw new Error("Invalid configuration provided for entity");if(ei(e.button_scale_keypad)&&("number"!=typeof e.button_scale_keypad||e.button_scale_keypad<1||e.button_scale_keypad>tt))throw new Error("Invalid configuration provided for button_scale_keypad");if(ei(e.button_scale_actions)&&("number"!=typeof e.button_scale_actions||e.button_scale_actions<1||e.button_scale_actions>tt))throw new Error("Invalid configuration provided for button_scale_actions")})(e),this._config=Object.assign(Object.assign({},et),e)}hassSubscribe(){return[this.hass.connection.subscribeMessage(e=>this._fetchData(e),{type:Qe})]}async firstUpdated(){const e=await window.loadCardHelpers(),t=await e.createCardElement({type:"entities",entities:[]});await t.constructor.getConfigElement(),await this.loadBackendConfig()}async loadBackendConfig(){this.backendConnection||li(this.hass).then(e=>{const t=e.find(e=>e.entity_id==this._config.entity);t&&(this.area_id=t.area_id?t.area_id:null)}).then(()=>di(this.hass)).then(e=>{this._alarmoConfig=e,this.backendConnection=!0}).then(()=>{return e=this.hass,t=this._config.entity,e.callWS({type:"alarmo/ready_to_arm_modes",entity_id:t});var e,t}).then(e=>{this.readyForArmModes=e.modes}).catch(e=>{this.backendConnection=!1})}async _fetchData(e){if(e.data.area_id===this.area_id)switch(e.data.event){case Ye.Arm:this._clearCode();break;case Ye.Trigger:break;case Ye.InvalidCodeProvided:case Ye.NoCodeProvided:this._showCodeError(),this.subscribedEntities=[];break;case Ye.FailedToArm:this.warning="blocking_sensors",this._last_command=e.data.command,this._last_code=this._input,this._clearCode();break;case Ye.CommandNotAllowed:this._clearCode();break;case Ye.TriggerTimeExpired:break;case Ye.ReadyToArmModesChanged:this.readyForArmModes=e.data.modes}}shouldUpdate(e){if(e.has("_config"))return!0;const t=e.get("hass");if(!t||t.themes!==this.hass.themes||t.language!==this.hass.language||t.config.state!==this.hass.config.state)return!0;if(t.states[this._config.entity]!==this.hass.states[this._config.entity]){const e=t.states[this._config.entity],i=this.hass.states[this._config.entity];return!1===this.backendConnection&&(async()=>{await this.loadBackendConfig()})(),this.processStateUpdate(e,i),!0}return!(!this.subscribedEntities.length||!this.subscribedEntities.some(e=>t.states[e]!==this.hass.states[e]))}processStateUpdate(e,t){t.state!=e.state&&(this.subscribedEntities=[]),(t.state==Ze.Disarmed||t.last_changed!==e.last_changed)&&this._clearCode()}render(){var e,t;if(!this._config||!this.hass||null===this.backendConnection)return fe``;const i=this.hass.states[this._config.entity];return i?!1===this.backendConnection?fe`
+    `}};t([ue({attribute:!1})],Ft.prototype,"hass",void 0),t([ue({attribute:!1})],Ft.prototype,"config",void 0),t([ue({attribute:!1})],Ft.prototype,"readyForArmModes",void 0),Ft=t([ce("alarmo-actions-bar")],Ft);const Wt=["1","2","3","4","5","6","7","8","9","","0","clear"];return e.AlarmoCard=class extends(It(le)){constructor(){super(...arguments),this._input="",this.warning="",this.area_id=void 0,this.armOptions=Object.assign({},Ce),this.readyForArmModes=null,this.backendConnection=null,this.showBypassedSensors=!1,this.subscribedEntities=[],this._codeClearTimer=0}static async getConfigElement(){return await Promise.resolve().then(function(){return Ut}),document.createElement("alarmo-card-editor")}static async getStubConfig(e){let t=Object.keys(e.states).find(e=>"alarm_control_panel"==Ct(e));return await Tt(e).then(e=>{const i=e.sort((e,t)=>Number(e.area_id)-Number(t.area_id));i.length&&(t=i[0].entity_id)}),{type:"custom:alarmo-card",entity:t}}async getCardSize(){var e;if(!this._config||!this.hass)return 9;const t=this.hass.states[this._config.entity];return t&&(null===(e=this._alarmoConfig)||void 0===e?void 0:e.code_format)===ge?!Et(t)&&!this._config.keep_keypad_visible||this._config.use_code_dialog?4:9:4}setConfig(e){!(null==e?void 0:e.button_scale_actions)&&(null==e?void 0:e.button_scale)&&(e=Object.assign(Object.assign({},e),{button_scale_actions:null==e?void 0:e.button_scale})),!(null==e?void 0:e.button_scale_keypad)&&(null==e?void 0:e.button_scale)&&(e=Object.assign(Object.assign({},e),{button_scale_keypad:null==e?void 0:e.button_scale})),(e=>{if(!e||!e.entity||"alarm_control_panel"!==Ct(e.entity))throw new Error("Invalid configuration provided for entity");if(xt(e.button_scale_keypad)&&("number"!=typeof e.button_scale_keypad||e.button_scale_keypad<1||e.button_scale_keypad>Ae))throw new Error("Invalid configuration provided for button_scale_keypad");if(xt(e.button_scale_actions)&&("number"!=typeof e.button_scale_actions||e.button_scale_actions<1||e.button_scale_actions>Ae))throw new Error("Invalid configuration provided for button_scale_actions");if(xt(e.font_size)&&("number"!=typeof e.font_size||e.font_size<12||e.font_size>24))throw new Error("Invalid configuration provided for font_size");if(xt(e.icon_size)&&("number"!=typeof e.icon_size||e.icon_size<16||e.icon_size>40))throw new Error("Invalid configuration provided for icon_size")})(e),this._config=Object.assign(Object.assign({},xe),e)}hassSubscribe(){return[this.hass.connection.subscribeMessage(e=>this._fetchData(e),{type:we})]}async firstUpdated(){const e=await window.loadCardHelpers(),t=await e.createCardElement({type:"entities",entities:[]});await t.constructor.getConfigElement(),await this.loadBackendConfig()}async loadBackendConfig(){this.backendConnection||Tt(this.hass).then(e=>{const t=e.find(e=>e.entity_id==this._config.entity);t&&(this.area_id=t.area_id?t.area_id:null)}).then(()=>Mt(this.hass)).then(e=>{this._alarmoConfig=e,this.backendConnection=!0}).then(()=>{return e=this.hass,t=this._config.entity,e.callWS({type:"alarmo/ready_to_arm_modes",entity_id:t});var e,t}).then(e=>{this.readyForArmModes=e.modes}).catch(e=>{this.backendConnection=!1})}async _fetchData(e){if(e.data.area_id===this.area_id)switch(e.data.event){case $e.Arm:this._clearCode();break;case $e.Trigger:break;case $e.InvalidCodeProvided:case $e.NoCodeProvided:this._showCodeError(),this.subscribedEntities=[];break;case $e.FailedToArm:this.warning="blocking_sensors",this._last_command=e.data.command,this._last_code=this._input,this._clearCode();break;case $e.CommandNotAllowed:this._clearCode();break;case $e.TriggerTimeExpired:break;case $e.ReadyToArmModesChanged:this.readyForArmModes=e.data.modes}}shouldUpdate(e){if(e.has("_config"))return!0;const t=e.get("hass");if(!t||t.themes!==this.hass.themes||t.language!==this.hass.language||t.config.state!==this.hass.config.state)return!0;if(t.states[this._config.entity]!==this.hass.states[this._config.entity]){const e=t.states[this._config.entity],i=this.hass.states[this._config.entity];return!1===this.backendConnection&&(async()=>{await this.loadBackendConfig()})(),this.processStateUpdate(e,i),!0}return!(!this.subscribedEntities.length||!this.subscribedEntities.some(e=>t.states[e]!==this.hass.states[e]))}processStateUpdate(e,t){t.state!=e.state&&(this.subscribedEntities=[]),(t.state==me.Disarmed||t.last_changed!==e.last_changed)&&this._clearCode()}render(){var e,t;if(!this._config||!this.hass||null===this.backendConnection)return B``;const i=this.hass.states[this._config.entity];return i?!1===this.backendConnection?B`
         <hui-warning>
           Could not establish a connection with the alarmo integration. Please check if it is installed and the correct
           entity is selected in the card settings.
         </hui-warning>
-      `:fe`
-      <ha-card>
-        ${i.state===Ze.Disarmed?fe`
-              <ha-dropdown
-                placement="bottom-end"
-                id="cornerMenu"
-              >
-                <ha-icon-button slot="trigger" .label=${this.hass.localize("ui.common.menu")} .path=${"M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"}>
-                </ha-icon-button>
-                <span class="title">
-                  ${Xt("arm_options.heading",this.hass.language)}
-                </span>
-                <ha-dropdown-item @click=${e=>this._toggleArmOptions(e,"skip_delay")}>
-                  <ha-icon
-                    icon="mdi:check"
-                    style="${this.armOptions.skip_delay?"":"visibility: hidden"}"
-                  ></ha-icon>
-                  ${Xt("arm_options.skip_delay",this.hass.language)}
-                </ha-dropdown-item>
-                <ha-dropdown-item @click=${e=>this._toggleArmOptions(e,"force")}>
-                  <ha-icon
-                    icon="mdi:check"
-                    style="${this.armOptions.force?"":"visibility: hidden"}"
-                  ></ha-icon>
-                  ${Xt("arm_options.force",this.hass.language)}
-                </ha-dropdown-item>
-              </ha-dropdown>
-            `:""}
+      `:B`
+      <ha-card
+        style="--alarmo-card-font-size: ${this._config.font_size}px; --alarmo-card-icon-size: ${this._config.icon_size}px; --mdc-icon-size: ${this._config.icon_size}px"
+      >
+        ${i.state===me.Disarmed?B`
+                <ha-dropdown placement="bottom-end" id="cornerMenu">
+                  <ha-icon-button
+                    slot="trigger"
+                    .label=${this.hass.localize("ui.common.menu")}
+                    .path=${"M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"}
+                  >
+                  </ha-icon-button>
+                  <span class="title"> ${kt("arm_options.heading",this.hass.language)} </span>
+                  <ha-dropdown-item @click=${e=>this._toggleArmOptions(e,"skip_delay")}>
+                    <ha-icon
+                      icon="mdi:check"
+                      style="${this.armOptions.skip_delay?"":"visibility: hidden"}"
+                    ></ha-icon>
+                    ${kt("arm_options.skip_delay",this.hass.language)}
+                  </ha-dropdown-item>
+                  <ha-dropdown-item @click=${e=>this._toggleArmOptions(e,"force")}>
+                    <ha-icon icon="mdi:check" style="${this.armOptions.force?"":"visibility: hidden"}"></ha-icon>
+                    ${kt("arm_options.force",this.hass.language)}
+                  </ha-dropdown-item>
+                </ha-dropdown>
+              `:""}
 
         <div class="header">
           <div class="icon">
             <alarmo-state-badge
               .hass=${this.hass}
               .entity=${this._config.entity}
-              style="--alarm-state-color: ${ri(i,this._config)}"
+              style="--alarm-state-color: ${jt(i,this._config)}"
             >
             </alarmo-state-badge>
           </div>
           <div class="summary">
-            <div class="name">
-              ${((e,t)=>ti(t.name)?e.attributes.friendly_name:t.name)(i,this._config)}
-            </div>
-            <div class="state">
-              ${ni(i,this.hass.localize,this._config)}
-            </div>
+            <div class="name">${((e,t)=>At(t.name)?e.attributes.friendly_name:t.name)(i,this._config)}</div>
+            <div class="state">${St(i,this.hass.localize,this._config)}</div>
           </div>
         </div>
 
         ${this._renderWarning()}
 
-        <div id="actions" class="actions">
-          ${this._renderActions()}
-        </div>
+        <div id="actions" class="actions">${this._renderActions()}</div>
 
-        ${!si(i)&&!this._config.keep_keypad_visible||this._config.use_code_dialog?fe``:fe`
-              <ha-input
-                .value=${this._input}
-                .label=${this.hass.localize("ui.card.alarm_control_panel.code")}
-                ?disabled=${!si(i)}
-                @input=${e=>{this._clearCodeError(),this._input=e.target.value,this._setCodeClearTimer()}}
-                @focus=${this._clearCodeError}
-                type="password"
-                id="code_input"
-                .inputmode=${(null===(e=this._alarmoConfig)||void 0===e?void 0:e.code_format)===Fe?"numeric":"text"}
-              ></ha-input>
-            `}
-        ${!si(i)&&!this._config.keep_keypad_visible||(null===(t=this._alarmoConfig)||void 0===t?void 0:t.code_format)!==Fe||this._config.use_code_dialog||this._config.hide_keypad?fe``:fe`
-          <div id="keypad" class="keypad" style="max-width: ${300*this._config.button_scale_keypad}px">
-            ${$i.map(e=>""===e?fe`
-              <alarmo-button
-                disabled
-                style="--content-scale: ${this._config.button_scale_keypad}"
-                ?scaled=${1!=this._config.button_scale_keypad}
-                class="placeholder"
-              ></alarmo-button>
-            `:fe`
-              <alarmo-button
-                .value="${e}"
-                @click=${this._handlePadClick}
-                ?disabled=${!si(i)||"clear"===e&&!this._input.length}
-                class="${"clear"!==e?"numberKey":"clear"}"
-                style="--content-scale: ${this._config.button_scale_keypad}"
-                ?scaled=${1!=this._config.button_scale_keypad}
-              >
-                ${"clear"===e?fe`<ha-icon icon="mdi:close" style="--mdc-icon-size: calc(${this._config.button_scale_keypad} * 24px)"></ha-icon>`:fe` <span>${e}</span>`}
-              </alarmo-button>
-            `)}
-          </div>
-        `}
+        ${!Et(i)&&!this._config.keep_keypad_visible||this._config.use_code_dialog?B``:B`
+                <ha-input
+                  .value=${this._input}
+                  .label=${this.hass.localize("ui.card.alarm_control_panel.code")}
+                  ?disabled=${!Et(i)}
+                  @input=${e=>{this._clearCodeError(),this._input=e.target.value,this._setCodeClearTimer()}}
+                  @focus=${this._clearCodeError}
+                  type="password"
+                  id="code_input"
+                  .inputmode=${(null===(e=this._alarmoConfig)||void 0===e?void 0:e.code_format)===ge?"numeric":"text"}
+                ></ha-input>
+              `}
+        ${!Et(i)&&!this._config.keep_keypad_visible||(null===(t=this._alarmoConfig)||void 0===t?void 0:t.code_format)!==ge||this._config.use_code_dialog||this._config.hide_keypad?B``:B`
+                <div id="keypad" class="keypad" style="max-width: ${300*this._config.button_scale_keypad}px">
+                  ${Wt.map(e=>""===e?B`
+                          <alarmo-button
+                            disabled
+                            style="--content-scale: ${this._config.button_scale_keypad}"
+                            ?scaled=${1!=this._config.button_scale_keypad}
+                            class="placeholder"
+                          ></alarmo-button>
+                        `:B`
+                          <alarmo-button
+                            .value="${e}"
+                            @click=${this._handlePadClick}
+                            ?disabled=${!Et(i)||"clear"===e&&!this._input.length}
+                            class="${"clear"!==e?"numberKey":"clear"}"
+                            style="--content-scale: ${this._config.button_scale_keypad}"
+                            ?scaled=${1!=this._config.button_scale_keypad}
+                          >
+                            ${"clear"===e?B`<ha-icon
+                                    icon="mdi:close"
+                                    style="--mdc-icon-size: calc(${this._config.button_scale_keypad} * var(--alarmo-card-icon-size, 24px))"
+                                  ></ha-icon>`:B` <span>${e}</span>`}
+                          </alarmo-button>
+                        `)}
+                </div>
+              `}
       </ha-card>
-    `:fe`
+    `:B`
         <hui-warning>
           ${"NOT_RUNNING"!==this.hass.config.state?this.hass.localize("ui.panel.lovelace.warning.entity_not_found","entity",this._config.entity||"[empty]"):this.hass.localize("ui.panel.lovelace.warning.starting")}
         </hui-warning>
-      `}_renderActions(){if(!this.hass||!this._config)return fe``;const e=this.hass.states[this._config.entity],t=this._config.show_ready_indicator;return fe`
+      `}_renderActions(){if(!this.hass||!this._config)return B``;const e=this.hass.states[this._config.entity],t=this._config.show_ready_indicator;return B`
       <alarmo-actions-bar
         @button-clicked=${e=>this._handleActionClick(e,e.detail.action)}
         .hass=${this.hass}
         .config=${this._config}
         .readyForArmModes=${t?this.readyForArmModes:void 0}
-        style="--alarm-state-color: ${ri(e,this._config,!0)}; --content-scale: ${this._config.button_scale_actions}"
+        style="--alarm-state-color: ${jt(e,this._config,!0)}; --content-scale: ${this._config.button_scale_actions}"
       ></alarmo-actions-bar>
-    `}_renderWarning(){var e;if(!this.hass||!this._config||!this._config.show_messages)return fe``;const t=this.hass.states[this._config.entity];return t.attributes.open_sensors&&t.state==Ze.Triggered||"blocking_sensors"==this.warning&&t.attributes.open_sensors?fe`
+    `}_renderWarning(){var e;if(!this.hass||!this._config||!this._config.show_messages)return B``;const t=this.hass.states[this._config.entity];return t.attributes.open_sensors&&t.state==me.Triggered||"blocking_sensors"==this.warning&&t.attributes.open_sensors?B`
         <div class="messagebox">
           <div class="messagebox-left"></div>
           <div class="messagebox-inner">
@@ -1016,30 +952,30 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
               <div class="description-filler"></div>
               <span>
                 <ha-icon icon="hass:alert"></ha-icon>
-                ${"blocking_sensors"==this.warning?Xt("errors.blocking_sensors",this.hass.language):Xt("errors.triggered_sensors",this.hass.language)}
+                ${"blocking_sensors"==this.warning?kt("errors.blocking_sensors",this.hass.language):kt("errors.triggered_sensors",this.hass.language)}
               </span>
               <div class="description-filler"></div>
             </div>
             <div class="content">
-              ${Object.entries(t.attributes.open_sensors).map(([e])=>(this.subscribedEntities.includes(e)||this.subscribedEntities.push(e),fe`
+              ${Object.entries(t.attributes.open_sensors).map(([e])=>(this.subscribedEntities.includes(e)||this.subscribedEntities.push(e),B`
                   <div class="badge">
                     <alarmo-sensor-badge .hass=${this.hass} .entity=${e}> </alarmo-sensor-badge>
                   </div>
                 `))}
             </div>
-          ${"blocking_sensors"==this.warning&&t.attributes.open_sensors?fe`
-            <alarmo-button
-              @click=${this._forceRetryClick}
-              style="--content-scale: ${this._config.button_scale_actions}"
-              ?scaled=${1!=this._config.button_scale_actions}
-            >
-              <span>${Xt("arm_options.force",this.hass.language)}</span>
-            </alarmo-button>
-          `:""}
+            ${"blocking_sensors"==this.warning&&t.attributes.open_sensors?B`
+                    <alarmo-button
+                      @click=${this._forceRetryClick}
+                      style="--content-scale: ${this._config.button_scale_actions}"
+                      ?scaled=${1!=this._config.button_scale_actions}
+                    >
+                      <span>${kt("arm_options.force",this.hass.language)}</span>
+                    </alarmo-button>
+                  `:""}
           </div>
           <div class="messagebox-right"></div>
         </div>
-      `:t.state.startsWith("armed_")&&(null===(e=t.attributes.bypassed_sensors)||void 0===e?void 0:e.length)&&this._config.show_bypassed_sensors?fe`
+      `:t.state.startsWith("armed_")&&(null===(e=t.attributes.bypassed_sensors)||void 0===e?void 0:e.length)&&this._config.show_bypassed_sensors?B`
         <div class="messagebox warning">
           <div class="messagebox-left"></div>
           <div class="messagebox-inner">
@@ -1047,12 +983,12 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
               <div class="description-filler"></div>
               <span>
                 <ha-icon icon="hass:alert"></ha-icon>
-                ${Xt("errors.bypassed_sensors",this.hass.language)}
+                ${kt("errors.bypassed_sensors",this.hass.language)}
               </span>
               <div class="description-filler"></div>
             </div>
             <div class="content">
-              ${t.attributes.bypassed_sensors.map(e=>(this.subscribedEntities.includes(e)||this.subscribedEntities.push(e),fe`
+              ${t.attributes.bypassed_sensors.map(e=>(this.subscribedEntities.includes(e)||this.subscribedEntities.push(e),B`
                   <div class="badge">
                     <alarmo-sensor-badge .hass=${this.hass} .entity=${e}> </alarmo-sensor-badge>
                   </div>
@@ -1061,7 +997,7 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
           </div>
           <div class="messagebox-right"></div>
         </div>
-      `:fe``}_handlePadClick(e){const t=e.currentTarget.value;this._clearCodeError(),this._input="clear"===t?"":this._input+t}async _handleActionClick(e,t){var i;e.target.blur(),this._clearCodeError();const a=this.hass.states[this._config.entity];if((null===(i=this._config)||void 0===i?void 0:i.use_code_dialog)&&!this._config.hide_keypad&&si(a)){const i=await new Promise(i=>{const a=e.target,o={code_format:this._alarmoConfig.code_format,area_id:this.area_id,entity_id:this._config.entity,action:t,armOptions:this.armOptions,cancel:()=>{i(null)},confirm:e=>{i(e)}};ci(a,"show-dialog",{dialogTag:"alarmo-code-dialog",dialogImport:()=>Promise.resolve().then(function(){return ki}),dialogParams:o})});i!=Ye.Arm&&i!=Ye.Disarm||(this.warning="",this.armOptions=Object.assign({},it))}else t==Ge.Disarm?this.hass.callService("alarmo","disarm",{entity_id:this._config.entity,code:this._input}):this.hass.callService("alarmo","arm",Object.assign(Object.assign({},this.armOptions),{entity_id:this._config.entity,mode:Je[t],code:this._input})),this.warning="",this.armOptions=Object.assign({},it)}_showCodeError(){var e;const t=null===(e=this.shadowRoot)||void 0===e?void 0:e.querySelector("#code_input");t&&(t.classList.remove("error"),t.classList.add("error"),t.hint=Xt("errors.invalid_pin",this.hass.language))}_clearCodeError(){var e;const t=null===(e=this.shadowRoot)||void 0===e?void 0:e.querySelector("#code_input");t&&t.classList.contains("error")&&(t.classList.remove("error"),t.hint="",this._input="",this._cancelCodeClearTimer())}_clearCode(){this._input="",this._clearCodeError(),this._cancelCodeClearTimer()}_setCodeClearTimer(){this._cancelCodeClearTimer(),this._input.length&&(this._codeClearTimer=window.setTimeout(()=>{this._clearCode()},12e4))}_cancelCodeClearTimer(){this._codeClearTimer&&clearTimeout(this._codeClearTimer)}_toggleArmOptions(e,t){e.stopImmediatePropagation(),e.target.blur(),"skip_delay"==t?this.armOptions=Object.assign(Object.assign({},this.armOptions),{skip_delay:!this.armOptions.skip_delay}):"force"==t&&(this.armOptions=Object.assign(Object.assign({},this.armOptions),{force:!this.armOptions.force}))}_forceRetryClick(){if(!this.hass||!this._config||!this._last_command)return;let e=this._last_command;this.hass.callService("alarmo","arm",{entity_id:this._config.entity,mode:Je[e],code:this._last_code,force:!0}),this._last_command=void 0,this._last_code=void 0}static get styles(){return L`
+      `:B``}_handlePadClick(e){const t=e.currentTarget.value;this._clearCodeError(),this._input="clear"===t?"":this._input+t}async _handleActionClick(e,t){var i,s;const a=this.hass.states[this._config.entity],o=Object.values(ve).map(e=>ye[e]);let r=a.state;if(o.includes(r)||(r=null!==(i=a.attributes.arm_mode)&&void 0!==i?i:r),ye[t]!==r)if(e.target.blur(),this._clearCodeError(),(null===(s=this._config)||void 0===s?void 0:s.use_code_dialog)&&!this._config.hide_keypad&&Et(a)){const i=await new Promise(i=>{const s=e.target,a={code_format:this._alarmoConfig.code_format,area_id:this.area_id,entity_id:this._config.entity,action:t,armOptions:this.armOptions,cancel:()=>{i(null)},confirm:e=>{i(e)}};Pt(s,"show-dialog",{dialogTag:"alarmo-code-dialog",dialogImport:()=>Promise.resolve().then(function(){return Bt}),dialogParams:a})});i!=$e.Arm&&i!=$e.Disarm||(this.warning="",this.armOptions=Object.assign({},Ce))}else t==ve.Disarm?this.hass.callService("alarmo","disarm",{entity_id:this._config.entity,code:this._input}):this.hass.callService("alarmo","arm",Object.assign(Object.assign({},this.armOptions),{entity_id:this._config.entity,mode:ye[t],code:this._input})),this.warning="",this.armOptions=Object.assign({},Ce)}_showCodeError(){var e;const t=null===(e=this.shadowRoot)||void 0===e?void 0:e.querySelector("#code_input");t&&(t.classList.remove("error"),t.classList.add("error"),t.hint=kt("errors.invalid_pin",this.hass.language))}_clearCodeError(){var e;const t=null===(e=this.shadowRoot)||void 0===e?void 0:e.querySelector("#code_input");t&&t.classList.contains("error")&&(t.classList.remove("error"),t.hint="",this._input="",this._cancelCodeClearTimer())}_clearCode(){this._input="",this._clearCodeError(),this._cancelCodeClearTimer()}_setCodeClearTimer(){this._cancelCodeClearTimer(),this._input.length&&(this._codeClearTimer=window.setTimeout(()=>{this._clearCode()},12e4))}_cancelCodeClearTimer(){this._codeClearTimer&&clearTimeout(this._codeClearTimer)}_toggleArmOptions(e,t){e.stopImmediatePropagation(),e.target.blur(),"skip_delay"==t?this.armOptions=Object.assign(Object.assign({},this.armOptions),{skip_delay:!this.armOptions.skip_delay}):"force"==t&&(this.armOptions=Object.assign(Object.assign({},this.armOptions),{force:!this.armOptions.force}))}_forceRetryClick(){if(!this.hass||!this._config||!this._last_command)return;let e=this._last_command;this.hass.callService("alarmo","arm",{entity_id:this._config.entity,mode:ye[e],code:this._last_code,force:!0}),this._last_command=void 0,this._last_code=void 0}static get styles(){return n`
       ha-card {
         padding-bottom: 16px;
         position: relative;
@@ -1087,11 +1023,11 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
         flex-direction: column;
       }
       .header .name {
-        font-size: 24px;
+        font-size: calc(var(--alarmo-card-font-size, 16px) * 1.25);
         display: flex;
       }
       .header .state {
-        font-size: 14px;
+        font-size: calc(var(--alarmo-card-font-size, 16px) * 0.875);
         display: flex;
       }
       .actions {
@@ -1133,7 +1069,7 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
       #keypad alarmo-button {
         width: calc(var(--content-scale, 1) * 56px);
         height: calc(var(--content-scale, 1) * 56px);
-        --alarmo-button-font-size: 24px;
+        --alarmo-button-font-size: calc(var(--alarmo-card-font-size, 16px) * 1.5);
         --alarmo-button-background-color: var(--primary-text-color);
         --alarmo-button-background-opacity: 0.05;
         --alarmo-button-border-radius: 50%;
@@ -1144,7 +1080,7 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
       #keypad alarmo-button.clear:not([disabled]) {
         --alarmo-button-background-color: var(--red-color);
         --alarmo-button-color: var(--red-color);
-        --alarmo-button-background-opacity: 0.10;
+        --alarmo-button-background-opacity: 0.1;
       }
       #keypad alarmo-button.placeholder {
         visibility: hidden;
@@ -1220,7 +1156,7 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
         min-width: 5px;
       }
       div.messagebox .description ha-icon {
-        --mdc-icon-size: 24px;
+        --mdc-icon-size: var(--alarmo-card-icon-size, 24px);
         margin: 0px 4px 0px 0px;
       }
       div.messagebox .content {
@@ -1263,4 +1199,4 @@ var Ue=function(e){return function(t,i){void 0!==i?i.addInitializer(function(){c
           display: none;
         }
       }
-    `}},t([qe({attribute:!1})],e.AlarmoCard.prototype,"hass",void 0),t([Ve()],e.AlarmoCard.prototype,"_config",void 0),t([Ve()],e.AlarmoCard.prototype,"_alarmoConfig",void 0),t([Ve()],e.AlarmoCard.prototype,"_input",void 0),t([Ve()],e.AlarmoCard.prototype,"warning",void 0),t([Ve()],e.AlarmoCard.prototype,"area_id",void 0),t([Ve()],e.AlarmoCard.prototype,"armOptions",void 0),t([Ve()],e.AlarmoCard.prototype,"readyForArmModes",void 0),t([Ve()],e.AlarmoCard.prototype,"backendConnection",void 0),t([Ve()],e.AlarmoCard.prototype,"showBypassedSensors",void 0),e.AlarmoCard=t([Ue("alarmo-card")],e.AlarmoCard),window.customCards=window.customCards||[],window.customCards.push({type:"alarmo-card",name:"Alarmo Card",description:"Card for operating Alarmo through Lovelace.",preview:!0}),console.info(`%c  ALARMO-CARD  \n%c  Version: ${"v1.6.9".padEnd(7," ")}`,"color: orange; font-weight: bold; background: black","color: white; font-weight: bold; background: dimgray"),e}({});
+    `}},t([ue({attribute:!1})],e.AlarmoCard.prototype,"hass",void 0),t([_e()],e.AlarmoCard.prototype,"_config",void 0),t([_e()],e.AlarmoCard.prototype,"_alarmoConfig",void 0),t([_e()],e.AlarmoCard.prototype,"_input",void 0),t([_e()],e.AlarmoCard.prototype,"warning",void 0),t([_e()],e.AlarmoCard.prototype,"area_id",void 0),t([_e()],e.AlarmoCard.prototype,"armOptions",void 0),t([_e()],e.AlarmoCard.prototype,"readyForArmModes",void 0),t([_e()],e.AlarmoCard.prototype,"backendConnection",void 0),t([_e()],e.AlarmoCard.prototype,"showBypassedSensors",void 0),e.AlarmoCard=t([ce("alarmo-card")],e.AlarmoCard),window.customCards=window.customCards||[],window.customCards.push({type:"alarmo-card",name:"Alarmo Card",description:"Card for operating Alarmo through Lovelace.",preview:!0}),console.info(`%c  ALARMO-CARD  \n%c  Version: ${"v1.6.9".padEnd(7," ")}`,"color: orange; font-weight: bold; background: black","color: white; font-weight: bold; background: dimgray"),e}({});
