@@ -2,7 +2,7 @@
 
 ![Alarmo Card Custom — a simpler Alarmo interface for Home Assistant](docs/banner.svg)
 
-A fork of [nielsfaber/alarmo-card](https://github.com/nielsfaber/alarmo-card) with a simpler appearance and an updated code-entry popup for Home Assistant.
+A fork of [nielsfaber/alarmo-card](https://github.com/nielsfaber/alarmo-card) with some minor changes in appearance and an updated code-entry popup for Home Assistant.
 
 The original card and its functionality were created by [Niels Faber](https://github.com/nielsfaber). See the [upstream README](https://github.com/nielsfaber/alarmo-card#readme) for general features and configuration options. This README focuses on the changes in this fork.
 
@@ -18,7 +18,7 @@ The inline keypad remains available when popup code entry is disabled. The horiz
 
 ## Screenshot
 
-![Alarmo card state and configuration example](screenshots/state-config-example.png)
+![Alarmo-Custom](screenshots/alarmo-card-custom.png)
 
 ## Requirements
 
