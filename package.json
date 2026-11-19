@@ -6,10 +6,10 @@
   "type": "module",
   "scripts": {
     "test": "node tests/alarmo-countdown.test.mjs",
-    "build": "npm run lint && npm run rollup",
+    "build": "pnpm run lint && pnpm run rollup",
     "rollup": "rollup -c rollup.config.mjs",
     "lint": "eslint \"src/**/*.ts\"",
-    "lint:fix": "npm run lint -- --fix",
+    "lint:fix": "pnpm run lint -- --fix",
     "typecheck": "tsc --noEmit",
     "format:check": "prettier --check .",
     "format": "prettier --write .",

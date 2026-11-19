@@ -77,11 +77,11 @@ The lesson is to distinguish sending a command from confirming its result, show 
 
 ## Build from source
 
-From this repository, with Node.js and npm installed:
+From this repository, with Node.js and pnpm installed:
 
 ```sh
-npm install
-npm run build
+pnpm install
+pnpm run build
 ```
 
 The compiled bundle is written to `dist/alarmo-card.js`. Install or update it using the steps above.
@@ -91,17 +91,17 @@ The compiled bundle is written to `dist/alarmo-card.js`. Install or update it us
 GitHub Actions checks linting, TypeScript types, and formatting on pushes and pull requests. Run the same checks locally:
 
 ```sh
-npm run lint
-npm run typecheck
-npm run format:check
+pnpm run lint
+pnpm run typecheck
+pnpm run format:check
 ```
 
-These checks do not modify files. Use `npm run lint:fix` or `npm run format` to apply fixes. Formatting excludes generated bundles and the dependency lockfile.
+These checks do not modify files. Use `pnpm run lint:fix` or `pnpm run format` to apply fixes. Formatting excludes generated bundles and the dependency lockfile.
 
 To run all three checks automatically before each commit, enable the Bash hook once per clone:
 
 ```sh
-npm run hooks:install
+pnpm run hooks:install
 ```
 
 The hook checks the current working tree and blocks the commit if any check fails. It does not fix or stage files automatically.

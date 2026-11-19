@@ -28,8 +28,10 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: '24'
-          package-manager-cache: false
+          cache: 'pnpm'
+      - name: Install pnpm
+        run: corepack enable
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: pnpm install --frozen-lockfile
       - name: Run ${{ matrix.check }}
-        run: npm run ${{ matrix.check }}
+        run: pnpm run ${{ matrix.check }}
