@@ -1,5 +1,7 @@
 node_modules
 package-lock.json
+skills-lock.json
+.agents/
 README.html
 .DS_Store
 .vscode
