@@ -1,7 +1,10 @@
 node_modules
 package-lock.json
 skills-lock.json
+.agent/
 .agents/
+.skills/
+.AGENTS.md
 README.html
 .DS_Store
 .vscode
