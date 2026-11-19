@@ -13,6 +13,7 @@ export class AlarmoCountdown extends LitElement {
   private _duration = 0;
   private _deadline = 0;
   private _interval?: number;
+  private _retry?: number;
   private _request = 0;
 
   connectedCallback() {
@@ -46,7 +47,9 @@ export class AlarmoCountdown extends LitElement {
   private _stopCountdown() {
     this._request++;
     window.clearInterval(this._interval);
+    window.clearTimeout(this._retry);
     this._interval = undefined;
+    this._retry = undefined;
     this._remaining = 0;
   }
 
@@ -55,18 +58,39 @@ export class AlarmoCountdown extends LitElement {
     const entity = this.hass?.states[this.entity];
     if (!this.isConnected || !entity || !PENDING_STATES.includes(entity.state)) return;
     const request = this._request;
+    return this._fetchCountdown(request);
+  }
+
+  private async _fetchCountdown(request: number, attempt = 0): Promise<void> {
     const started = performance.now();
     try {
       const countdown = await fetchCountdown(this.hass, this.entity);
       if (request !== this._request || !this.isConnected) return;
-      if (!Number.isFinite(countdown.delay) || !Number.isFinite(countdown.remaining) || countdown.delay <= 0) return;
+      if (
+        !Number.isFinite(countdown.delay) ||
+        !Number.isFinite(countdown.remaining) ||
+        countdown.delay <= 0 ||
+        countdown.remaining <= 0
+      ) {
+        this._retryCountdown(request, attempt);
+        return;
+      }
       this._duration = countdown.delay;
       this._deadline = started + Math.min(countdown.delay, Math.max(0, countdown.remaining)) * 1000;
       this._tick();
       if (this._remaining > 0) this._interval = window.setInterval(() => this._tick(), 100);
     } catch {
-      // Keep the card usable if countdown data is temporarily unavailable.
+      this._retryCountdown(request, attempt);
     }
+  }
+
+  private _retryCountdown(request: number, attempt: number) {
+    // State updates can arrive before Alarmo has initialized its countdown.
+    if (request !== this._request || !this.isConnected || attempt >= 10) return;
+    this._retry = window.setTimeout(() => {
+      this._retry = undefined;
+      this._fetchCountdown(request, attempt + 1);
+    }, 500);
   }
 
   private _tick() {

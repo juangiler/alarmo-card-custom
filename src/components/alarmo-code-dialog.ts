@@ -34,6 +34,12 @@ export class AlarmoCodeDialog extends SubscribeMixin(LitElement) implements Hass
 
   _codeClearTimer = 0;
 
+  @state() private _submitted = false;
+
+  @state() private _status = '';
+
+  private _submitTimer = 0;
+
   public hassSubscribe(): Promise<UnsubscribeFunc>[] {
     return [
       this.hass!.connection.subscribeMessage((ev) => this._fetchData(ev as unknown as AlarmoEvent), { type: EVENT }),
@@ -41,7 +47,7 @@ export class AlarmoCodeDialog extends SubscribeMixin(LitElement) implements Hass
   }
 
   private async _fetchData(ev: AlarmoEvent): Promise<void> {
-    if (ev.data.area_id !== this._params?.area_id) return;
+    if (!this._params || String(ev.data.area_id ?? '') !== String(this._params.area_id ?? '')) return;
     switch (ev.data.event) {
       case AlarmoEvents.Disarm:
         this._confirm(ev.data.event);
@@ -54,6 +60,7 @@ export class AlarmoCodeDialog extends SubscribeMixin(LitElement) implements Hass
         break;
       case AlarmoEvents.InvalidCodeProvided:
       case AlarmoEvents.NoCodeProvided:
+        this._finishSubmit();
         this._showCodeError();
         break;
       case AlarmoEvents.FailedToArm:
@@ -72,20 +79,33 @@ export class AlarmoCodeDialog extends SubscribeMixin(LitElement) implements Hass
   protected shouldUpdate(changedProps: PropertyValues): boolean {
     const oldHass = changedProps.get('hass') as HomeAssistant | undefined;
     if (changedProps.has('_params') || !this._params) return true;
-    else if (changedProps.has('_input')) return true;
+    else if (changedProps.has('_input') || changedProps.has('_submitted') || changedProps.has('_status')) return true;
     else if (!oldHass) return true;
     else if (oldHass.states[this._params!.entity_id] !== this.hass!.states[this._params!.entity_id]) {
-      const oldState = oldHass.states[this._params!.entity_id] as AlarmoEntity;
-      const newState = this.hass!.states[this._params!.entity_id] as AlarmoEntity;
-      //this.processStateUpdate(oldState, newState);
       return true;
     }
     return false;
   }
 
-  // private processStateUpdate(_oldState: AlarmoEntity, _newState: AlarmoEntity) {
-  //   //console.log(`state changed: ${oldState.state} -> ${newState.state}`);
-  // }
+  protected updated(changedProps: PropertyValues): void {
+    super.updated(changedProps);
+    if (!this._submitted || !this._params || !changedProps.has('hass')) return;
+    const oldHass = changedProps.get('hass') as HomeAssistant | undefined;
+    const oldState = oldHass?.states[this._params.entity_id]?.state;
+    const entity = this.hass?.states[this._params.entity_id] as AlarmoEntity | undefined;
+    if (!entity || oldState === entity.state) return;
+
+    const target = ActionToState[this._params.action];
+    if (entity.state === target) {
+      this._confirm(this._params.action === ArmActions.Disarm ? AlarmoEvents.Disarm : AlarmoEvents.Arm);
+    } else if (
+      this._params.action !== ArmActions.Disarm &&
+      entity.state === AlarmStates.Arming &&
+      entity.attributes.arm_mode === target
+    ) {
+      this._confirm(AlarmoEvents.Arm);
+    }
+  }
 
   protected firstUpdated(changedProps) {
     super.firstUpdated(changedProps);
@@ -98,6 +118,8 @@ export class AlarmoCodeDialog extends SubscribeMixin(LitElement) implements Hass
   }
 
   public async showDialog(dialogParams: CodeDialogParams): Promise<void> {
+    this._finishSubmit();
+    this._cancelCodeClearTimer();
     this._params = dialogParams;
     this._input = '';
     await this.updateComplete;
@@ -105,6 +127,9 @@ export class AlarmoCodeDialog extends SubscribeMixin(LitElement) implements Hass
 
   public closeDialog() {
     this._params = undefined;
+    this._finishSubmit();
+    this._input = '';
+    this._cancelCodeClearTimer();
     return true;
   }
 
@@ -148,33 +173,62 @@ export class AlarmoCodeDialog extends SubscribeMixin(LitElement) implements Hass
     }
   }
 
-  private _submit(): void {
+  private _finishSubmit(): void {
+    this._submitted = false;
+    this._status = '';
+    window.clearTimeout(this._submitTimer);
+    this._submitTimer = 0;
+  }
+
+  public disconnectedCallback(): void {
+    super.disconnectedCallback();
+    this._finishSubmit();
+    this._cancelCodeClearTimer();
+  }
+
+  private async _submit(): Promise<void> {
+    if (!this._params || this._submitted) return;
+    const params = this._params;
     const code = this._input ?? '';
     this._clearCodeError();
+    this._submitted = true;
+    this._status = '';
+    this._submitTimer = window.setTimeout(() => {
+      this._finishSubmit();
+      this._status = localize('code_dialog.no_confirmation', this.hass!.language);
+    }, 20000);
 
-    if (this._params!.action == ArmActions.Disarm) {
-      this.hass!.callService('alarmo', 'disarm', {
-        entity_id: this._params!.entity_id,
-        code: code,
-      });
-    } else {
-      this.hass!.callService('alarmo', 'arm', {
-        ...this._params!.armOptions,
-        entity_id: this._params!.entity_id,
-        mode: ActionToState[this._params!.action],
-        code: code,
-      });
+    try {
+      if (params.action === ArmActions.Disarm) {
+        await this.hass!.callService('alarmo', 'disarm', {
+          entity_id: params.entity_id,
+          code,
+        });
+      } else {
+        await this.hass!.callService('alarmo', 'arm', {
+          ...params.armOptions,
+          entity_id: params.entity_id,
+          mode: ActionToState[params.action],
+          code,
+        });
+      }
+    } catch {
+      if (this._params !== params || !this._submitted) return;
+      this._finishSubmit();
+      this._status = localize('code_dialog.submit_failed', this.hass!.language);
     }
   }
 
   private _confirm(ev: AlarmoEvents): void {
-    this._params?.confirm?.(ev);
+    const confirm = this._params?.confirm;
     this.closeDialog();
+    confirm?.(ev);
   }
 
   private _cancel(): void {
-    this._params?.cancel?.();
+    const cancel = this._params?.cancel;
     this.closeDialog();
+    cancel?.();
   }
 
   protected render() {
@@ -197,6 +251,7 @@ export class AlarmoCodeDialog extends SubscribeMixin(LitElement) implements Hass
           <ha-input
             class="input"
             autofocus
+            .disabled=${this._submitted}
             .value=${this._input}
             id="code"
             .label=${this.hass.localize('ui.dialogs.enter_code.input_label')}
@@ -210,11 +265,14 @@ export class AlarmoCodeDialog extends SubscribeMixin(LitElement) implements Hass
             }}
             @focus=${this._clearCodeError}
           ></ha-input>
+          <p class="submit-status" role="status" aria-live="polite">
+            ${this._submitted ? localize('code_dialog.submitting', this.hass.language) : this._status}
+          </p>
           <ha-dialog-footer>
             <ha-button slot="secondaryAction" data-dialog="close" appearance="plain">
               ${this.hass.localize('ui.common.cancel')}
             </ha-button>
-            <ha-button @click=${this._submit} slot="primaryAction">
+            <ha-button .disabled=${this._submitted} @click=${this._submit} slot="primaryAction">
               ${this.hass.localize('ui.common.submit')}
             </ha-button>
           </ha-dialog-footer>
@@ -235,6 +293,7 @@ export class AlarmoCodeDialog extends SubscribeMixin(LitElement) implements Hass
           <ha-input
             class="input"
             autofocus
+            .disabled=${this._submitted}
             .value=${this._input}
             id="code"
             .label=${this.hass.localize('ui.dialogs.enter_code.input_label')}
@@ -249,11 +308,16 @@ export class AlarmoCodeDialog extends SubscribeMixin(LitElement) implements Hass
             @focus=${this._clearCodeError}
           ></ha-input>
         </div>
+        <p class="submit-status" role="status" aria-live="polite">
+          ${this._submitted ? localize('code_dialog.submitting', this.hass.language) : this._status}
+        </p>
         <ha-dialog-footer>
           <ha-button slot="secondaryAction" data-dialog="close" appearance="plain">
             ${this.hass.localize('ui.common.cancel')}
           </ha-button>
-          <ha-button @click=${this._submit} slot="primaryAction"> ${this.hass.localize('ui.common.submit')} </ha-button>
+          <ha-button .disabled=${this._submitted} @click=${this._submit} slot="primaryAction">
+            ${this.hass.localize('ui.common.submit')}
+          </ha-button>
         </ha-dialog-footer>
       </ha-dialog>
     `;
@@ -305,6 +369,10 @@ export class AlarmoCodeDialog extends SubscribeMixin(LitElement) implements Hass
       100% {
         transform: translateX(0);
       }
+    }
+    .submit-status {
+      text-align: center;
+      color: var(--secondary-text-color);
     }
     .container {
       display: flex;

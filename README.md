@@ -65,6 +65,16 @@ icon_size: 24
 
 The background blur is enabled automatically for code popups and has no separate setting. Other inherited options are documented in the [upstream configuration reference](https://github.com/nielsfaber/alarmo-card#options).
 
+## Lessons learned: password dialog and countdown timing
+
+Home Assistant state updates, Alarmo events, and service responses can arrive at different times. The card needs to handle that timing explicitly.
+
+- **Password dialog stayed open after Submit:** closing previously depended only on an Alarmo event. A missed event or a string/number mismatch in the area ID could leave the dialog open even after the alarm action succeeded. Area IDs are now compared consistently, and a matching alarm state change after submission also confirms success, including entry into the exit delay for the requested arm mode. Invalid passwords keep the dialog open for correction.
+- **Submit needed visible feedback:** the password dialog now shows “Submitting… Waiting for alarm confirmation.” and disables the input and Submit button while waiting. A service error restores the controls and shows a retry message. If no confirmation arrives within 20 seconds, the dialog asks the user to check the alarm status before trying again; it does not automatically resend the command. This timeout is only a UI waiting limit, not the alarm’s entry or exit delay.
+- **Countdown sometimes failed to start:** an `arming` or `pending` state can arrive before Alarmo has initialized its countdown data. Instead of giving up after the first empty result or temporary request failure, the card retries every 500 ms, up to 10 retries. Leaving the delay state or disconnecting cancels pending timers, and stale responses cannot restart a stopped countdown.
+
+The lesson is to distinguish sending a command from confirming its result, show progress while waiting, and use bounded retries when related state and data arrive separately. Regression tests cover these timing cases; behavior should also be checked in a live Home Assistant installation.
+
 ## Build from source
 
 From this repository, with Node.js and npm installed:

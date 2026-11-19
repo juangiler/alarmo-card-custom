@@ -5,6 +5,7 @@
   "main": "dist/alarmo-card.js",
   "type": "module",
   "scripts": {
+    "test": "node tests/alarmo-countdown.test.mjs",
     "build": "npm run lint && npm run rollup",
     "rollup": "rollup -c rollup.config.mjs",
     "lint": "eslint \"src/**/*.ts\"",
